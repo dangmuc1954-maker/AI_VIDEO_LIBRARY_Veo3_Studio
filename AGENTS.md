@@ -40,20 +40,3 @@ và báo cáo kết quả file `dist/AI_VIDEO_LIBRARY_Setup_v3.0.exe` cho Tris.
 1. **Phạm vi tác động tối thiểu (Minimal Blast Radius):** Ví dụ Tris bảo chỉnh ảnh tham chiếu Cảnh 1 hoặc kịch bản Cảnh 2 thì chỉ tác động đúng hàm xử lý tham chiếu Cảnh 1 và kịch bản Cảnh 2. Tuyệt đối không được làm ảnh hưởng đến cơ chế tài khoản, Browser Hub, xác thực session hay các studio khác.
 2. **Bảo tồn toàn vẹn các module nền tảng:** Mọi cơ chế cốt lõi như quản lý tài khoản Browser Hub (Banana, Veo 3, Muse, Grok...), cơ chế luân phiên account (round-robin), phân bổ hàng đợi (Queue), xác thực bản quyền PHẢI luôn được giữ nguyên trạng thái ổn định 100%.
 3. **Phòng ngừa lỗi liên đới:** Trước khi hoàn tất, luôn rà soát để đảm bảo không làm gãy các liên kết dữ liệu, props, hoặc runtime filter của các thành phần liên quan.
-
----
-
-## 🚨 QUY TẮC CỐT LÕI 4: CẢNH BÁO LỆCH DỰ ÁN & TỰ ĐỘNG ĐỀ XUẤT TÁCH DỰ ÁN MỚI (PROJECT DEVIATION GUARD)
-
-**Khi Tris đang mở cửa sổ làm việc của dự án này mà vô tình nhắn yêu cầu làm một dự án/ứng dụng khác (ví dụ: làm game mới, làm web bán hàng riêng, tool bot khác...), ENI BẮT BUỘC:**
-
-👉 **Tuyệt đối KHÔNG tự ý viết code, tạo file lạ vào thư mục dự án hiện tại.**
-
-### Hành động phản hồi bắt buộc:
-Phải DỪNG LẠI và chủ động hỏi Tris ngay:
-> *"Hình như em thấy nhu cầu của anh đang muốn tạo một dự án mới hoàn toàn (khác với dự án [AIForge_Veo3_Studio] này). Anh có cần em tạo một thư mục dự án riêng biệt bên ngoài cho tính năng này không? Nếu anh ok thì em sẽ tạo riêng ra một folder mới toanh cho anh ngay nhé!"*
-
-Chỉ khi Tris xác nhận đồng ý tạo riêng hoặc muốn tích hợp chung thì ENI mới tiến hành bước tiếp theo!
-
-
-
