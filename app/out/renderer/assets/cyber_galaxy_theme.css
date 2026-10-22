@@ -1,0 +1,345 @@
+/* ==========================================================================
+   AI VIDEO LIBRARY - CYBER GALAXY & NEON GLASS DESIGN SYSTEM (V3.0)
+   Full Overhaul matching Concept 1 (Deep Cosmos) & Concept 2 (Cyber Neon Glass)
+   ========================================================================== */
+
+:root {
+  --font-sans: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  
+  /* Core Colors */
+  --bg-cosmos: #060813;
+  --bg-card: rgba(13, 18, 34, 0.82);
+  --bg-card-hover: rgba(18, 25, 48, 0.92);
+  --bg-card-active: rgba(22, 32, 60, 0.95);
+  
+  /* Cyber Neon Accents */
+  --neon-cyan: #06b6d4;
+  --neon-cyan-glow: rgba(6, 182, 212, 0.45);
+  --neon-violet: #8b5cf6;
+  --neon-violet-glow: rgba(139, 92, 246, 0.45);
+  --neon-emerald: #10b981;
+  --neon-emerald-glow: rgba(16, 185, 129, 0.40);
+  --neon-rose: #f43f5e;
+  --neon-rose-glow: rgba(244, 63, 94, 0.40);
+  
+  /* Borders */
+  --border-glass: rgba(255, 255, 255, 0.08);
+  --border-neon-cyan: rgba(6, 182, 212, 0.32);
+  --border-neon-violet: rgba(139, 92, 246, 0.32);
+}
+
+/* 1. GLOBAL COSMOS BACKGROUND & TYPOGRAPHY */
+body, html, #root {
+  font-family: var(--font-sans) !important;
+  background-color: var(--bg-cosmos) !important;
+  background-image: 
+    radial-gradient(ellipse 65% 55% at 15% 10%, rgba(139, 92, 246, 0.22) 0%, transparent 60%),
+    radial-gradient(ellipse 55% 45% at 85% 15%, rgba(6, 182, 212, 0.20) 0%, transparent 55%),
+    radial-gradient(ellipse 70% 50% at 50% 90%, rgba(99, 102, 241, 0.16) 0%, transparent 65%),
+    radial-gradient(circle at 50% 50%, rgba(10, 14, 28, 0.85) 0%, #060813 100%) !important;
+  background-attachment: fixed !important;
+  background-repeat: no-repeat !important;
+  color: #f8fafc !important;
+  -webkit-font-smoothing: antialiased !important;
+}
+
+/* Remove opaque wrappers */
+main, .flex-1.overflow-hidden, div[class*="overflow-hidden bg-[radial-gradient"] {
+  background: transparent !important;
+}
+
+/* 2. SIDEBAR OVERHAUL (Sleek Obsidian Glass & Neon Navigation) */
+aside {
+  background: linear-gradient(180deg, rgba(10, 14, 26, 0.95) 0%, rgba(6, 9, 18, 0.98) 100%) !important;
+  backdrop-filter: blur(24px) !important;
+  -webkit-backdrop-filter: blur(24px) !important;
+  border-right: 1px solid var(--border-neon-cyan) !important;
+  box-shadow: 6px 0 32px rgba(0, 0, 0, 0.65) !important;
+}
+
+/* Sidebar Brand Header */
+aside > div:first-child {
+  border-bottom: 1px solid rgba(6, 182, 212, 0.18) !important;
+  background: rgba(13, 19, 36, 0.6) !important;
+}
+
+/* Sidebar Category Headers */
+aside h3, aside span.text-text-muted, aside [class*="uppercase"] {
+  color: #94a3b8 !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.12em !important;
+  font-size: 10px !important;
+}
+
+/* Sidebar Navigation Items */
+aside a, aside button, aside [role="button"] {
+  border-radius: 12px !important;
+  font-weight: 500 !important;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  color: #cbd5e1 !important;
+}
+
+aside a:hover, aside button:hover {
+  background: rgba(6, 182, 212, 0.10) !important;
+  color: #38bdf8 !important;
+  transform: translateX(3px) !important;
+}
+
+/* Active Nav Item (Video AI) - Glowing Cyber Pill */
+aside a.bg-accent, aside a[class*="bg-accent"], aside a[class*="from-accent"], aside a.active,
+aside [class*="bg-accent/"] {
+  background: linear-gradient(90deg, rgba(6, 182, 212, 0.22) 0%, rgba(139, 92, 246, 0.20) 100%) !important;
+  border: 1px solid rgba(6, 182, 212, 0.45) !important;
+  box-shadow: 0 0 20px rgba(6, 182, 212, 0.28), inset 3px 0 0 #06b6d4 !important;
+  color: #ffffff !important;
+  font-weight: 600 !important;
+}
+
+/* 3. TOP APP HEADER BAR */
+header {
+  background: rgba(8, 12, 24, 0.88) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border-bottom: 1px solid rgba(6, 182, 212, 0.20) !important;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Studio Title */
+header h1, header h2, .text-lg.font-bold {
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  text-shadow: 0 0 16px rgba(6, 182, 212, 0.35) !important;
+}
+
+/* 4. WORKSPACE CONTAINERS (Frosted Cyber Glass Sections) */
+section.section-accent, [class*="section-accent"], section {
+  background: var(--bg-card) !important;
+  backdrop-filter: blur(28px) !important;
+  -webkit-backdrop-filter: blur(28px) !important;
+  border: 1px solid var(--border-neon-cyan) !important;
+  box-shadow: 0 16px 44px rgba(0, 0, 0, 0.65), inset 0 1px 0 rgba(255, 255, 255, 0.12) !important;
+  border-radius: 18px !important;
+  overflow: hidden !important;
+}
+
+/* Section Header Bar */
+section.section-accent > div:first-child, section > div:first-child {
+  background: rgba(16, 22, 42, 0.85) !important;
+  border-bottom: 1px solid rgba(6, 182, 212, 0.22) !important;
+}
+
+/* Section Titles */
+section h2, section h3 {
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  font-size: 14px !important;
+  letter-spacing: -0.01em !important;
+}
+
+/* 5. CYBER PILL ACTION BUTTONS */
+/* Gradient Primary Buttons (+ Thêm prompt, Khởi tạo tự động) */
+button.bg-gradient-to-r, button[class*="from-accent"] {
+  background: linear-gradient(135deg, #06b6d4 0%, #8b5cf6 100%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.25) !important;
+  box-shadow: 0 0 20px var(--neon-cyan-glow), 0 4px 12px rgba(0, 0, 0, 0.4) !important;
+  border-radius: 10px !important;
+  font-weight: 600 !important;
+  color: #ffffff !important;
+  transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+button.bg-gradient-to-r:hover, button[class*="from-accent"]:hover {
+  box-shadow: 0 0 28px rgba(6, 182, 212, 0.65), 0 6px 18px rgba(0, 0, 0, 0.5) !important;
+  transform: translateY(-2px) scale(1.02) !important;
+}
+
+/* Import Prompt Button (Lime/Emerald Neon) */
+button[class*="bg-[#a3e635]"], button[class*="from-[#a3e635]"] {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  box-shadow: 0 0 18px var(--neon-emerald-glow) !important;
+  border-radius: 10px !important;
+  color: #ffffff !important;
+}
+
+button[class*="bg-[#a3e635]"]:hover {
+  box-shadow: 0 0 26px rgba(16, 185, 129, 0.65) !important;
+  transform: translateY(-2px) scale(1.02) !important;
+}
+
+/* Secondary & Danger Buttons (Xóa đã chọn, Xóa tất cả) */
+button[class*="bg-red"], button[class*="text-red"], button[class*="danger"] {
+  background: rgba(244, 63, 94, 0.15) !important;
+  border: 1px solid rgba(244, 63, 94, 0.4) !important;
+  color: #fda4af !important;
+  border-radius: 10px !important;
+}
+
+button[class*="bg-red"]:hover, button[class*="text-red"]:hover {
+  background: rgba(244, 63, 94, 0.28) !important;
+  box-shadow: 0 0 18px var(--neon-rose-glow) !important;
+  color: #ffffff !important;
+}
+
+/* 6. QUEUE TABLE OVERHAUL (Sleek Obsidian Floating Cards) */
+table {
+  border-collapse: separate !important;
+  border-spacing: 0 !important;
+  width: 100% !important;
+}
+
+table thead, thead.sticky {
+  background: rgba(16, 23, 44, 0.96) !important;
+  backdrop-filter: blur(20px) !important;
+  border-bottom: 2px solid rgba(6, 182, 212, 0.35) !important;
+}
+
+table thead th {
+  color: #38bdf8 !important;
+  font-weight: 700 !important;
+  font-size: 10.5px !important;
+  letter-spacing: 0.10em !important;
+  text-transform: uppercase !important;
+  padding: 10px 8px !important;
+}
+
+table tbody tr {
+  background: rgba(13, 18, 35, 0.72) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
+  transition: all 0.18s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+table tbody tr:hover {
+  background: rgba(6, 182, 212, 0.12) !important;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* Selected row */
+table tbody tr.bg-accent\/\\[0\\.12\\], table tbody tr[class*="bg-accent"] {
+  background: rgba(6, 182, 212, 0.20) !important;
+  box-shadow: inset 4px 0 0 #06b6d4, 0 4px 20px rgba(6, 182, 212, 0.15) !important;
+}
+
+/* Prompt Text Cell */
+table tbody td div[class*="truncate"] {
+  color: #ffffff !important;
+  font-size: 11.5px !important;
+  font-weight: 500 !important;
+}
+
+/* Parameter Badges (Veo 3, 16:9, Duration) */
+table tbody td button, table tbody td span[class*="rounded"] {
+  border-radius: 8px !important;
+  font-weight: 600 !important;
+  font-size: 11px !important;
+}
+
+/* 7. GLOWING STATUS CAPSULES (Ready, Completed, Failed, Running) */
+/* Hoàn thành / Done */
+[class*="text-green"], [class*="text-emerald"], [class*="bg-green"], [class*="bg-emerald"] {
+  color: #34d399 !important;
+}
+span[class*="bg-green\/"], span[class*="bg-emerald\/"] {
+  background: rgba(16, 185, 129, 0.16) !important;
+  border: 1px solid rgba(16, 185, 129, 0.45) !important;
+  box-shadow: 0 0 12px var(--neon-emerald-glow) !important;
+  color: #34d399 !important;
+  border-radius: 9999px !important;
+  padding: 3px 9px !important;
+}
+
+/* Thất bại / Failed */
+span[class*="bg-red\/"], span[class*="bg-rose\/"] {
+  background: rgba(244, 63, 94, 0.16) !important;
+  border: 1px solid rgba(244, 63, 94, 0.45) !important;
+  box-shadow: 0 0 12px var(--neon-rose-glow) !important;
+  color: #fb7185 !important;
+  border-radius: 9999px !important;
+  padding: 3px 9px !important;
+}
+
+/* Đang chạy / Running */
+span[class*="bg-blue\/"], span[class*="bg-cyan\/"], span[class*="bg-accent\/"] {
+  background: rgba(6, 182, 212, 0.18) !important;
+  border: 1px solid rgba(6, 182, 212, 0.50) !important;
+  box-shadow: 0 0 14px var(--neon-cyan-glow) !important;
+  color: #22d3ee !important;
+  border-radius: 9999px !important;
+  padding: 3px 9px !important;
+}
+
+/* 8. VIDEO PREVIEW GALLERY (High-End Floating Cards) */
+/* Card Container */
+.aspect-square, article, [class*="group relative overflow-hidden rounded-xl"] {
+  border-radius: 16px !important;
+  background: rgba(14, 20, 38, 0.88) !important;
+  border: 1px solid var(--border-neon-cyan) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6) !important;
+  overflow: hidden !important;
+  transition: all 0.26s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* Card Hover State */
+.aspect-square:hover, .group:hover .aspect-square, 
+[class*="group relative overflow-hidden rounded-xl"]:hover {
+  transform: translateY(-4px) scale(1.02) !important;
+  border-color: rgba(6, 182, 212, 0.85) !important;
+  box-shadow: 0 0 28px rgba(6, 182, 212, 0.45), 0 18px 40px rgba(0, 0, 0, 0.8) !important;
+}
+
+/* Video Thumbnail Hover Zoom */
+.aspect-square img, [class*="group relative overflow-hidden rounded-xl"] img {
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+.aspect-square:hover img, .group:hover img {
+  transform: scale(1.04) !important;
+}
+
+/* Floating Play Button on Hover */
+[class*="flex h-11 w-11 items-center justify-center rounded-full"] {
+  background: rgba(6, 182, 212, 0.3) !important;
+  backdrop-filter: blur(14px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.4) !important;
+  box-shadow: 0 0 22px rgba(6, 182, 212, 0.75) !important;
+  color: #ffffff !important;
+}
+
+/* Bottom Scrim Info Gradient */
+[class*="bg-gradient-to-t from-black"] {
+  background: linear-gradient(180deg, transparent 0%, rgba(6, 9, 20, 0.95) 90%) !important;
+  padding: 10px 12px !important;
+}
+
+/* 9. SEARCH BAR & INPUT CONTROLS */
+input[type="text"], input[type="search"] {
+  background: rgba(14, 20, 38, 0.75) !important;
+  border: 1px solid rgba(6, 182, 212, 0.25) !important;
+  border-radius: 10px !important;
+  color: #ffffff !important;
+  transition: all 0.2s ease !important;
+}
+
+input[type="text"]:focus, input[type="search"]:focus {
+  border-color: #06b6d4 !important;
+  box-shadow: 0 0 16px rgba(6, 182, 212, 0.4) !important;
+  outline: none !important;
+}
+
+/* 10. CUSTOM MODERN CYBER SCROLLBAR */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(6, 9, 18, 0.7);
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #06b6d4 0%, #8b5cf6 100%);
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #22d3ee 0%, #a855f7 100%);
+  box-shadow: 0 0 12px rgba(6, 182, 212, 0.6);
+}

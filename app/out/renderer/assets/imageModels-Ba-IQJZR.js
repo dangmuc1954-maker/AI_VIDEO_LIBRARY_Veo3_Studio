@@ -1,0 +1,1 @@
+const _=7;function e(n){const t=typeof n=="number"?n:Number(n);return Number.isFinite(t)?Math.max(1,Math.min(4,Math.round(t))):1}function r(n,t){const o=e(n),E=t===0;return{requestedCount:o,jobCount:E?1:o,generationCount:E?o:1}}const G=10;export{G,_ as a,r};

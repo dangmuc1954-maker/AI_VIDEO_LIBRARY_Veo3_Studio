@@ -1,0 +1,5 @@
+const fs = require('fs');
+const code = fs.readFileSync('license_server/server.js', 'utf8');
+
+const idx = code.indexOf('/v1/licenses/check-in');
+console.log(code.slice(idx + 2500, idx + 4500));

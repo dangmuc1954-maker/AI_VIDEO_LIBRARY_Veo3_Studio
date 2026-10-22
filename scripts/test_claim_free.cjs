@@ -1,0 +1,22 @@
+const https = require('https');
+
+// token from check-in response
+const tok = "eyJhbGciOiJFZERTQSIsImtpZCI6IjIwMjYtcTMifQ.eyJpYXQiOjE3ODk5NTk0MTcsIm5iZiI6MTc4OTk1OTM1NywiZXhwIjoxNzg5OTczODE3LCJqdGkiOiJhNmE3Y2QyNy1iNmViLTRkN2UtODU4Yi00ZjE5MTEyZGNiZmIiLCJsaWNlbnNlSWQiOiJjbXR6a254MmIwMTFmcTMwMTVtMW83dXZmIiwiYWN0aXZhdGlvbklkIjoiY210emtueDJxMDExaXEzMDFpcTZwdHVkYSIsImN1c3RvbWVySWQiOiJjbXR6a254MjcwMTFkcTMwMTY5ZGNrbTVmIiwiY3VzdG9tZXJJZGVudGlmaWVyIjoicGhhbmhvbmdoYSIsIm1hY2hpbmVDb2RlIjoiZWFiY2JhZjI2ZjgzN2IwMGQ1NzFlYTk5MjlkOWNlNTQ4NzJjMWZkMjkzODE2Y2Q2NjZlYTg2ZGM2MGU5MmY4YyIsInBsYW4iOiJwcm8iLCJwbGFuTmFtZSI6IlBybyIsInBsYW5UaWVyIjoicHJvIiwic3RhdHVzIjoiZXhwaXJlZCIsImZlYXR1cmVzIjp7ImltYWdlR2VuZXJhdGlvbiI6dHJ1ZSwidmlkZW9HZW5lcmF0aW9uIjp0cnVlLCJ0dHMiOnRydWUsImNoYXQiOnRydWUsIndvcmtmbG93cyI6dHJ1ZSwicHJlbWl1bVRlbXBsYXRlcyI6dHJ1ZSwicHJvdmlkZXJDb25maWciOnRydWUsInVwZGF0ZXMiOnRydWV9LCJjYXBhYmlsaXRpZXMiOlsidXBzY2FsZV9pbWFnZSIsInVwc2NhbGVfdmlkZW8iLCJyZW1vdmVfd2F0ZXJtYXJrX2ltYWdlIiwicmVtb3ZlX3dhdGVybWFya192aWRlbyJdLCJsaW1pdHMiOnsibWF4QmF0Y2hTaXplIjo1MCwibWF4UGFyYWxsZWxKb2JzIjo4LCJtYXhQcm92aWRlckFjY291bnRzIjoxMCwiaW1hZ2VDb25jdXJyZW5jeSI6NCwiaW1hZ2VQZXJpb2RRdW90YSI6NDAwLCJ2aWRlb0NvbmN1cnJlbmN5Ijo0LCJ2aWRlb1BlcmlvZFF1b3RhIjo0MDAsInR0c0NvbmN1cnJlbmN5Ijo0LCJ0dHNQZXJpb2RRdW90YSI6MTAwLCJ3b3JrZmxvd0NvbmN1cnJlbmN5Ijo0LCJ3b3JrZmxvd1F1b3RhTW9kZSI6ImluaGVyaXRzLW91dHB1dCIsInVubGltaXRlZCI6ZmFsc2V9LCJ0b2tlbkV4cGlyZXNBdCI6IjIwMjYtMDktMjFUMDY6NTY6NTcuNjU2WiIsImxpY2Vuc2VFeHBpcmVzQXQiOiIyMDI2LTA5LTE2VDA4OjQ4OjQyLjI2OVoiLCJvZmZsaW5lVW50aWwiOiIyMDI2LTA5LTE2VDA4OjQ4OjQyLjI2OVoiLCJzZXJ2ZXJUaW1lIjoiMjAyNi0wOS0yMVQwMjo1Njo1Ny42NTZaIiwic3RhdHVzVmVyc2lvbiI6MSwiYXBwVmVyc2lvbiI6IjAuMS4wLWJ1aWxkLjIwMjYwOTEyMTI0MDAzIiwiaXNzIjoiYWlmb3JnZS1saWNlbnNlLXNlcnZlciIsImF1ZCI6ImFpZm9yZ2Utc3R1ZGlvIn0.Ds5tc_ecySBuVqMWcZJcju8A0ag1Rx4pyWN1VbZfe5yxm7cO-blWXvrrdTq1LXzkmI-8N2uefrKoBPsyySMLCg";
+
+const id = 'cmtcbvpbp000gms01hcoqwwug';
+
+const req = https.request(`https://aitoolforge.shop/v1/workflow-store/products/${id}/claim-free`, {
+  method: 'POST',
+  headers: {
+    'authorization': `Bearer ${tok}`,
+    'content-type': 'application/json'
+  }
+}, res => {
+  let d = '';
+  res.on('data', c => d += c);
+  res.on('end', () => {
+    console.log('Claim free status:', res.statusCode, 'body:', d);
+  });
+});
+req.write(JSON.stringify({}));
+req.end();

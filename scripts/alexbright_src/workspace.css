@@ -1,0 +1,142 @@
+:root{font-family:'Segoe UI',Arial,sans-serif;background:#0b111a;color:#eaf2f5}
+html,body,.shell{height:100%;width:100%;min-height:0;overflow:hidden}
+body{margin:0}
+.shell{display:grid;grid-template-columns:minmax(0,1fr) 192px}
+.sidebar{grid-column:2;grid-row:1;height:100%;min-height:0;padding:18px 11px 12px;background:#111d29;border-left:1px solid #28404a;border-right:0;overflow:hidden}
+.brand{gap:9px;padding:0 7px 24px}
+.brand-icon{width:32px;height:32px;font-size:19px}
+.brand strong{font-size:11px;letter-spacing:.045em}
+.brand strong{white-space:nowrap;font-size:10px}
+.brand small{font-size:8px}
+.nav-label{padding:0 11px 8px;font-size:9px}
+.sidebar nav{gap:3px}
+.nav{padding:10px 10px;font-size:12px;gap:9px}
+.nav span{font-size:15px;width:17px}
+.nav.active{box-shadow:inset -3px 0 #3dd9c1;background:#1a383e}
+.sidebar-bottom{padding:9px}
+.sidebar-bottom strong,.sidebar-bottom small{font-size:10px}
+main{grid-column:1;grid-row:1;display:flex;flex-direction:column;height:100%;min-width:0;min-height:0;overflow:hidden}
+.topbar{height:44px;flex:none;padding:0 16px;background:#101923}
+.top-right{gap:11px}
+.avatar{height:25px;width:25px}
+.page{flex:1;min-height:0;overflow:hidden;padding:11px 14px 13px}
+#view-video,#view-image{display:flex;flex-direction:column;gap:9px}
+.page-head{flex:none;margin:0;min-height:39px;align-items:center}
+.page-head .eyebrow{display:none}
+.page-head h1{font-size:19px;line-height:1.1;margin:0;letter-spacing:-.02em}
+#view-video .page-head p,#view-image .page-head p{display:none}
+.head-actions{gap:7px}
+.head-actions .btn{padding:7px 12px;font-size:11px}
+#view-video>.stats,#view-image>.stats{height:48px;flex:none;gap:7px;margin:0}
+#view-video>.stats,#view-image>.stats,#view-accounts>.stats{gap:0;border:1px solid #2c414e;border-radius:7px;background:#13212c;overflow:hidden}
+#view-video .stat,#view-image .stat{display:flex;align-items:center;justify-content:space-between;padding:7px 12px;border-radius:7px}
+#view-video .stat,#view-image .stat,#view-accounts .stat{border:0;border-right:1px solid #2c414e;border-radius:0;background:transparent}
+#view-video .stat:last-child,#view-image .stat:last-child,#view-accounts .stat:last-child{border-right:0}
+#view-video .stat small,#view-image .stat small{font-size:10px}
+#view-video .stat strong,#view-image .stat strong{font-size:19px;margin:0}
+#view-video .stat:after,#view-image .stat:after{display:none}
+.work-grid{flex:1;min-height:0;overflow:hidden;display:grid;grid-template-columns:292px minmax(0,1fr);gap:9px;align-items:stretch}
+.card{border-radius:8px;box-shadow:none;background:#141f2b}
+.composer{height:100%;min-height:0;overflow:hidden;padding:11px;display:flex;flex-direction:column}
+.composer .section-head{flex:none;margin-bottom:7px}
+.composer .section-head h2{font-size:12px}
+.composer .step,.queue .step{padding:3px 5px}
+.composer .form-grid{flex:none;gap:4px 8px}
+.composer label{font-size:10px;margin-bottom:5px}
+.composer input:not([type=checkbox]):not([type=file]),.composer select{padding:6px 8px;margin-top:3px;font-size:11px;height:30px}
+.composer>label:not(.upload-label){flex:none}
+.composer>p.hint,.composer>.hint.center{display:none}
+.composer .divider{flex:none;margin:6px 0}
+.composer .segmented{flex:none;margin-bottom:6px;padding:2px}
+.composer .mode{padding:5px 3px;font-size:9px}
+.composer>textarea{flex:1;min-height:65px;height:auto;max-height:none;padding:8px;margin:0;font-size:11px}
+.composer .input-tools{flex:none;margin:5px 0 4px}
+.composer .upload-label{flex:none;padding:6px;margin:0;font-size:10px}
+.composer .upload-label small{display:none}
+.composer .upload-label input{margin-top:3px;font-size:9px}
+.composer .chips{max-height:38px;overflow:auto;flex:none}
+.composer .btn.wide{flex:none;margin-top:6px;padding:8px;font-size:11px}
+.queue{height:100%;min-height:0;min-width:0;overflow:hidden;padding:0;display:flex;flex-direction:column}
+.queue>.section-head{flex:none;height:39px;padding:0 11px;margin:0;border-bottom:1px solid #293a48}
+.queue>.section-head h2{font-size:12px}
+.queue-toolbar{flex:none;min-height:39px;padding:5px 11px;gap:8px;flex-wrap:nowrap}
+.queue-toolbar .check,.queue-toolbar .text-btn{font-size:10px!important;white-space:nowrap}
+.queue-toolbar .spacer{min-width:3px}
+.queue-toolbar .queue-search{width:160px!important;min-width:100px!important;padding:5px 8px!important;font-size:10px!important}
+.queue-toolbar select{width:132px;padding:5px 8px;font-size:10px}
+.queue .table-wrap{flex:1;min-height:0;max-height:none;overflow:auto}
+.queue table{width:100%;min-width:810px;table-layout:fixed;white-space:normal}
+.queue th{padding:8px 6px;font-size:9px;background:#162330;top:0;z-index:1}
+.queue td{padding:6px;font-size:10px;white-space:normal;line-height:1.25;height:63px}
+.queue th:first-child,.queue td:first-child{padding-left:9px;width:46px}
+.queue th:nth-child(2){width:76px}
+.queue th:nth-child(3){width:115px}
+.queue th:nth-child(4){width:24%}
+.queue th:nth-child(5){width:185px}
+.queue th:nth-child(6){width:164px}
+.queue .row-num{gap:4px}
+.queue .type-pill{padding:4px 5px;font-size:9px}
+.queue .ref-cell{gap:2px;max-width:100px}
+.queue .ref-tile,.queue .ref-add{width:26px;height:26px;border-radius:4px}
+.queue .ref-add{font-size:15px}
+.queue .ref-count{margin-top:2px}
+.queue .prompt-cell{max-width:none;display:inline-block;width:calc(100% - 30px);vertical-align:middle;color:#e1edf1}
+.queue .prompt-eye{display:inline-grid;place-items:center;vertical-align:middle;width:24px;height:24px;margin-left:3px;background:#214043;border:1px solid #35666a;border-radius:5px;color:#72ead9;font-size:14px}
+.queue td:nth-child(4)>.task-meta{display:none}
+.queue .status{padding:3px 5px;font-size:9px}
+.queue td:nth-child(5)>.task-meta{margin-top:2px;font-size:9px}
+.queue .task-countdown{font-size:10px;margin-top:2px}
+.queue .result-button{display:none}
+.queue .task-media-button{display:flex;align-items:center;gap:5px;margin-top:3px;padding:2px 5px 2px 2px;border-radius:5px;color:#80e4d2;font-size:9px;font-weight:700}
+.queue .task-media-button img{width:53px;height:32px;border-radius:3px;object-fit:cover}
+.queue .row-actions{min-width:0;gap:3px}
+.queue .row-actions .icon-btn{font-size:12px;padding:2px 3px}
+.queue .row-actions .small-action{font-size:9px;padding:3px 5px}
+.queue .empty{height:150px}
+#view-accounts{display:flex;flex-direction:column;gap:10px}
+#view-accounts .page-head{min-height:43px}
+#view-accounts .page-head p{font-size:10px}
+#view-accounts .stats{height:48px;flex:none;gap:7px;margin:0}
+#view-accounts .stat{padding:6px 10px}
+#view-accounts .stat strong{font-size:19px;margin:0}
+#view-accounts .stat:after{display:none}
+#view-accounts .account-manager{flex:1;min-height:0;overflow:hidden;display:flex;flex-direction:column}
+#view-accounts .account-manager .table-wrap{flex:1;min-height:0;max-height:none;overflow:auto}
+#view-library .library-grid{height:calc(100% - 125px);overflow:auto;align-content:start}
+#view-logs>.card{height:calc(100% - 75px);overflow:hidden}
+#view-logs .log-list{height:100%;max-height:none}
+#view-settings{overflow:auto}
+@media(max-width:1280px){
+  .shell{grid-template-columns:minmax(0,1fr) 165px}
+  .brand strong{font-size:10px}
+  .brand strong{font-size:9px}
+  .work-grid{grid-template-columns:260px minmax(0,1fr)}
+  .queue table{min-width:760px}
+  .queue-toolbar .queue-search{width:115px!important}
+}
+@media(max-height:760px){
+  .topbar{height:37px}
+  .page{padding:7px 10px 8px}
+  #view-video,#view-image{gap:6px}
+  #view-video>.stats,#view-image>.stats,#view-accounts .stats{height:39px}
+  .page-head{min-height:32px}
+  .composer{padding:8px}
+  .composer .form-grid{gap:2px 6px}
+  .composer label{margin-bottom:3px}
+  .composer .section-head{margin-bottom:4px}
+  .composer .divider{margin:3px 0}
+  .composer .upload-label{padding:4px}
+}
+@media(min-width:1600px){
+  .work-grid{grid-template-columns:320px minmax(0,1fr)}
+  .sidebar{padding-left:13px;padding-right:13px}
+  .nav{font-size:13px}
+  .queue th{font-size:10px}
+  .queue td{font-size:11px}
+  .queue .prompt-cell{font-size:11px}
+  .queue .status{font-size:10px}
+  .queue .row-actions .small-action{font-size:10px}
+  .composer label{font-size:11px}
+  .composer>textarea{font-size:12px}
+  #view-video .stat small,#view-image .stat small{font-size:11px}
+}

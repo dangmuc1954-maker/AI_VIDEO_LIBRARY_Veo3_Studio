@@ -1,0 +1,22 @@
+aMuseBrowser
+uhttps://muse.ai/thread/new
+uhttps://muse.ai/
+uMuse
+t cookie ho
+uMuse chuy
+c cookie
+Nawait_for_url
+u/thread/(?:new|[0-9a-f-]{36})(?:[/?#]|$)
+n Muse ho
+a Muse sau 2 l
+afill
+aprompt_for
+uMuseBrowser.generate.<locals>.on_response
+aMuseBrowser
+aprompt
+uthread/close
+uthread/current
+uthread/exit
+uthread/new
+uthread/receive
+uthread/send

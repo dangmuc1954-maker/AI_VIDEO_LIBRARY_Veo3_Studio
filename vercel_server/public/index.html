@@ -1,0 +1,1160 @@
+<!DOCTYPE html>
+<html lang="vi" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI VIDEO LIBRARY — Trạm Sáng Tạo Video & Âm Thanh AI Toàn Năng (Veo 3 & Grok)</title>
+  <meta name="title" content="AI VIDEO LIBRARY — Trạm Sáng Tạo Video & Âm Thanh AI Toàn Năng">
+  <meta name="description" content="Phần mềm tự động hóa sản xuất video AI Veo 3, xAI Grok, tạo ảnh Google Flow Nano và lồng tiếng ElevenLabs không giới hạn. Bộ cài đặt 1-click cho Windows.">
+  <meta name="theme-color" content="#030611">
+
+  <!-- Open Graph / Facebook / Zalo Preview Thumbnail -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://vercelserver-eight.vercel.app/">
+  <meta property="og:title" content="AI VIDEO LIBRARY — Trạm Sáng Tạo Video & Âm Thanh AI Toàn Năng">
+  <meta property="og:description" content="Phần mềm tự động hóa sản xuất video AI Veo 3, xAI Grok, tạo ảnh Google Flow Nano và lồng tiếng ElevenLabs không giới hạn. Bộ cài đặt 1-click cho Windows.">
+  <meta property="og:image" content="https://vercelserver-eight.vercel.app/intro_studio_banner.png?v=3.0">
+  <meta property="og:image:secure_url" content="https://vercelserver-eight.vercel.app/intro_studio_banner.png?v=3.0">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="996">
+  <meta property="og:image:height" content="820">
+  <meta property="og:image:alt" content="AI VIDEO LIBRARY — Biến ý tưởng thành video chỉ trong vài phút">
+  <meta property="og:site_name" content="AI VIDEO LIBRARY">
+  <meta property="og:locale" content="vi_VN">
+
+  <!-- Twitter / X Card Preview -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://vercelserver-eight.vercel.app/">
+  <meta name="twitter:title" content="AI VIDEO LIBRARY — Trạm Sáng Tạo Video & Âm Thanh AI Toàn Năng">
+  <meta name="twitter:description" content="Phần mềm tự động hóa sản xuất video AI Veo 3, xAI Grok, tạo ảnh Google Flow Nano và lồng tiếng ElevenLabs không giới hạn. Bộ cài đặt 1-click cho Windows.">
+  <meta name="twitter:image" content="https://vercelserver-eight.vercel.app/intro_studio_banner.png?v=3.0">
+  <meta name="twitter:image:src" content="https://vercelserver-eight.vercel.app/intro_studio_banner.png?v=3.0">
+  <meta name="twitter:image:alt" content="AI VIDEO LIBRARY — Biến ý tưởng thành video chỉ trong vài phút">
+
+  <!-- Zalo, Skype, Viber & Search Engines Direct Thumbnail -->
+  <link rel="image_src" href="https://vercelserver-eight.vercel.app/intro_studio_banner.png?v=3.0">
+  <meta name="thumbnail" content="https://vercelserver-eight.vercel.app/intro_studio_banner.png?v=3.0">
+
+  <!-- Schema.org item tags for messaging crawlers (Zalo / Telegram / iMessage) -->
+  <meta itemprop="name" content="AI VIDEO LIBRARY — Trạm Sáng Tạo Video & Âm Thanh AI Toàn Năng">
+  <meta itemprop="description" content="Phần mềm tự động hóa sản xuất video AI Veo 3, xAI Grok, tạo ảnh Google Flow Nano và lồng tiếng ElevenLabs không giới hạn. Bộ cài đặt 1-click cho Windows.">
+  <meta itemprop="image" content="https://vercelserver-eight.vercel.app/intro_studio_banner.png?v=3.0">
+
+  <!-- Schema.org JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "AI VIDEO LIBRARY",
+    "operatingSystem": "Windows 10, Windows 11 (64-bit)",
+    "applicationCategory": "MultimediaApplication",
+    "image": "https://vercelserver-eight.vercel.app/intro_studio_banner.png?v=3.0",
+    "url": "https://vercelserver-eight.vercel.app/",
+    "description": "Phần mềm tự động hóa sản xuất video AI Veo 3, xAI Grok, tạo ảnh Google Flow Nano và lồng tiếng ElevenLabs không giới hạn. Bộ cài đặt 1-click cho Windows.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "VND"
+    }
+  }
+  </script>
+
+  <!-- Canonical Link -->
+  <link rel="canonical" href="https://vercelserver-eight.vercel.app/">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/logo.png">
+  <link rel="apple-touch-icon" href="/logo.png">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS & Lucide Icons -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            galaxy: {
+              950: '#030611',
+              900: '#060b1e',
+              800: '#0b132d',
+              700: '#111d40'
+            },
+            mint: {
+              300: '#6ee7b7',
+              400: '#34d399',
+              500: '#10b981',
+              600: '#059669'
+            },
+            cyan: {
+              400: '#22d3ee',
+              500: '#06b6d4'
+            }
+          },
+          fontFamily: {
+            outfit: ['Outfit', 'sans-serif'],
+            sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #030611;
+      color: #f1f5f9;
+      overflow-x: hidden;
+    }
+    h1, h2, h3, h4, .font-heading {
+      font-family: 'Outfit', sans-serif;
+    }
+
+    /* Cosmic Galaxy Glow Backgrounds */
+    .bg-cosmic-glow {
+      background: radial-gradient(circle at 50% 0%, rgba(16, 185, 129, 0.18) 0%, rgba(6, 182, 212, 0.12) 35%, rgba(99, 102, 241, 0.05) 60%, transparent 80%),
+                  radial-gradient(circle at 100% 50%, rgba(5, 150, 105, 0.1) 0%, transparent 50%),
+                  radial-gradient(circle at 0% 70%, rgba(14, 165, 233, 0.1) 0%, transparent 50%);
+    }
+
+    /* High-End 3D Glassmorphism Card */
+    .glass-card-3d {
+      background: rgba(11, 19, 45, 0.65);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(52, 211, 153, 0.18);
+      box-shadow: 0 20px 50px -15px rgba(0, 0, 0, 0.7),
+                  0 0 30px -10px rgba(52, 211, 153, 0.15),
+                  inset 0 1px 1px rgba(255, 255, 255, 0.1);
+      transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+      transform-style: preserve-3d;
+      will-change: transform;
+    }
+
+    .glass-card-3d:hover {
+      border-color: rgba(52, 211, 153, 0.45);
+      box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.85),
+                  0 0 45px -5px rgba(52, 211, 153, 0.3),
+                  inset 0 1px 2px rgba(255, 255, 255, 0.25);
+    }
+
+    /* Mint Glow Gradient Text */
+    .text-galaxy-gradient {
+      background: linear-gradient(135deg, #ffffff 10%, #6ee7b7 55%, #38bdf8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .text-mint-gradient {
+      background: linear-gradient(135deg, #a7f3d0 0%, #34d399 50%, #06b6d4 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* Glowing Action Buttons */
+    .btn-mint-glow {
+      background: linear-gradient(135deg, #10b981 0%, #059669 50%, #0d9488 100%);
+      box-shadow: 0 0 25px rgba(16, 185, 129, 0.45),
+                  inset 0 1px 1px rgba(255, 255, 255, 0.3);
+      transition: all 0.25s ease;
+    }
+    .btn-mint-glow:hover {
+      background: linear-gradient(135deg, #34d399 0%, #10b981 50%, #059669 100%);
+      box-shadow: 0 0 40px rgba(52, 211, 153, 0.7),
+                  inset 0 1px 2px rgba(255, 255, 255, 0.5);
+      transform: translateY(-2px);
+    }
+
+    .btn-glass-secondary {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      transition: all 0.25s ease;
+    }
+    .btn-glass-secondary:hover {
+      background: rgba(255, 255, 255, 0.12);
+      border-color: rgba(52, 211, 153, 0.4);
+      color: #6ee7b7;
+      transform: translateY(-2px);
+    }
+
+    /* Neon Pulsing Border */
+    @keyframes pulseGlow {
+      0%, 100% { border-color: rgba(52, 211, 153, 0.35); box-shadow: 0 0 25px rgba(52, 211, 153, 0.2); }
+      50% { border-color: rgba(52, 211, 153, 0.85); box-shadow: 0 0 50px rgba(52, 211, 153, 0.45); }
+    }
+    .pulse-glow-border {
+      animation: pulseGlow 3.5s infinite ease-in-out;
+    }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #030611; }
+    ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 6px; border: 1px solid rgba(52, 211, 153, 0.2); }
+    ::-webkit-scrollbar-thumb:hover { background: #334155; }
+  </style>
+</head>
+<body class="min-h-screen relative antialiased selection:bg-mint-500 selection:text-black">
+
+  <!-- Interactive Galaxy Stars Canvas Background -->
+  <canvas id="galaxyCanvas" class="fixed inset-0 pointer-events-none z-0 opacity-75"></canvas>
+  <div class="fixed inset-0 bg-cosmic-glow pointer-events-none z-0"></div>
+
+  <!-- Main Container -->
+  <div class="relative z-10 flex flex-col min-h-screen">
+
+    <!-- ========================================================================= -->
+    <!-- NAVBAR -->
+    <!-- ========================================================================= -->
+    <header class="sticky top-0 z-50 backdrop-blur-xl bg-galaxy-950/80 border-b border-mint-500/15 px-4 sm:px-8 py-3.5 transition duration-300">
+      <div class="max-w-7xl mx-auto flex items-center justify-between">
+        
+        <!-- Brand Logo -->
+        <a href="#hero" class="flex items-center space-x-3 group">
+          <div class="relative w-11 h-11 rounded-2xl overflow-hidden shadow-lg shadow-mint-500/25 border border-mint-400/30 group-hover:scale-105 group-hover:border-mint-400 transition-all duration-300 bg-galaxy-900 flex items-center justify-center p-0.5">
+            <img src="/logo.png" alt="AI VIDEO LIBRARY Logo" class="w-full h-full object-cover rounded-xl">
+          </div>
+          <div>
+            <div class="flex items-center space-x-2">
+              <span class="font-heading font-black text-lg tracking-wider text-white">AI VIDEO LIBRARY</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded-full bg-mint-500/20 text-mint-400 font-semibold border border-mint-500/30">v3.0</span>
+            </div>
+            <p class="text-[10px] text-slate-400 font-medium tracking-tight">Studio Sáng Tạo Video AI Đa Nền Tảng</p>
+          </div>
+        </a>
+
+        <!-- 4 Main Navigation Links (Active Pill Indicator) -->
+        <nav class="hidden md:flex items-center space-x-1 lg:space-x-2 bg-galaxy-900/90 p-1.5 rounded-2xl border border-white/10 shadow-inner">
+          <a href="#intro" class="nav-link px-4 py-2 rounded-xl text-xs font-semibold text-slate-300 hover:text-white hover:bg-white/5 transition flex items-center space-x-1.5">
+            <i data-lucide="sparkles" class="w-3.5 h-3.5 text-mint-400"></i>
+            <span>Giới thiệu Tool</span>
+          </a>
+          <a href="#guide" class="nav-link px-4 py-2 rounded-xl text-xs font-semibold text-slate-300 hover:text-white hover:bg-white/5 transition flex items-center space-x-1.5">
+            <i data-lucide="book-open" class="w-3.5 h-3.5 text-cyan-400"></i>
+            <span>Hướng dẫn sử dụng</span>
+          </a>
+          <a href="#download" class="nav-link px-4 py-2 rounded-xl text-xs font-semibold text-slate-300 hover:text-white hover:bg-white/5 transition flex items-center space-x-1.5">
+            <i data-lucide="download" class="w-3.5 h-3.5 text-emerald-400"></i>
+            <span>Tải xuống</span>
+          </a>
+          <a href="#support" class="nav-link px-4 py-2 rounded-xl text-xs font-semibold text-slate-300 hover:text-white hover:bg-white/5 transition flex items-center space-x-1.5">
+            <i data-lucide="headset" class="w-3.5 h-3.5 text-indigo-400"></i>
+            <span>Chi tiết hỗ trợ</span>
+          </a>
+        </nav>
+
+        <!-- Right Quick CTAs -->
+        <div class="flex items-center space-x-3">
+          <a href="#download" class="flex items-center space-x-1.5 btn-mint-glow text-slate-950 font-bold text-xs px-4 py-2.5 rounded-xl">
+            <i data-lucide="download" class="w-4 h-4"></i>
+            <span>Tải Ngay v3.0</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- ========================================================================= -->
+    <!-- HERO SECTION -->
+    <!-- ========================================================================= -->
+    <section id="hero" class="relative pt-12 pb-20 md:pt-16 md:pb-28 px-4 sm:px-6 max-w-7xl mx-auto w-full text-center">
+      
+      <!-- 3D Mascot Avatar Badge -->
+      <div class="relative inline-block mb-6 group cursor-pointer">
+        <div class="absolute -inset-3 bg-gradient-to-r from-mint-500 via-cyan-400 to-indigo-500 rounded-3xl blur-xl opacity-40 group-hover:opacity-85 transition duration-500 animate-pulse"></div>
+        <div class="relative w-24 h-24 sm:w-28 sm:h-28 rounded-3xl p-1 bg-gradient-to-b from-white/30 via-white/10 to-transparent border border-mint-400/50 shadow-2xl backdrop-blur-2xl flex items-center justify-center overflow-hidden bg-galaxy-900/80">
+          <img src="/logo.png" alt="AI Robot Mascot" class="w-full h-full object-cover rounded-2xl transform group-hover:scale-110 transition duration-500">
+        </div>
+        <div class="absolute -bottom-2 -right-2 bg-gradient-to-r from-mint-500 to-cyan-400 text-galaxy-950 text-[10px] font-mono font-black px-2.5 py-0.5 rounded-full shadow-lg border border-white/50">
+          v3.0 PRO
+        </div>
+      </div>
+
+      <!-- Top Announcement Badge -->
+      <div class="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-mint-500/10 border border-mint-500/30 text-mint-300 text-xs font-semibold mb-6 animate-pulse">
+        <span class="w-2 h-2 rounded-full bg-mint-400 animate-ping"></span>
+        <span>CHÍNH THỨC PHÁT HÀNH BỘ CÀI ĐẶT STANDALONE V3.0 — AI VIDEO STUDIO</span>
+      </div>
+
+      <!-- Main Headline -->
+      <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black font-heading tracking-tight leading-tight max-w-5xl mx-auto">
+        <span class="text-white">Trạm Sản Xuất Video AI</span><br>
+        <span class="text-galaxy-gradient">Toàn Năng, Đột Phá & Không Giới Hạn</span>
+      </h1>
+
+      <!-- Subtitle -->
+      <p class="mt-6 text-base sm:text-lg lg:text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed font-normal">
+        Tự động hóa 100% quy trình làm video triệu view TikTok, Reels, Shorts với sự kết hợp đỉnh cao của 
+        <strong class="text-mint-400 font-semibold">Google Veo 3</strong>, 
+        <strong class="text-cyan-400 font-semibold">xAI Grok Imagine</strong>, 
+        <strong class="text-indigo-300 font-semibold">Flow Nano</strong> và 
+        <strong class="text-emerald-300 font-semibold">ElevenLabs Studio</strong>.
+      </p>
+
+      <!-- Hero Call-To-Action Buttons -->
+      <div class="mt-10 flex flex-wrap items-center justify-center gap-4">
+        <a href="#download" class="btn-mint-glow text-slate-950 font-black text-sm sm:text-base px-8 py-4 rounded-2xl flex items-center space-x-2.5 shadow-2xl">
+          <i data-lucide="download" class="w-5 h-5"></i>
+          <span>Tải Về Cài Đặt (v3.0.0 64-bit)</span>
+        </a>
+        <a href="#guide" class="btn-glass-secondary text-slate-200 font-semibold text-sm sm:text-base px-7 py-4 rounded-2xl flex items-center space-x-2.5">
+          <i data-lucide="play-circle" class="w-5 h-5 text-mint-400"></i>
+          <span>Xem Hướng Dẫn Sử Dụng</span>
+        </a>
+      </div>
+
+      <!-- Feature Highlight Badges Row -->
+      <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
+        <div class="glass-card-3d rounded-2xl p-4 text-center">
+          <div class="text-2xl font-black font-heading text-mint-400">Veo 3 & Grok</div>
+          <p class="text-xs text-slate-400 mt-1">Render Video Điện Ảnh 720p/1080p</p>
+        </div>
+        <div class="glass-card-3d rounded-2xl p-4 text-center">
+          <div class="text-2xl font-black font-heading text-cyan-400">30+ Giọng Đọc</div>
+          <p class="text-xs text-slate-400 mt-1">ElevenLabs Lồng Tiếng Siêu Thực</p>
+        </div>
+        <div class="glass-card-3d rounded-2xl p-4 text-center">
+          <div class="text-2xl font-black font-heading text-indigo-400">Browser Hub</div>
+          <p class="text-xs text-slate-400 mt-1">Quản Lý & Duy Trì Phiên Đa Luồng</p>
+        </div>
+        <div class="glass-card-3d rounded-2xl p-4 text-center">
+          <div class="text-2xl font-black font-heading text-emerald-400">1-Click Setup</div>
+          <p class="text-xs text-slate-400 mt-1">Cài Đặt Tự Động, Không Cần IT</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- MỤC 1: GIỚI THIỆU TOOL & BẢN QUYỀN (CHIA 2 PHẦN TÁCH BIỆT RÕ RÀNG) -->
+    <!-- ========================================================================= -->
+    <section id="intro" class="py-20 px-4 sm:px-6 max-w-7xl mx-auto w-full space-y-16 lg:space-y-24">
+      
+      <!-- Tiêu Đề Tổng Mục 1 -->
+      <div class="text-center max-w-3xl mx-auto">
+        <div class="inline-flex items-center space-x-1.5 px-3.5 py-1 rounded-full bg-mint-500/10 border border-mint-500/20 text-mint-400 text-xs font-semibold mb-3">
+          <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+          <span>MỤC 1 — TỔNG QUAN GIẢI PHÁP & TÍNH NĂNG VƯỢT TRỘI</span>
+        </div>
+        <h2 class="text-3xl sm:text-5xl font-black font-heading text-white tracking-tight">
+          Hệ Sinh Thái Sáng Tạo Video AI Đột Phá
+        </h2>
+        <p class="mt-4 text-sm sm:text-base text-slate-400">
+          Khám phá công nghệ sản xuất nội dung AI tự động hóa và cơ chế kích hoạt bản quyền 1-click thông minh.
+        </p>
+      </div>
+
+      <!-- ===================================================================== -->
+      <!-- PHẦN 1: GIỚI THIỆU SẢN PHẨM (NỬA TRÁI: VĂN BẢN — NỬA PHẢI: HÌNH ẢNH TƯỢNG TRƯNG) -->
+      <!-- ===================================================================== -->
+      <div id="intro-product" class="glass-card-3d rounded-3xl p-6 sm:p-10 lg:p-12 border-mint-500/20 relative overflow-hidden">
+        
+        <!-- Ambient Glow -->
+        <div class="absolute -top-24 -left-24 w-96 h-96 bg-mint-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center relative z-10">
+          
+          <!-- CỘT TRÁI (50% MÀN HÌNH): CHỮ GIỚI THIỆU CHUNG CHO SẢN PHẨM (ANH DỄ THÊM/SỬA CHỮ) -->
+          <div class="space-y-6 text-left">
+            <div class="inline-flex items-center space-x-2 px-3.5 py-1 rounded-xl bg-mint-500/15 border border-mint-500/30 text-mint-300 text-xs font-mono font-bold tracking-wider">
+              <i data-lucide="layers" class="w-3.5 h-3.5 text-mint-400"></i>
+              <span>PHẦN 1: GIỚI THIỆU SẢN PHẨM</span>
+            </div>
+
+            <h3 class="text-2xl sm:text-4xl font-black font-heading text-white leading-tight">
+              AI VIDEO LIBRARY v3.0<br>
+              <span class="text-mint-gradient">Studio Sáng Tạo Video AI Đa Nền Tảng</span>
+            </h3>
+
+            <!-- Khối văn bản giới thiệu sản phẩm (Nội dung chính thức) -->
+            <div class="space-y-4 text-slate-300 text-sm sm:text-base leading-relaxed">
+              <p>
+                <strong class="text-white font-bold">AI VIDEO LIBRARY</strong> là phần mềm hỗ trợ tạo dựng video chuyên nghiệp đa luồng và tiện lợi, phù hợp cho nhu cầu tạo film, tạo video, tạo ảnh nhằm mục đích bán hàng xây kênh cho các nền tảng xã hội như <span class="text-blue-400 font-medium">Facebook</span>, <span class="text-red-400 font-medium">Youtube</span>, <span class="text-pink-400 font-medium">Tiktok</span>...
+              </p>
+              <p class="text-slate-200">
+                Ứng dụng được tích hợp các nền tảng AI hot như <strong class="text-mint-300 font-bold">VEO3</strong>, <strong class="text-cyan-300 font-bold">GROK</strong>, <strong class="text-purple-300 font-bold">MUSE</strong>, <strong class="text-emerald-300 font-bold">ELEVENLABS</strong>.
+              </p>
+            </div>
+
+            <!-- Các điểm nhấn tính năng nổi bật -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+              <div class="flex items-start space-x-2.5 p-3 rounded-2xl bg-galaxy-900/80 border border-white/5">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-mint-400 shrink-0 mt-0.5"></i>
+                <div class="text-xs">
+                  <span class="font-bold text-white block">Tự Động Hóa 100%</span>
+                  <span class="text-slate-400">Từ Prompt -> Ảnh -> Video hoàn thiện</span>
+                </div>
+              </div>
+              <div class="flex items-start space-x-2.5 p-3 rounded-2xl bg-galaxy-900/80 border border-white/5">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-cyan-400 shrink-0 mt-0.5"></i>
+                <div class="text-xs">
+                  <span class="font-bold text-white block">Đa Dạng Tỷ Lệ Khung Hình</span>
+                  <span class="text-slate-400">Chuẩn 9:16 dọc TikTok, 16:9 ngang, 1:1</span>
+                </div>
+              </div>
+              <div class="flex items-start space-x-2.5 p-3 rounded-2xl bg-galaxy-900/80 border border-white/5">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i>
+                <div class="text-xs">
+                  <span class="font-bold text-white block">Đồng Nhất Nhân Vật & Bối Cảnh</span>
+                  <span class="text-slate-400">Giữ chuẩn diện mạo qua từng phân đoạn</span>
+                </div>
+              </div>
+              <div class="flex items-start space-x-2.5 p-3 rounded-2xl bg-galaxy-900/80 border border-white/5">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-indigo-400 shrink-0 mt-0.5"></i>
+                <div class="text-xs">
+                  <span class="font-bold text-white block">Không Cần GPU Đắt Tiền</span>
+                  <span class="text-slate-400">Render trên Cloud, máy yếu vẫn chạy mượt</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Quick Action Buttons -->
+            <div class="pt-3 flex flex-wrap items-center gap-3">
+              <a href="#download" class="btn-mint-glow text-slate-950 font-bold text-xs px-5 py-3 rounded-xl flex items-center space-x-2">
+                <i data-lucide="download" class="w-4 h-4"></i>
+                <span>Tải Bản Cài Đặt Trải Nghiệm</span>
+              </a>
+              <a href="#guide" class="btn-glass-secondary text-xs px-4 py-3 rounded-xl font-semibold flex items-center space-x-2 text-slate-300 hover:text-white">
+                <i data-lucide="play-circle" class="w-4 h-4 text-mint-400"></i>
+                <span>Xem Hướng Dẫn Sử Dụng</span>
+              </a>
+            </div>
+
+          </div>
+
+          <!-- CỘT PHẢI (50% MÀN HÌNH): HÌNH ẢNH TƯỢNG TRƯNG PHẦN GIỚI THIỆU SẢN PHẨM -->
+          <div class="relative group flex items-center justify-center">
+            
+            <!-- Intense Cosmic Neon Aura Effect -->
+            <div class="absolute -inset-3 bg-gradient-to-tr from-cyan-500/40 via-mint-500/30 to-indigo-600/40 rounded-3xl blur-2xl opacity-40 group-hover:opacity-85 transition duration-700 animate-pulse"></div>
+            
+            <!-- Poster Display Card 3D -->
+            <div class="relative rounded-2xl sm:rounded-3xl p-1.5 sm:p-2.5 bg-gradient-to-b from-white/25 via-galaxy-900/80 to-galaxy-950 border border-cyan-400/40 shadow-2xl backdrop-blur-xl overflow-hidden w-full">
+              
+              <!-- Main 3D Artwork Image -->
+              <div class="relative rounded-xl sm:rounded-2xl overflow-hidden bg-galaxy-950 flex items-center justify-center">
+                <img src="/intro_studio_banner.png" alt="AI VIDEO LIBRARY — Biến ý tưởng thành video chỉ trong vài phút" class="w-full h-auto object-contain rounded-xl sm:rounded-2xl transform group-hover:scale-[1.03] transition-all duration-500 shadow-2xl">
+              </div>
+
+              <!-- Sleek Bottom Info Bar -->
+              <div class="p-3 sm:p-4 bg-galaxy-950/90 border-t border-white/10 flex flex-wrap items-center justify-between gap-2 text-xs rounded-b-xl sm:rounded-b-2xl mt-1.5">
+                <div class="flex items-center space-x-2 text-slate-200">
+                  <span class="px-2.5 py-0.5 rounded-lg bg-mint-500/20 text-mint-400 font-mono font-bold text-[10px] border border-mint-500/30">STUDIO ĐA NỀN TẢNG</span>
+                  <span class="font-medium text-[11px] sm:text-xs">VEO3 • GROK • MUSE • ELEVENLABS</span>
+                </div>
+                <span class="text-cyan-400 font-mono font-bold text-[11px] flex items-center gap-1.5">
+                  <span class="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span>
+                  <span>Biến Ý Tưởng Thành Video</span>
+                </span>
+              </div>
+
+            </div>
+
+            <!-- Floating Pill Tags Outside -->
+            <div class="hidden sm:flex absolute -bottom-4 -left-4 glass-card-3d px-3.5 py-2 rounded-xl border-mint-400/40 text-xs font-semibold text-mint-300 items-center space-x-2 shadow-2xl animate-bounce">
+              <i data-lucide="sparkles" class="w-4 h-4 text-mint-400"></i>
+              <span>Tạo Video Chỉ Trong Vài Phút</span>
+            </div>
+            <div class="hidden sm:flex absolute -top-4 -right-4 glass-card-3d px-3.5 py-2 rounded-xl border-cyan-400/40 text-xs font-semibold text-cyan-300 items-center space-x-2 shadow-2xl">
+              <i data-lucide="film" class="w-4 h-4 text-cyan-400"></i>
+              <span>Xuất Bản Đa Luồng 4K</span>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Modern Glowing Divider Between Part 1 and Part 2 -->
+      <div class="relative py-2 flex items-center justify-center">
+        <div class="w-full border-t border-white/10"></div>
+        <div class="absolute px-4 py-1.5 rounded-full bg-galaxy-900 border border-cyan-500/30 text-cyan-400 text-xs font-mono font-bold flex items-center space-x-2 shadow-lg shadow-cyan-500/10">
+          <i data-lucide="shield-check" class="w-3.5 h-3.5 text-cyan-400"></i>
+          <span>HỆ THỐNG BẢN QUYỀN ĐỘC QUYỀN</span>
+        </div>
+      </div>
+
+      <!-- ===================================================================== -->
+      <!-- PHẦN 2: CHỨC NĂNG TỰ ĐỘNG KÍCH HOẠT LICENSE (NỬA TRÁI: CHỮ — NỬA PHẢI: HÌNH ẢNH TƯỢNG TRƯNG) -->
+      <!-- ===================================================================== -->
+      <div id="intro-license" class="glass-card-3d rounded-3xl p-6 sm:p-10 lg:p-12 border-cyan-500/20 relative overflow-hidden">
+        
+        <!-- Ambient Glow -->
+        <div class="absolute -bottom-24 -right-24 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center relative z-10">
+          
+          <!-- CỘT TRÁI (50% MÀN HÌNH): CHỮ GIỚI THIỆU CHỨC NĂNG TỰ ĐỘNG KÍCH HOẠT LICENSE (ANH DỄ THÊM/SỬA CHỮ) -->
+          <div class="space-y-6 text-left">
+            <div class="inline-flex items-center space-x-2 px-3.5 py-1 rounded-xl bg-cyan-500/15 border border-cyan-500/30 text-cyan-300 text-xs font-mono font-bold tracking-wider">
+              <i data-lucide="key" class="w-3.5 h-3.5 text-cyan-400"></i>
+              <span>PHẦN 2: TỰ ĐỘNG KÍCH HOẠT LICENSE</span>
+            </div>
+
+            <h3 class="text-2xl sm:text-4xl font-black font-heading text-white leading-tight">
+              Kích Hoạt Bản Quyền Tự Động<br>
+              <span class="text-galaxy-gradient">Nhanh Chóng, Chuẩn Xác & Bảo Mật HWID</span>
+            </h3>
+
+            <!-- Khối văn bản giới thiệu chức năng kích hoạt bản quyền (Dễ dàng để anh Tris chỉnh sửa thêm chữ bất cứ lúc nào) -->
+            <div class="space-y-4 text-slate-300 text-sm sm:text-base leading-relaxed">
+              <p>
+                <strong class="text-white font-semibold">Hệ thống kích hoạt License tự động</strong> được thiết kế theo quy chuẩn thương mại thông minh, hỗ trợ khách hàng đăng ký, quét mã thanh toán và mở khóa bản quyền sử dụng ngay lập tức 24/7 mà không cần chờ duyệt thủ công.
+              </p>
+              <p>
+                Tích hợp công nghệ thanh toán <strong class="text-cyan-300">VietQR SePay Webhook</strong>: Khách hàng chỉ cần quét mã QR trên ứng dụng ngân hàng, máy chủ sẽ tự động đối soát nội dung chuyển khoản và kích hoạt tài khoản trong vòng <strong class="text-mint-300">3 đến 5 giây</strong>.
+              </p>
+              <p>
+                Toàn bộ bản quyền được quản lý và bảo vệ nghiêm ngặt bằng thuật toán <strong class="text-emerald-300">Khóa phần cứng máy tính (Machine Code / HWID)</strong>. Mỗi key chỉ kích hoạt trên đúng thiết bị được cấp phép, triệt tiêu hoàn toàn tình trạng share lậu key, bảo vệ an toàn tối đa cho khách hàng và nhà phát triển.
+              </p>
+              <p class="text-slate-400 text-xs sm:text-sm">
+                Khi cần nâng cấp linh kiện hoặc đổi máy tính làm việc mới, hệ thống hỗ trợ cơ chế <strong class="text-slate-200">đổi máy / reset HWID linh hoạt</strong> nhanh chóng qua hỗ trợ kỹ thuật mà không bị mất ngày sử dụng.
+              </p>
+            </div>
+
+            <!-- Các điểm nhấn tính năng bản quyền -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+              <div class="flex items-start space-x-2.5 p-3 rounded-2xl bg-galaxy-900/80 border border-white/5">
+                <i data-lucide="qr-code" class="w-4 h-4 text-cyan-400 shrink-0 mt-0.5"></i>
+                <div class="text-xs">
+                  <span class="font-bold text-white block">VietQR Tự Động 24/7</span>
+                  <span class="text-slate-400">Cấp key và gia hạn sau 5 giây</span>
+                </div>
+              </div>
+              <div class="flex items-start space-x-2.5 p-3 rounded-2xl bg-galaxy-900/80 border border-white/5">
+                <i data-lucide="shield-check" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i>
+                <div class="text-xs">
+                  <span class="font-bold text-white block">Khóa Máy HWID Độc Quyền</span>
+                  <span class="text-slate-400">Bảo mật cao, chống chia sẻ trái phép</span>
+                </div>
+              </div>
+              <div class="flex items-start space-x-2.5 p-3 rounded-2xl bg-galaxy-900/80 border border-white/5">
+                <i data-lucide="refresh-cw" class="w-4 h-4 text-indigo-400 shrink-0 mt-0.5"></i>
+                <div class="text-xs">
+                  <span class="font-bold text-white block">Hỗ Trợ Đổi Máy 1-Click</span>
+                  <span class="text-slate-400">Hỗ trợ chuyển đổi thiết bị nhanh chóng</span>
+                </div>
+              </div>
+              <div class="flex items-start space-x-2.5 p-3 rounded-2xl bg-galaxy-900/80 border border-white/5">
+                <i data-lucide="check-check" class="w-4 h-4 text-mint-400 shrink-0 mt-0.5"></i>
+                <div class="text-xs">
+                  <span class="font-bold text-white block">Đa Dạng Gói Cước</span>
+                  <span class="text-slate-400">Free Trial, Basic, Silver, Gold VIP & Trọn đời</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Quick Action Buttons -->
+            <div class="pt-3 flex flex-wrap items-center gap-3">
+              <a href="#support" class="btn-mint-glow text-slate-950 font-bold text-xs px-5 py-3 rounded-xl flex items-center space-x-2">
+                <i data-lucide="key" class="w-4 h-4"></i>
+                <span>Đăng Ký & Nhận Key Ngay</span>
+              </a>
+              <a href="#support" class="btn-glass-secondary text-xs px-4 py-3 rounded-xl font-semibold flex items-center space-x-2 text-slate-300 hover:text-white">
+                <i data-lucide="headset" class="w-4 h-4 text-cyan-400"></i>
+                <span>Liên Hệ Hỗ Trợ 24/7</span>
+              </a>
+            </div>
+
+          </div>
+
+          <!-- CỘT PHẢI (50% MÀN HÌNH): HÌNH ẢNH TƯỢNG TRƯNG CHỨC NĂNG KÍCH HOẠT BẢN QUYỀN -->
+          <div class="relative group">
+            
+            <!-- Glow Aura Effect -->
+            <div class="absolute -inset-2 bg-gradient-to-r from-cyan-500 via-indigo-500 to-purple-600 rounded-3xl blur-xl opacity-35 group-hover:opacity-70 transition duration-500"></div>
+            
+            <!-- Window Container Mockup 3D -->
+            <div class="relative rounded-2xl sm:rounded-3xl bg-galaxy-950 border border-cyan-400/30 shadow-2xl overflow-hidden backdrop-blur-xl">
+              
+              <!-- Mockup Window Titlebar -->
+              <div class="px-4 py-3 bg-galaxy-900/90 border-b border-white/10 flex items-center justify-between">
+                <div class="flex items-center space-x-2">
+                  <div class="flex space-x-1.5">
+                    <span class="w-3 h-3 rounded-full bg-red-500/80 inline-block"></span>
+                    <span class="w-3 h-3 rounded-full bg-amber-500/80 inline-block"></span>
+                    <span class="w-3 h-3 rounded-full bg-emerald-500/80 inline-block"></span>
+                  </div>
+                  <span class="text-[11px] font-mono text-slate-300 pl-2">AI VIDEO LIBRARY — Bảng Chọn Gói & Kích Hoạt License</span>
+                </div>
+                <div class="flex items-center space-x-1.5 text-[10px] font-mono text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-md border border-emerald-500/20">
+                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                  <span>HWID Protected</span>
+                </div>
+              </div>
+
+              <!-- Main Screenshot Image -->
+              <div class="relative overflow-hidden bg-galaxy-950">
+                <img src="/screenshot_license.png" alt="Giao diện Chọn Gói Cước và Kích Hoạt License" class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-galaxy-950/80 via-transparent to-transparent pointer-events-none"></div>
+              </div>
+
+              <!-- Floating Bar under Image -->
+              <div class="p-4 bg-galaxy-900/95 border-t border-white/10 flex flex-wrap items-center justify-between gap-2 text-xs">
+                <div class="flex items-center space-x-2 text-slate-300">
+                  <span class="px-2 py-0.5 rounded bg-cyan-500/20 text-cyan-400 font-mono font-bold text-[10px]">TỰ ĐỘNG HOÁ</span>
+                  <span>Nhận diện máy & kích hoạt gói cước</span>
+                </div>
+                <span class="text-cyan-400 font-mono font-semibold text-[11px] flex items-center gap-1">
+                  <i data-lucide="shield-check" class="w-3.5 h-3.5"></i> Đã đồng bộ Server
+                </span>
+              </div>
+
+            </div>
+
+            <!-- Floating Pill Tags Outside -->
+            <div class="hidden sm:flex absolute -bottom-4 -left-4 glass-card-3d px-3.5 py-2 rounded-xl border-cyan-400/40 text-xs font-semibold text-cyan-300 items-center space-x-2 shadow-2xl animate-bounce">
+              <i data-lucide="zap" class="w-4 h-4 text-cyan-400"></i>
+              <span>Kích Hoạt Tự Động 5 Giây</span>
+            </div>
+            <div class="hidden sm:flex absolute -top-4 -right-4 glass-card-3d px-3.5 py-2 rounded-xl border-indigo-400/40 text-xs font-semibold text-indigo-300 items-center space-x-2 shadow-2xl">
+              <i data-lucide="lock" class="w-4 h-4 text-indigo-400"></i>
+              <span>Bảo Vệ Phần Cứng HWID</span>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Quick 4 AI Engines Summary Badges -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 pt-4">
+        <div class="glass-card-3d rounded-2xl p-4 text-center border-mint-500/20">
+          <div class="text-xl font-black font-heading text-mint-400">Google Veo 3</div>
+          <p class="text-xs text-slate-400 mt-1">Render Video Điện Ảnh Chuẩn 1080p</p>
+        </div>
+        <div class="glass-card-3d rounded-2xl p-4 text-center border-cyan-500/20">
+          <div class="text-xl font-black font-heading text-cyan-400">xAI Grok Imagine</div>
+          <p class="text-xs text-slate-400 mt-1">Biến Ý Tưởng Thành Thước Phim</p>
+        </div>
+        <div class="glass-card-3d rounded-2xl p-4 text-center border-indigo-500/20">
+          <div class="text-xl font-black font-heading text-indigo-400">ElevenLabs TTS</div>
+          <p class="text-xs text-slate-400 mt-1">30+ Giọng Đọc Truyền Cảm Siêu Thực</p>
+        </div>
+        <div class="glass-card-3d rounded-2xl p-4 text-center border-emerald-500/20">
+          <div class="text-xl font-black font-heading text-emerald-400">Browser Hub Đa Luồng</div>
+          <p class="text-xs text-slate-400 mt-1">Lưu Phiên 6 Nền Tảng Vĩnh Viễn</p>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- MỤC 2: HƯỚNG DẪN SỬ DỤNG (STEP-BY-STEP WORKFLOW ROADMAP) -->
+    <!-- ========================================================================= -->
+    <section id="guide" class="py-20 px-4 sm:px-6 max-w-7xl mx-auto w-full">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="inline-flex items-center space-x-1.5 px-3.5 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-semibold mb-3">
+          <i data-lucide="book-open" class="w-3.5 h-3.5"></i>
+          <span>MỤC 2 — HƯỚNG DẪN SỬ DỤNG CHI TIẾT</span>
+        </div>
+        <h2 class="text-3xl sm:text-5xl font-black font-heading text-white tracking-tight">
+          Bắt Đầu Sản Xuất Video Chỉ Với 4 Bước Đơn Giản
+        </h2>
+        <p class="mt-4 text-sm sm:text-base text-slate-400">
+          Giao diện được thiết kế tối giản, thân thiện cho cả người mới bắt đầu lẫn nhà sáng tạo chuyên nghiệp.
+        </p>
+      </div>
+
+      <!-- 4 Steps Interactive Layout (Sườn ô hướng dẫn) -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
+        
+        <!-- Bước 1 -->
+        <div class="glass-card-3d rounded-3xl p-6 relative flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="w-10 h-10 rounded-xl bg-mint-500/20 text-mint-400 font-heading font-black text-lg flex items-center justify-center border border-mint-500/30">
+                01
+              </span>
+              <span class="text-[11px] font-mono text-slate-400 uppercase tracking-wider">Cài đặt</span>
+            </div>
+            <h3 class="text-lg font-bold text-white font-heading">Tải & Khởi Chạy 1-Click</h3>
+            <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+              Tải file cài đặt <code class="text-mint-300 font-mono text-[11px]">AI_VIDEO_LIBRARY_Setup_v3.0.exe</code>. Nhấp đúp mở lên -> Bấm <strong>"CÀI ĐẶT NGAY"</strong> -> Phần mềm tự tạo icon ngoài màn hình Desktop.
+            </p>
+          </div>
+          <div class="mt-6 pt-3 border-t border-white/5 text-[11px] text-mint-400 flex items-center space-x-1">
+            <i data-lucide="check-circle" class="w-3.5 h-3.5"></i>
+            <span>Không cần cài thêm môi trường phụ</span>
+          </div>
+        </div>
+
+        <!-- Bước 2 -->
+        <div class="glass-card-3d rounded-3xl p-6 relative flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="w-10 h-10 rounded-xl bg-cyan-500/20 text-cyan-400 font-heading font-black text-lg flex items-center justify-center border border-cyan-500/30">
+                02
+              </span>
+              <span class="text-[11px] font-mono text-slate-400 uppercase tracking-wider">Kích hoạt</span>
+            </div>
+            <h3 class="text-lg font-bold text-white font-heading">Nhập License Bản Quyền</h3>
+            <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+              Mở ứng dụng, vào mục <strong>"Gói & License"</strong>, dán mã License Key được cấp vào ô và bấm <strong>"Kích hoạt"</strong>. Máy tính sẽ nhận ngay thời hạn bản quyền.
+            </p>
+          </div>
+          <div class="mt-6 pt-3 border-t border-white/5 text-[11px] text-cyan-400 flex items-center space-x-1">
+            <i data-lucide="check-circle" class="w-3.5 h-3.5"></i>
+            <span>Có hỗ trợ key Trial dùng thử 1 ngày</span>
+          </div>
+        </div>
+
+        <!-- Bước 3 -->
+        <div class="glass-card-3d rounded-3xl p-6 relative flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="w-10 h-10 rounded-xl bg-indigo-500/20 text-indigo-400 font-heading font-black text-lg flex items-center justify-center border border-indigo-500/30">
+                03
+              </span>
+              <span class="text-[11px] font-mono text-slate-400 uppercase tracking-wider">Tài khoản</span>
+            </div>
+            <h3 class="text-lg font-bold text-white font-heading">Đăng Nhập Browser Hub</h3>
+            <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+              Truy cập tab <strong>"Tài khoản (Browser Hub)"</strong>. Nhấp vào các nền tảng (ChatGPT, Grok, Veo3, ElevenLabs, Muse AI) và đăng nhập 1 lần duy nhất. Trình duyệt tự động ghi nhớ phiên.
+            </p>
+          </div>
+          <div class="mt-6 pt-3 border-t border-white/5 text-[11px] text-indigo-400 flex items-center space-x-1">
+            <i data-lucide="check-circle" class="w-3.5 h-3.5"></i>
+            <span>Độc lập, không lẫn lộn cookies</span>
+          </div>
+        </div>
+
+        <!-- Bước 4 -->
+        <div class="glass-card-3d rounded-3xl p-6 relative flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 font-heading font-black text-lg flex items-center justify-center border border-emerald-500/30">
+                04
+              </span>
+              <span class="text-[11px] font-mono text-slate-400 uppercase tracking-wider">Sáng tạo</span>
+            </div>
+            <h3 class="text-lg font-bold text-white font-heading">Render Video & Xuất File</h3>
+            <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+              Mở <strong>"Video AI"</strong>, nhập câu lệnh Prompt hoặc kịch bản -> Chọn số lượng video -> Bấm <strong>"Bắt đầu tạo"</strong>. Video hoàn thành sẽ nằm trong thư mục thư viện của bạn.
+            </p>
+          </div>
+          <div class="mt-6 pt-3 border-t border-white/5 text-[11px] text-emerald-400 flex items-center space-x-1">
+            <i data-lucide="check-circle" class="w-3.5 h-3.5"></i>
+            <span>Tự động gộp video và audio chất lượng cao</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Extra Tips Box -->
+      <div class="mt-10 glass-card-3d rounded-3xl p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6 border-mint-500/30">
+        <div class="flex items-center space-x-4">
+          <div class="w-12 h-12 rounded-2xl bg-mint-500/20 flex items-center justify-center text-mint-400 shrink-0">
+            <i data-lucide="lightbulb" class="w-6 h-6"></i>
+          </div>
+          <div>
+            <h4 class="text-base font-bold text-white font-heading">Mẹo Tối Ưu Hóa Render Siêu Tốc:</h4>
+            <p class="text-xs sm:text-sm text-slate-400 mt-0.5">
+              Bạn có thể thêm nhiều tài khoản phụ trong Browser Hub để hệ thống tự động chạy luân phiên, nâng cao năng suất render gấp 5-10 lần mà không lo bị giới hạn tốc độ.
+            </p>
+          </div>
+        </div>
+        <a href="#support" class="shrink-0 btn-glass-secondary text-xs px-5 py-3 rounded-xl font-semibold text-mint-300 flex items-center space-x-2">
+          <span>Hỏi Chuyên Viên Kỹ Thuật</span>
+          <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </a>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- MỤC 3: TẢI XUỐNG (DOWNLOAD CENTER) -->
+    <!-- ========================================================================= -->
+    <section id="download" class="py-20 px-4 sm:px-6 max-w-7xl mx-auto w-full">
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <div class="inline-flex items-center space-x-1.5 px-3.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-semibold mb-3">
+          <i data-lucide="download" class="w-3.5 h-3.5"></i>
+          <span>MỤC 3 — KHU VỰC TẢI XUỐNG BỘ CÀI ĐẶT</span>
+        </div>
+        <h2 class="text-3xl sm:text-5xl font-black font-heading text-white tracking-tight">
+          Tải Ngay Bộ Cài Đặt AI VIDEO LIBRARY v3.0
+        </h2>
+        <p class="mt-4 text-sm sm:text-base text-slate-400">
+          Chỉ cần tải 1 file duy nhất. Nhấp đúp là tự động cài đặt và cập nhật biểu tượng Desktop ngay lập tức.
+        </p>
+      </div>
+
+      <!-- Main Download Card 3D with Neon Glowing Border -->
+      <div class="max-w-4xl mx-auto glass-card-3d rounded-3xl p-8 sm:p-12 relative overflow-hidden pulse-glow-border">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
+          
+          <!-- Left: Big Download Button & Action -->
+          <div class="lg:col-span-2 space-y-6">
+            <div class="flex items-center space-x-4">
+              <div class="w-14 h-14 rounded-2xl overflow-hidden border border-mint-400/40 shadow-lg shadow-mint-500/20 bg-galaxy-900 shrink-0 p-1 flex items-center justify-center">
+                <img src="/logo.png" alt="AI VIDEO LIBRARY App Icon" class="w-full h-full object-cover rounded-xl">
+              </div>
+              <div>
+                <div class="flex items-center space-x-2">
+                  <span class="px-2.5 py-0.5 rounded-md bg-mint-500/20 text-mint-400 font-mono text-xs font-bold border border-mint-500/30">
+                    BẢN CHÍNH THỨC
+                  </span>
+                  <span class="text-xs text-slate-300 font-mono">v3.0.0 Stable</span>
+                </div>
+                <p class="text-xs text-slate-400 font-mono mt-0.5">Setup Độc Lập 1-Click • 64-bit Windows</p>
+              </div>
+            </div>
+
+            <h3 class="text-2xl sm:text-3xl font-black font-heading text-white leading-snug">
+              Bộ Cài Đặt Độc Lập 1-Click<br>
+              <span class="text-mint-gradient">Native Installer Executable (.EXE)</span>
+            </h3>
+
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              Tích hợp sẵn trọn bộ mã nguồn bảo vệ, thư viện AI ONNX Runtime, Whisper Voice và toàn bộ môi trường thực thi. Không yêu cầu cấu hình thêm Node.js hay Python.
+            </p>
+
+            <!-- Download Button -->
+            <div class="pt-2 flex flex-col sm:flex-row gap-3">
+              <a id="btnDirectDownload" href="https://drive.google.com/file/d/1fPsbP72500JKiExlzt1UNE0Cai6yWabX/view?usp=drive_link" target="_blank" class="btn-mint-glow text-slate-950 font-black text-sm px-8 py-4 rounded-2xl flex items-center justify-center space-x-2.5 shadow-xl hover:scale-105 transition-all">
+                <i data-lucide="download" class="w-5 h-5"></i>
+                <span>TẢI FILE CÀI ĐẶT (.EXE)</span>
+              </a>
+              <a href="/api/download/AI_VIDEO_LIBRARY_Setup_v3.0.exe" class="btn-glass-secondary text-xs sm:text-sm px-5 py-4 rounded-2xl font-semibold flex items-center justify-center space-x-2 text-slate-200">
+                <i data-lucide="zap" class="w-4 h-4 text-mint-400"></i>
+                <span>Tải Máy Chủ (1-Click)</span>
+              </a>
+              <button onclick="copyDownloadLink()" class="btn-glass-secondary text-xs sm:text-sm px-5 py-4 rounded-2xl font-semibold flex items-center justify-center space-x-2">
+                <i data-lucide="copy" class="w-4 h-4 text-cyan-400"></i>
+                <span id="txtCopyLink">Sao Chép Link Tải</span>
+              </button>
+            </div>
+            <p class="text-[11px] text-mint-400 font-medium flex items-center gap-1.5 pt-1">
+              <i data-lucide="check-circle" class="w-3.5 h-3.5 text-mint-400"></i>
+              <span>Link tải trực tiếp 1-Click tốc độ cao • Không qua trang trung gian hay Google Docs</span>
+            </p>
+          </div>
+
+          <!-- Right: Technical Specs Box -->
+          <div class="bg-galaxy-950/80 rounded-2xl p-5 border border-white/10 space-y-3.5 font-mono text-xs">
+            <div class="flex justify-between items-center pb-2 border-b border-white/5">
+              <span class="text-slate-400">Tên Tệp:</span>
+              <span class="font-bold text-white text-[11px]">AI_VIDEO_LIBRARY_Setup_v3.0.exe</span>
+            </div>
+            <div class="flex justify-between items-center pb-2 border-b border-white/5">
+              <span class="text-slate-400">Dung Lượng:</span>
+              <span class="font-bold text-mint-400">396.9 MB</span>
+            </div>
+            <div class="flex justify-between items-center pb-2 border-b border-white/5">
+              <span class="text-slate-400">Hệ Điều Hành:</span>
+              <span class="font-semibold text-slate-200">Win 10, 11 (64-bit)</span>
+            </div>
+            <div class="flex justify-between items-center pb-2 border-b border-white/5">
+              <span class="text-slate-400">Yêu cầu RAM:</span>
+              <span class="font-semibold text-slate-200">Tối thiểu 8 GB RAM</span>
+            </div>
+            <div class="flex justify-between items-center pb-2 border-b border-white/5">
+              <span class="text-slate-400">Bảo Mật:</span>
+              <span class="font-semibold text-emerald-400 flex items-center gap-1">
+                <i data-lucide="shield-check" class="w-3 h-3"></i> Đã Kiểm Định
+              </span>
+            </div>
+            <div class="flex justify-between items-center">
+              <span class="text-slate-400">Cập Nhật:</span>
+              <span class="text-slate-300">11/10/2026</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Extra Download Mirrors Box (Dự phòng cho khách) -->
+      <div class="max-w-4xl mx-auto mt-6 grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
+        <a href="https://drive.google.com/file/d/1fPsbP72500JKiExlzt1UNE0Cai6yWabX/view?usp=drive_link" target="_blank" class="glass-card-3d rounded-2xl p-4 flex items-center justify-center space-x-2 text-xs font-semibold text-slate-300 hover:text-mint-300">
+          <i data-lucide="hard-drive" class="w-4 h-4 text-mint-400"></i>
+          <span>Mở Thư Mục Google Drive (Dự phòng)</span>
+        </a>
+        <a href="/api/download/AI_VIDEO_LIBRARY_Setup_v3.0.exe" class="glass-card-3d rounded-2xl p-4 flex items-center justify-center space-x-2 text-xs font-semibold text-slate-300 hover:text-cyan-300">
+          <i data-lucide="zap" class="w-4 h-4 text-cyan-400"></i>
+          <span>Tải Trực Tiếp Máy Chủ (1-Click)</span>
+        </a>
+        <a href="https://zalo.me/0395957039" target="_blank" class="glass-card-3d rounded-2xl p-4 flex items-center justify-center space-x-2 text-xs font-semibold text-slate-300 hover:text-cyan-300">
+          <i data-lucide="message-circle" class="w-4 h-4 text-cyan-400"></i>
+          <span>Hỗ Trợ Kỹ Thuật Zalo: 0395957039</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- MỤC 4: CHI TIẾT HỖ TRỢ (CONTACT & CUSTOMER CARE) -->
+    <!-- ========================================================================= -->
+    <section id="support" class="py-20 px-4 sm:px-6 max-w-7xl mx-auto w-full">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="inline-flex items-center space-x-1.5 px-3.5 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-xs font-semibold mb-3">
+          <i data-lucide="headset" class="w-3.5 h-3.5"></i>
+          <span>MỤC 4 — TRUNG TÂM HỖ TRỢ & LIÊN HỆ</span>
+        </div>
+        <h2 class="text-3xl sm:text-5xl font-black font-heading text-white tracking-tight">
+          Hỗ Trợ Kỹ Thuật & Cấp Bản Quyền 24/7
+        </h2>
+        <p class="mt-4 text-sm sm:text-base text-slate-400">
+          Đội ngũ luôn sẵn sàng hỗ trợ cài đặt qua UltraViewer, tư vấn gói cước và giải đáp mọi thắc mắc trong suốt quá trình sử dụng.
+        </p>
+      </div>
+
+      <!-- Support Channels Cards: Duy nhất Zalo Hỗ Trợ 1-1 -->
+      <div class="max-w-xl mx-auto">
+        <div class="glass-card-3d rounded-3xl p-8 sm:p-10 text-center relative overflow-hidden group border border-cyan-500/30 hover:border-cyan-400/50 shadow-2xl shadow-cyan-950/40">
+          <!-- Background Glow Effect -->
+          <div class="absolute -top-24 left-1/2 -translate-x-1/2 w-72 h-72 bg-cyan-500/15 rounded-full blur-3xl pointer-events-none group-hover:bg-cyan-500/25 transition-all duration-500"></div>
+
+          <div class="relative z-10">
+            <!-- Icon Zalo Glow -->
+            <div class="w-20 h-20 rounded-3xl bg-gradient-to-br from-cyan-500/20 to-blue-600/20 border border-cyan-400/30 flex items-center justify-center text-cyan-400 mx-auto mb-5 group-hover:scale-110 transition-transform shadow-lg shadow-cyan-500/20">
+              <i data-lucide="message-circle" class="w-10 h-10"></i>
+            </div>
+
+            <!-- Tag / Badge -->
+            <div class="inline-flex items-center space-x-1.5 px-3.5 py-1 rounded-full bg-cyan-500/15 border border-cyan-500/30 text-cyan-300 text-[11px] font-mono font-semibold uppercase tracking-wider mb-3">
+              <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+              <span>Hỗ Trợ Kỹ Thuật Trực Tiếp 1-1</span>
+            </div>
+
+            <h3 class="text-2xl sm:text-3xl font-black text-white font-heading tracking-tight">
+              Zalo Hỗ Trợ 1-1
+            </h3>
+
+            <!-- Hotline / Số Zalo Nổi Bật -->
+            <div class="my-4 inline-block px-6 py-2.5 rounded-2xl bg-cyan-950/70 border border-cyan-500/40 text-cyan-300 font-mono text-xl sm:text-2xl font-bold tracking-widest shadow-inner shadow-cyan-500/20">
+              0395.957.039
+            </div>
+
+            <p class="text-sm text-slate-300 mt-2 leading-relaxed max-w-md mx-auto">
+              Nhắn tin trực tiếp qua Zalo để nhận License Key dùng thử, hỗ trợ cài đặt từ xa qua UltraViewer và xử lý mọi vấn đề kỹ thuật 24/7.
+            </p>
+
+            <div class="mt-8 space-y-3">
+              <a href="https://zalo.me/0395957039" target="_blank" class="w-full btn-mint-glow text-slate-950 font-black text-sm sm:text-base py-3.5 rounded-2xl flex items-center justify-center space-x-2 shadow-lg hover:shadow-mint-500/30 transition-all">
+                <i data-lucide="message-circle" class="w-5 h-5"></i>
+                <span>Nhắn Zalo Ngay (0395957039)</span>
+              </a>
+              <button onclick="copyText('0395957039', 'txtZalo')" class="w-full btn-glass-secondary text-xs sm:text-sm py-3 rounded-2xl text-slate-200 font-semibold flex items-center justify-center space-x-2 hover:border-cyan-400/40">
+                <i data-lucide="copy" class="w-4 h-4 text-cyan-400"></i>
+                <span id="txtZalo">Sao Chép Số Zalo Kỹ Thuật: 0395957039</span>
+              </button>
+            </div>
+
+            <div class="mt-5 flex items-center justify-center space-x-4 text-[11px] text-slate-400 font-mono">
+              <span class="flex items-center space-x-1.5">
+                <i data-lucide="shield-check" class="w-3.5 h-3.5 text-mint-400"></i>
+                <span>Cài Đặt UltraViewer 24/7</span>
+              </span>
+              <span>•</span>
+              <span class="flex items-center space-x-1.5">
+                <i data-lucide="clock" class="w-3.5 h-3.5 text-cyan-400"></i>
+                <span>Phản hồi dưới 3 phút</span>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Payment / Bank Account Information Box -->
+      <div class="mt-10 glass-card-3d rounded-3xl p-6 sm:p-8 max-w-3xl mx-auto border-emerald-500/20">
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-6">
+          <div class="space-y-1 text-center sm:text-left">
+            <span class="px-2.5 py-0.5 rounded-md bg-emerald-500/20 text-emerald-400 text-[10px] font-mono font-bold uppercase tracking-wider">
+              Tài Khoản Nhận Thanh Toán VietQR Tự Động
+            </span>
+            <h4 class="text-lg font-bold text-white font-heading mt-1">Ngân hàng BIDV — Chi nhánh TP.HCM</h4>
+            <p class="text-xs text-slate-300 font-mono">Số tài khoản: <strong class="text-mint-400 text-sm">96247HP2004</strong></p>
+            <p class="text-xs text-slate-400">Chủ tài khoản: <strong>PHAN DANG HONG HA</strong></p>
+          </div>
+          <button onclick="copyText('96247HP2004', 'txtCopySTK')" class="btn-glass-secondary text-xs px-5 py-3 rounded-xl font-semibold flex items-center space-x-2 text-mint-300 shrink-0">
+            <i data-lucide="copy" class="w-4 h-4"></i>
+            <span id="txtCopySTK">Sao Chép STK BIDV</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- FOOTER -->
+    <!-- ========================================================================= -->
+    <footer class="mt-auto border-t border-white/10 bg-galaxy-950/90 backdrop-blur-md py-10 px-4 sm:px-8 text-center text-xs text-slate-400">
+      <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div class="flex items-center space-x-3">
+          <div class="w-8 h-8 rounded-xl overflow-hidden border border-mint-400/30 bg-galaxy-900 shrink-0 p-0.5 shadow-md shadow-mint-500/10">
+            <img src="/logo.png" alt="Logo" class="w-full h-full object-cover rounded-lg">
+          </div>
+          <div class="text-left">
+            <span class="font-heading font-bold text-white text-sm block">AI VIDEO LIBRARY</span>
+            <span class="text-[11px] text-slate-500">© 2026. Bản quyền thuộc về Studio.</span>
+          </div>
+        </div>
+        <div class="flex items-center space-x-6">
+          <a href="#intro" class="hover:text-mint-400 transition">Giới thiệu</a>
+          <a href="#guide" class="hover:text-mint-400 transition">Hướng dẫn</a>
+          <a href="#download" class="hover:text-mint-400 transition">Tải xuống</a>
+          <a href="#support" class="hover:text-mint-400 transition">Hỗ trợ</a>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Toast Notification Box -->
+  <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none glass-card-3d px-5 py-3 rounded-2xl border-mint-500/40 text-xs font-semibold text-mint-300 flex items-center space-x-2 shadow-2xl">
+    <i data-lucide="check" class="w-4 h-4 text-mint-400"></i>
+    <span id="toastMsg">Đã sao chép thành công!</span>
+  </div>
+
+  <!-- ========================================================================= -->
+  <!-- SCRIPTS: 3D CARD TILT EFFECT & GALAXY PARTICLES CANVAS -->
+  <!-- ========================================================================= -->
+  <script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
+
+    // 1. Toast Helper
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      const toastMsg = document.getElementById('toastMsg');
+      toastMsg.textContent = msg;
+      toast.classList.remove('translate-y-20', 'opacity-0');
+      toast.classList.add('translate-y-0', 'opacity-100');
+      setTimeout(() => {
+        toast.classList.remove('translate-y-0', 'opacity-100');
+        toast.classList.add('translate-y-20', 'opacity-0');
+      }, 2500);
+    }
+
+    function copyText(text, btnId) {
+      navigator.clipboard.writeText(text).then(() => {
+        showToast('Đã sao chép: ' + text);
+        if (btnId) {
+          const el = document.getElementById(btnId);
+          if (el) {
+            const original = el.textContent;
+            el.textContent = '✓ Đã Sao Chép!';
+            setTimeout(() => { el.textContent = original; }, 2000);
+          }
+        }
+      });
+    }
+
+    function copyDownloadLink() {
+      const link = document.getElementById('btnDirectDownload')?.href || window.location.origin + '/#download';
+      navigator.clipboard.writeText(link).then(() => {
+        showToast('Đã sao chép link tải phần mềm!');
+        const el = document.getElementById('txtCopyLink');
+        if (el) {
+          el.textContent = '✓ Đã Copy Link!';
+          setTimeout(() => { el.textContent = 'Sao Chép Link Tải'; }, 2000);
+        }
+      });
+    }
+
+    // 2. 3D Card Tilt Effect on Mouse Movement
+    document.querySelectorAll('.glass-card-3d').forEach(card => {
+      card.addEventListener('mousemove', e => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        const rotateX = ((y - centerY) / centerY) * -8;
+        const rotateY = ((x - centerX) / centerX) * 8;
+        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+      });
+
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+      });
+    });
+
+    // Copy Direct Download Link Handler
+    function copyDownloadLink() {
+      const directUrl = 'https://drive.google.com/file/d/1fPsbP72500JKiExlzt1UNE0Cai6yWabX/view?usp=drive_link';
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(directUrl).then(() => {
+          const txt = document.getElementById('txtCopyLink');
+          if (txt) {
+            const old = txt.textContent;
+            txt.textContent = '✓ Đã Sao Chép Link!';
+            setTimeout(() => { txt.textContent = old; }, 2500);
+          }
+        }).catch(() => {
+          prompt('Đường dẫn tải ứng dụng của bạn:', directUrl);
+        });
+      } else {
+        prompt('Đường dẫn tải ứng dụng của bạn:', directUrl);
+      }
+    }
+
+    // 3. Interactive Galaxy Stardust & Nebula Canvas
+    const canvas = document.getElementById('galaxyCanvas');
+    const ctx = canvas.getContext('2d');
+    let width, height;
+    let particles = [];
+    const particleCount = 75;
+
+    function resizeCanvas() {
+      width = canvas.width = window.innerWidth;
+      height = canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    class Particle {
+      constructor() {
+        this.reset();
+      }
+      reset() {
+        this.x = Math.random() * width;
+        this.y = Math.random() * height;
+        this.size = Math.random() * 2 + 0.6;
+        this.speedX = (Math.random() - 0.5) * 0.35;
+        this.speedY = (Math.random() - 0.5) * 0.35;
+        this.alpha = Math.random() * 0.6 + 0.2;
+        this.color = Math.random() > 0.4 ? 'rgba(52, 211, 153, ' : 'rgba(34, 211, 238, ';
+      }
+      update() {
+        this.x += this.speedX;
+        this.y += this.speedY;
+        if (this.x < 0 || this.x > width) this.speedX *= -1;
+        if (this.y < 0 || this.y > height) this.speedY *= -1;
+      }
+      draw() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fillStyle = this.color + this.alpha + ')';
+        ctx.shadowBlur = 8;
+        ctx.shadowColor = this.color + '0.8)';
+        ctx.fill();
+        ctx.shadowBlur = 0;
+      }
+    }
+
+    for (let i = 0; i < particleCount; i++) {
+      particles.push(new Particle());
+    }
+
+    function animateGalaxy() {
+      ctx.clearRect(0, 0, width, height);
+      particles.forEach(p => {
+        p.update();
+        p.draw();
+      });
+      requestAnimationFrame(animateGalaxy);
+    }
+    animateGalaxy();
+  </script>
+
+</body>
+</html>

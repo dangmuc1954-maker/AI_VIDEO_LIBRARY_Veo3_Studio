@@ -1,0 +1,36 @@
+{
+  "version": 2,
+  "rewrites": [
+    { "source": "/webhook", "destination": "/api/index.js" },
+    { "source": "/api/webhook/payment", "destination": "/api/index.js" },
+    { "source": "/api/webhook/sepay", "destination": "/api/index.js" },
+    { "source": "/api/sepay/webhook", "destination": "/api/index.js" },
+    { "source": "/api/webhook", "destination": "/api/index.js" },
+    { "source": "/api/payment", "destination": "/api/index.js" },
+    { "source": "/api/(.*)", "destination": "/api/index.js" },
+    { "source": "/v1/(.*)", "destination": "/api/index.js" },
+    { "source": "/licenses/(.*)", "destination": "/api/index.js" },
+    { "source": "/health", "destination": "/api/index.js" },
+    { "source": "/admin/(.*)", "destination": "/public/admin/$1" },
+    { "source": "/admin", "destination": "/public/admin/index.html" },
+    { "source": "/logo.png", "destination": "/public/logo.png" },
+    { "source": "/logo-rounded.png", "destination": "/public/logo-rounded.png" },
+    { "source": "/screenshot_studio.png", "destination": "/public/screenshot_studio.png" },
+    { "source": "/screenshot_license.png", "destination": "/public/screenshot_license.png" },
+    { "source": "/intro_studio_banner.png", "destination": "/public/intro_studio_banner.png" },
+    { "source": "/download/setup.exe", "destination": "/api/index.js" },
+    { "source": "/download/installer", "destination": "/api/index.js" },
+    { "source": "/download-file", "destination": "/api/index.js" },
+    { "source": "/download", "destination": "/public/index.html" },
+    { "source": "/", "destination": "/public/index.html" }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)\\.(png|jpg|jpeg|gif|svg|webp|ico)",
+      "headers": [
+        { "key": "Access-Control-Allow-Origin", "value": "*" },
+        { "key": "Cache-Control", "value": "public, max-age=86400, s-maxage=86400" }
+      ]
+    }
+  ]
+}

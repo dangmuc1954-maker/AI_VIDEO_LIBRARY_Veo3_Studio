@@ -1,0 +1,10 @@
+{
+  "name": "aiforge-license-server-vercel",
+  "version": "3.0.0",
+  "description": "AIForge Studio Commercial License Server on Vercel Serverless",
+  "main": "api/index.js",
+  "scripts": {
+    "start": "node api/index.js"
+  },
+  "dependencies": {}
+}

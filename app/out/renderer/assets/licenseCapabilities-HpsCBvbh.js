@@ -1,0 +1,1 @@
+import{bE as s,bn as r}from"./index-BS7vgKVV.js";import{n as t}from"./license-DSPJjoqg.js";function m(a,e=s.getState().status){return!0}function c(a,e){return[]}function d(a){const e=s(i=>i.status);return{allowed:!0,allowedPlanNames:[],currentPlanName:e?.planName||"VIP"}}export{m as h,d as u};

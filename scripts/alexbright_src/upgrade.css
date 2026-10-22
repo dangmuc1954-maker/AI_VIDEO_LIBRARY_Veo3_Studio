@@ -1,0 +1,36 @@
+.brand-logo{width:38px;height:38px;border-radius:50%;object-fit:cover;box-shadow:0 0 12px #8c42fd66}
+.brand strong{letter-spacing:.035em!important}
+.brand small{letter-spacing:.04em!important;font-size:8px!important}
+.topbar{position:relative}
+.top-brand{position:absolute;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:8px;background:transparent;border:0;color:#e4d4ff;font-size:11px;font-weight:800;white-space:nowrap}
+.top-brand img{width:28px;height:28px;border-radius:50%;object-fit:cover}
+.top-brand small{display:block;color:#c3b5d7;font-size:9px;font-weight:600;margin-top:2px}
+.chat-float{position:static;align-self:flex-end;margin-top:auto;margin-bottom:8px;z-index:8;display:flex;align-items:center;gap:7px;padding:6px 12px 6px 6px;border:1px solid #a767ff;border-radius:30px;background:#211237;color:#fff;box-shadow:0 4px 18px #000a;font-size:12px;font-weight:800}
+.sidebar-bottom{margin-top:0}
+.chat-float img{width:30px;height:30px;border-radius:50%;object-fit:cover}
+.chat-float:hover{background:#3a1a60}
+.toast{bottom:18px;right:206px}
+.admin-card{display:flex;align-items:center;gap:24px;max-width:900px;margin-bottom:16px;line-height:1.6}
+.admin-logo{width:220px;height:220px;object-fit:cover;border-radius:18px;flex:none}
+.admin-card a{color:#b88aff;text-decoration:none}
+.admin-card a:hover{text-decoration:underline}
+.admin-warning{border-color:#9e613c;background:#352a24;color:#ffcfab}
+.admin-warning p{color:#f3ba93}
+.account-table{min-width:1120px}
+.account-select-cell{width:30px!important;padding-left:10px!important;padding-right:4px!important}
+.account-select-cell input{accent-color:#4bd8c1}
+.account-table .account-mark{object-fit:cover;border-radius:8px}
+.health-time{display:block;color:#738697;margin-top:4px;font-size:9px}
+.health-alert{flex:none;padding:8px 11px;border:1px solid #a45b62;border-radius:7px;background:#40282e;color:#ffc0c0;font-size:11px}
+.account-manager .section-head>div:first-child{flex-wrap:wrap}
+.account-manager .section-head .danger{margin-left:10px}
+.danger-text{color:#ef9696!important}
+.choose-output{display:block;margin:6px 0 10px}
+.queue-toolbar{gap:7px!important}
+.queue-toolbar .danger-text{font-size:10px!important}
+.queue-toolbar .retry-errors{font-size:10px!important;color:#7ee3cc!important}
+.task-error{display:block;max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#efabab;font-size:9px;margin-top:3px}
+@media(max-width:1500px){.top-brand{left:48%}.queue-toolbar{flex-wrap:wrap!important}}
+.library-tabs{display:flex;gap:8px;margin:0 0 14px}.library-tab{border:1px solid #354653;background:#182633;color:#a9bdca;border-radius:8px;padding:9px 16px;font-weight:800}.library-tab.active{background:#1d4143;color:#65e2ce;border-color:#42c9b7}.library-tab span{margin-left:6px;color:#e1e9ee}.library-missing{height:175px;display:grid;place-items:center;color:#eea0a0;background:#231e27;text-align:center;padding:15px}
+@media(max-width:1280px){.toast{right:180px}}
+@media(max-width:700px){.admin-card{flex-direction:column;align-items:flex-start}.admin-logo{width:160px;height:160px}.chat-float{margin-top:8px}.toast{right:10px}}

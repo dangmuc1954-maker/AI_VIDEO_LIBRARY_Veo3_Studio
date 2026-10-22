@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>ALEXBRIGHT TOOL · MUSE.AI AUTO VIDEO</title><link rel="stylesheet" href="/static/style.css"><link rel="stylesheet" href="/static/workspace.css"><link rel="stylesheet" href="/static/upgrade.css"><link rel="stylesheet" href="/static/license.css">
+</head>
+<body class="app-locked">
+<div class="shell">
+  <aside class="sidebar">
+    <div class="brand"><div class="brand-icon">M</div><div><strong>MUSE WORKBENCH</strong><small>DESKTOP STUDIO</small></div></div>
+    <div class="nav-label">WORKSPACE</div>
+    <nav>
+      <button class="nav active" data-view="video"><span>◧</span>Tạo video</button>
+      <button class="nav" data-view="image"><span>▧</span>Tạo ảnh</button>
+      <button class="nav" data-view="accounts"><span>♙</span>Tài khoản</button>
+      <button class="nav" data-view="library"><span>▣</span>Kho thư viện</button>
+      <button class="nav" data-view="logs"><span>≡</span>Nhật ký</button>
+      <button class="nav" data-view="settings"><span>⚙</span>Cài đặt</button>
+    </nav>
+    <div class="sidebar-bottom"><div class="pulse"></div><div><strong id="side-state">Sẵn sàng</strong><small id="side-count">0 tác vụ đang chạy · Chrome ẩn</small></div></div>
+  </aside>
+  <main>
+    <header class="topbar"><div class="breadcrumbs">WORKSPACE <span>/</span> <b id="crumb">TẠO VIDEO</b></div><div class="top-right"><span class="local-pill">● LOCAL DESKTOP</span><span id="clock"></span><span class="avatar">M</span></div></header>
+    <div class="page" id="view-video">
+      <div class="page-head"><div><div class="eyebrow">GENERATION STUDIO</div><h1>Tạo video</h1><p>Soạn lệnh, đưa vào hàng đợi, rồi chủ động bắt đầu khi bạn sẵn sàng.</p></div><div class="head-actions"><button class="btn secondary" id="stop-video">Dừng tất cả</button><button class="btn primary" id="start-video">▶ Bắt đầu chạy</button></div></div>
+      <section class="stats" id="stats-video"></section>
+      <div class="work-grid">
+        <section class="card composer"><div class="section-head"><div><span class="step">01</span><h2>Thiết lập đợt chạy</h2></div><span class="tiny">VIDEO</span></div>
+          <div class="form-grid"><label>Thời lượng<select id="video-duration"><option value="10">10 giây</option></select></label><label>Khung hình<select id="video-ratio"><option value="9:16">9:16 · Dọc</option><option value="16:9">16:9 · Ngang</option></select></label><label>Số luồng / tài khoản<input id="video-threads" type="number" min="1" max="20" value="2"></label><label>Chờ tối đa (phút)<input id="video-timeout" type="number" min="1" max="240" value="60"></label></div>
+          <label>Thư mục lưu gốc<input id="video-output" type="text" placeholder="Để trống để dùng data/outputs"></label><p class="hint">Mỗi lần thêm prompt sẽ tạo một thư mục đợt chạy riêng.</p>
+          <div class="divider"></div><div class="section-head"><div><span class="step">02</span><h2>Nhập prompt</h2></div></div>
+          <div class="segmented"><button class="mode active" data-kind="video" data-mode="line">1 dòng / prompt</button><button class="mode" data-kind="video" data-mode="paragraph">Nhiều dòng / prompt</button></div>
+          <textarea id="video-prompts" rows="9" placeholder="Một con phố Tokyo dưới mưa, ánh đèn neon...&#10;Cảnh biển lúc bình minh, camera tiến chậm..."></textarea>
+          <div class="input-tools"><label class="file-button">↑ Nhập file TXT<input id="video-txt" type="file" accept=".txt,text/plain" hidden></label><span id="video-count">0 prompt</span></div>
+          <label class="upload-label">Ảnh dùng chung cho mọi prompt <small>Chọn 1 ảnh để áp dụng cho tất cả, hoặc tối đa 6 ảnh / prompt. Có thể thêm riêng ở từng task sau.</small><input id="video-refs" type="file" accept="image/png,image/jpeg,image/webp" multiple></label><div id="video-ref-list" class="chips"></div>
+          <button class="btn primary wide" id="add-video">＋ Thêm vào hàng đợi</button><p class="hint center">Thêm vào hàng đợi sẽ chưa gửi lệnh tới Muse.</p>
+        </section>
+        <section class="card queue"><div class="section-head"><div><span class="step">03</span><h2>Hàng đợi video</h2></div><span class="badge" id="video-queue-count">0 task</span></div><div class="queue-toolbar"><label class="check"><input type="checkbox" id="select-video"> Chọn tất cả</label><button class="text-btn" id="cancel-video-selected">Hủy đã chọn</button><div class="spacer"></div><input class="queue-search" id="search-video" type="search" placeholder="Tìm prompt, tài khoản..."><select id="filter-video"><option value="all">Tất cả trạng thái</option><option value="queued">Đang chờ</option><option value="done">Hoàn tất</option><option value="failed">Có lỗi</option></select></div><div class="table-wrap"><table><thead><tr><th>STT</th><th>Loại</th><th>Ảnh tham chiếu</th><th>Prompt</th><th>Tiến trình</th><th>Thao tác</th></tr></thead><tbody id="video-rows"></tbody></table></div></section>
+      </div>
+    </div>
+    <div class="page hidden" id="view-image">
+      <div class="page-head"><div><div class="eyebrow">GENERATION STUDIO</div><h1>Tạo ảnh</h1><p>Mỗi prompt tạo một chat phụ và một ảnh kết quả.</p></div><div class="head-actions"><button class="btn secondary" id="stop-image">Dừng tất cả</button><button class="btn primary" id="start-image">▶ Bắt đầu chạy</button></div></div>
+      <section class="stats" id="stats-image"></section><div class="work-grid"><section class="card composer"><div class="section-head"><div><span class="step">01</span><h2>Thiết lập đợt chạy</h2></div><span class="tiny">IMAGE</span></div><div class="form-grid"><label>Số luồng / tài khoản<input id="image-threads" type="number" min="1" max="20" value="2"></label><label>Chờ tối đa (phút)<input id="image-timeout" type="number" min="1" max="240" value="60"></label></div><label>Thư mục lưu gốc<input id="image-output" type="text" placeholder="Để trống để dùng data/outputs"></label><div class="divider"></div><div class="section-head"><div><span class="step">02</span><h2>Nhập prompt</h2></div></div><div class="segmented"><button class="mode active" data-kind="image" data-mode="line">1 dòng / prompt</button><button class="mode" data-kind="image" data-mode="paragraph">Nhiều dòng / prompt</button></div><textarea id="image-prompts" rows="9" placeholder="Một bức tranh màu nước về thành phố ven biển..."></textarea><div class="input-tools"><label class="file-button">↑ Nhập file TXT<input id="image-txt" type="file" accept=".txt,text/plain" hidden></label><span id="image-count">0 prompt</span></div><label class="upload-label">Ảnh dùng chung cho mọi prompt <small>Chọn 1 ảnh để áp dụng cho tất cả, hoặc tối đa 6 ảnh / prompt. Có thể thêm riêng ở từng task sau.</small><input id="image-refs" type="file" accept="image/png,image/jpeg,image/webp" multiple></label><div id="image-ref-list" class="chips"></div><button class="btn primary wide" id="add-image">＋ Thêm vào hàng đợi</button><p class="hint center">Thêm vào hàng đợi sẽ chưa gửi lệnh tới Muse.</p></section><section class="card queue"><div class="section-head"><div><span class="step">03</span><h2>Hàng đợi ảnh</h2></div><div class="badge" id="image-queue-count">0 task</div></div><div class="queue-toolbar"><label class="check"><input type="checkbox" id="select-image"> Chọn tất cả</label><button class="text-btn" id="cancel-image-selected">Hủy đã chọn</button><div class="spacer"></div><input class="queue-search" id="search-image" type="search" placeholder="Tìm prompt, tài khoản..."><select id="filter-image"><option value="all">Tất cả trạng thái</option><option value="queued">Đang chờ</option><option value="done">Hoàn tất</option><option value="failed">Có lỗi</option></select></div><div class="table-wrap"><table><thead><tr><th>STT</th><th>Loại</th><th>Ảnh tham chiếu</th><th>Prompt</th><th>Tiến trình</th><th>Thao tác</th></tr></thead><tbody id="image-rows"></tbody></table></div></section></div>
+    </div>
+    <div class="page hidden" id="view-accounts"><div class="page-head"><div><div class="eyebrow">ACCOUNT POOL</div><h1>Tài khoản Muse</h1><p>Một profile Chromium cho mỗi tài khoản. Chrome chỉ hiện khi bạn chủ động mở để đăng nhập; task chạy ẩn.</p></div></div><section class="stats" id="account-stats"></section><section class="card narrow"><h2>Thêm tài khoản</h2><div class="form-grid"><label>Tên hiển thị<input id="account-name" placeholder="Muse 01"></label><label>Profile có sẵn (tùy chọn)<input id="account-profile" placeholder="E:\...\muse_profile"></label></div><button class="btn primary" id="add-account">＋ Thêm tài khoản</button><p class="hint">Profile chứa cookie đăng nhập. Chỉ dùng profile riêng cho từng tài khoản, không chia sẻ thư mục này.</p></section><section class="card account-list"><div class="section-head"><h2>Danh sách tài khoản</h2><span class="badge" id="account-count">0 tài khoản</span></div><div id="account-rows"></div></section></div>
+    <div class="page hidden" id="view-library"><div class="page-head"><div><div class="eyebrow">OUTPUT LIBRARY</div><h1>Kho thư viện</h1><p>Video và ảnh đã tạo được giữ trong thư viện, kể cả sau khi xóa task khỏi hàng đợi.</p></div></div><div class="library-tabs"><button type="button" class="library-tab active" data-library-kind="video">Video <span id="library-video-count">0</span></button><button type="button" class="library-tab" data-library-kind="image">Ảnh <span id="library-image-count">0</span></button></div><div id="library-grid" class="library-grid"></div></div>
+    <div class="page hidden" id="view-logs"><div class="page-head"><div><div class="eyebrow">ACTIVITY</div><h1>Nhật ký</h1><p>Theo dõi tiến trình và sao chép lỗi để xử lý.</p></div></div><section class="card"><div id="log-list" class="log-list"></div></section></div>
+    <div class="page hidden" id="view-settings"><div class="page-head"><div><div class="eyebrow">PREFERENCES</div><h1>Cài đặt</h1><p>Cấu hình mặc định cho các đợt chạy tiếp theo.</p></div></div><section class="card narrow"><div class="form-grid"><label>Số luồng mặc định / tài khoản<input id="default-threads" type="number" min="1" max="20"></label><label>Chờ tối đa mặc định (phút)<input id="default-timeout" type="number" min="1" max="240"></label></div><label>Thư mục lưu mặc định<input id="default-output" placeholder="data/outputs"></label><button class="btn primary" id="save-settings">Lưu cài đặt</button></section><section class="note"><strong>Cách xử lý khi gián đoạn</strong><p>Task đã gửi Muse sẽ chuyển sang “Cần kiểm tra” nếu ứng dụng tắt hoặc hết thời gian chờ. Mở chat của task để đối chiếu trước khi gửi lại, tránh tạo trùng video.</p></section></div>
+  </main>
+</div>
+<dialog id="edit-dialog"><form method="dialog" class="modal"><div class="section-head"><h2>Chi tiết task</h2><button class="icon-btn" value="cancel">✕</button></div><div id="edit-meta" class="hint"></div><label>Prompt<textarea id="edit-prompt" rows="8"></textarea></label><label>Ảnh tham chiếu<input id="edit-refs" type="file" accept="image/png,image/jpeg,image/webp" multiple></label><div id="edit-ref-list" class="chips"></div><div class="modal-actions"><button class="btn secondary hidden" id="duplicate-task" value="duplicate">Gửi lại thành task mới</button><button class="btn secondary" value="cancel">Đóng</button><button class="btn primary" id="save-edit" value="save">Lưu thay đổi</button></div></form></dialog>
+<dialog id="cookie-dialog"><form method="dialog" class="modal"><div class="section-head"><h2>Nhập cookie Muse</h2><button class="icon-btn" value="cancel">✕</button></div><p class="hint">Dán chuỗi Cookie header dạng name=value; name2=value2. Tool chỉ dùng để đưa vào profile Chromium cục bộ.</p><textarea id="cookie-header" rows="6" placeholder="hatch_sess=...; ..."></textarea><div class="modal-actions"><button class="btn secondary" value="cancel">Đóng</button><button class="btn primary" id="save-cookie" value="save">Nhập cookie</button></div></form></dialog>
+<dialog id="preview-dialog"><div class="modal preview-modal"><div class="section-head"><h2 id="preview-title">Xem thành phẩm</h2><button class="icon-btn" id="close-preview" type="button">✕</button></div><div id="preview-media"></div><p id="preview-prompt" class="hint"></p><div class="modal-actions"><button class="btn secondary" id="open-output-folder" type="button">Mở thư mục</button><a class="btn primary" id="preview-download" href="#">↓ Tải về</a></div></div></dialog>
+<div id="license-shield">
+  <div class="license-modal-card">
+    <div class="lic-header">
+      <div class="lic-logo-wrap">
+        <img class="lic-logo-img" src="/static/alexbright-logo.png" alt="Alex Bright Logo">
+      </div>
+      <div class="lic-title-area">
+        <div class="lic-badge-row">
+          <span class="lic-badge-tag">MUSE AI STUDIO</span>
+          <span class="lic-version-tag">PREMIUM v1.6.8 · BẢN QUYỀN MÁY CHỦ</span>
+        </div>
+        <h1 class="lic-main-title">ALEXBRIGHT WORKBENCH</h1>
+        <p class="lic-sub-desc">Hệ thống tự động hóa khởi tạo video & hình ảnh đa luồng không giới hạn trên Muse.ai</p>
+      </div>
+    </div>
+    <div class="lic-features-grid">
+      <div class="lic-feature-item">
+        <span class="lic-feature-icon">⚡</span>
+        <div class="lic-feature-text">
+          <strong>Tự động hóa đa luồng</strong>
+          <span>Tạo hàng loạt video & ảnh song song cực nhanh</span>
+        </div>
+      </div>
+      <div class="lic-feature-item">
+        <span class="lic-feature-icon">🛡️</span>
+        <div class="lic-feature-text">
+          <strong>Chrome Profile độc lập</strong>
+          <span>Cách ly cookie từng tài khoản, chống checkpoint</span>
+        </div>
+      </div>
+      <div class="lic-feature-item">
+        <span class="lic-feature-icon">🎬</span>
+        <div class="lic-feature-text">
+          <strong>Tự tải & Lưu kho</strong>
+          <span>Tự động xuất video chuẩn FHD/4K về thư mục riêng</span>
+        </div>
+      </div>
+    </div>
+    <div class="lic-hwid-box">
+      <div class="lic-hwid-label-row">
+        <span class="lic-hwid-label">
+          <span>💻</span> Mã máy tính của bạn (HWID)
+        </span>
+        <span class="lic-hwid-tip">Mỗi máy tính có một mã duy nhất để kích hoạt</span>
+      </div>
+      <div class="lic-hwid-input-wrap">
+        <input type="text" id="lic-hwid-display" class="lic-hwid-code" readonly value="Đang tải mã phần cứng...">
+        <button type="button" id="lic-btn-copy" class="lic-btn-copy">
+          <span>📋</span> Sao chép mã máy
+        </button>
+      </div>
+    </div>
+    <div class="lic-status-bar">
+      <div class="lic-status-info">
+        <div id="lic-status-dot" class="lic-status-dot"></div>
+        <div>
+          <div id="lic-status-text" class="lic-status-text">Đang kết nối máy chủ xác thực...</div>
+          <small id="lic-status-sub" class="lic-status-sub">Hệ thống tự động kiểm tra mỗi 3 giây. Sau khi Admin kích hoạt, tool sẽ tự động mở.</small>
+        </div>
+      </div>
+      <button type="button" id="lic-btn-recheck" class="lic-btn-recheck">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21.5 2v6h-6M2.5 22v-6h6M2 11.5a10 10 0 0 1 18.8-4.3M22 12.5a10 10 0 0 1-18.8 4.2"/></svg>
+        Kiểm tra lại
+      </button>
+    </div>
+    <div class="lic-admin-box">
+      <div class="lic-admin-title">
+        <span>🔑</span> Thông tin Admin kích hoạt bản quyền chính hãng
+      </div>
+      <div class="lic-admin-contacts">
+        <div class="lic-contact-item">
+          <span>👤 Admin / Dev:</span>
+          <strong>Nhật Minh Dương</strong>
+        </div>
+        <div class="lic-contact-item">
+          <span>💬 Zalo / Hotline:</span>
+          <a href="tel:0333688491">0333688491</a>
+        </div>
+        <div class="lic-contact-item">
+          <span>✈️ Telegram:</span>
+          <a href="https://t.me/ANONY88888" target="_blank" rel="noopener">@ANONY88888</a>
+        </div>
+        <div class="lic-contact-item">
+          <span>🌐 Website:</span>
+          <a href="https://alexbright.site" target="_blank" rel="noopener">alexbright.site</a>
+        </div>
+        <div class="lic-contact-item" style="grid-column: 1 / -1;">
+          <span>👥 Nhóm Zalo hỗ trợ:</span>
+          <a href="https://zalo.me/g/t4cn56rel02pjomxwanh" target="_blank" rel="noopener">https://zalo.me/g/t4cn56rel02pjomxwanh</a>
+        </div>
+      </div>
+    </div>
+    <div class="lic-security-alert">
+      <div class="lic-alert-icon">⚠️</div>
+      <div class="lic-alert-content">
+        <strong>CẢNH BÁO BẢN QUYỀN & CHỐNG LỪA ĐẢO</strong>
+        <p>Bản quyền Tool MUSE AI STUDIO được phân phối & kích hoạt DUY NHẤT bởi Admin <b>Nhật Minh Dương</b> (website <b>alexbright.site</b>). Tuyệt đối KHÔNG MUA từ bất kỳ nguồn trung gian, hội nhóm hay trang web giả mạo nào khác để tránh bị lừa đảo hoặc cài mã độc chiếm đoạt tài khoản. Mọi bản crack đều bị máy chủ đám mây khóa vĩnh viễn theo mã máy!</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="toast" class="toast hidden"></div>
+<script src="/static/app.js"></script><script src="/static/desktop.js"></script><script src="/static/manager.js"></script><script src="/static/upgrade.js"></script><script src="/static/license.js"></script>
+</body></html>

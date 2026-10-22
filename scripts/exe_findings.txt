@@ -1,0 +1,207 @@
+--- URLS ---
+https://muse.ai
+https://muse.ai/thread/
+https://muse.ai/
+https://muse.ai/thread/new
+
+--- CHUNKS ---
+f the class from any iterable input.  Must override this method if the class construc
+not accept an iterable for an input. r      rF     its    &&r      _from_iterable  Se
+'3.14')              # string input Decimal('3.14') >>> Decimal((0, (3, 1, 4), -2))
+It works  as follows:   * On input, if newline is None, universal newlines mode is
+e is    enabled. Lines in the input can end in '\n', '\r', or '\r\n', and    these ar
+of    the other legal values, input lines are only terminated by the given    string,
+_CRLFr      replace) ra     inputr      output  crlf  cr  lfs    &&&    r    r
+abled.  With this enabled, on input, the lines endings '\n', '\r', or '\r\n' are tran
+ra     dec_buffer  dec_flags  input_chunk  eof  decoded_charss    &     r      _read_
+e) ra   r    r    r      next_inputr(     saved_state  skip_bytes  skip_backr    r#
+ng from the last token in the input string. This makes the parser more robust when pa
+codingr(     isinstancer      input_fd  fileno  output_fd)   selfr%   r&   r'   r(
+ending, but not yet processed input.Nr    rB   s    &r      forgetinput  Console.forg
+Nr    rB   s    &r      forgetinput  Console.forgetinput    rn   r    c
+forgetinput  Console.forgetinput    rn   r    c                           V ^ 8
+R # ) z Returns the current input hook.Nr    rB   s    &r      input_hook  Console.
+hook.Nr    rB   s    &r      input_hook  Console.input_hook    rn   r    c
+&r      input_hook  Console.input_hook    rn   r    c                           V ^
+;   i ) r    F)   incomplete_input)   sourcez 'await' outside functionz Try the asyn
+r    ) Nz <console>r-   ) z <input>  single) r    r    r    r      objectr    r5   r
+dataclass  field)   commands  input)   Reader       \z \%03oz isearch-endz isearch-ad
+tart  isearch_termrP     push_input_trans  isearch_transr%   s    & r    r'     forwa
+ARCH_DIRECTION_NONEr      pop_input_transr$   r    rO   rP   r%   s    & r    r'
+r    r      console  forgetinputr    rP   r%   s    & r    r'     isearch_end.do
+initz tuple[int, int]r    z input.KeymapTranslatorr    ro   rs   c
+ne  )   formats    "  _pyrepl\input.py  __annotate__  InputTranslator.__annotate__2
+fields)   commands  console  input)   wlen  unbracket  disp_str  gen_colors  THEME)
+is the prompt for a one-line input; for a     multiline input it looks like:
+ne input; for a     multiline input it looks like:         ps2> first line of input g
+e:         ps2> first line of input goes here         ps3> second and further
+, str], ...]  keymap    init  input.KeymapTranslator  input_transz list[input.KeymapT
+init  input.KeymapTranslator  input_transz list[input.KeymapTranslator]  input_trans_
+Translator  input_transz list[input.KeymapTranslator]  input_trans_stack  screen  lis
+list[input.KeymapTranslator]  input_trans_stack  screen  list[tuple[int, list[int]]]
+rx   r    s    &&r      push_input_trans  Reader.push_input_trans    s"
+push_input_trans  Reader.push_input_trans    s"                %  % d &6 &6  7  !   r
+popr^   r    s    &r      pop_input_trans  Reader.pop_input_trans    s           1  1
+pop_input_trans  Reader.pop_input_trans    s           1  1  5  5  7     r    c
+handlerrb     Exceptionr      input_hook) rx   ri   rb   rg   s    &   r      run_hoo
+ains extensions for multiline input. )   annotationsN)   dataclass  field)   gethisto
+u   # i ;   i ) Nz builtins.input  r    z builtins.input/result) r    r      raw_in
+iltins.input  r    z builtins.input/result) r    r      raw_inputrE     ps1  sys  aud
+input/result) r    r      raw_inputrE     ps1  sys  audit  readliner    ) r@   r    r
+ompt_strrf   s    &&   r(     input  _ReadlineWrapper.inputp   s          %    _ _  &
+(     input  _ReadlineWrapper.inputp   s          %    _ _  & F        [
+n         i ;   i ) z Read an input on possibly multiple lines, asking for more lines
+eds    &&&&  r(     multiline_input  _ReadlineWrapper.multiline_input}   s
+t  _ReadlineWrapper.multiline_input}   s                 "       !  !      &  *
+ileN)   redisplayN)   set_pre_input_hookN)]  __conditional_annotations__  __doc__  __
+ception of allowing multiline input and multiline history entries. )   annotationsN)
+nsN)   _get_reader  multiline_input  append_history_filez-tuple[type[Exception], ...]
+ps1z >>>   ps2z ... z <python-input-  >r4   )   filename  _symbolz-failed to open the
+Interruptr      cmpltn_reset  input_trans  isearch_trans  do_cmdr      get_unicode  p
+r/   rI   rO     more_lines  input_n  _is_x_showrefcount_set  _is_pydebug_build  sho
+ef_countr^   r`   ra   rS     input_name  morer      rs    f$              r     !run
+ing the given color tag.  The input `buffer` should be a valid start of a Python code
+WE3 # ) a    Decompose the input buffer into a printable variant with applied colo
+ists: - the first list is the input buffer, character by character, with color   esca
+idth of each character in the input   buffer.  Note on colors: - The `colors` list, i
+omputed from the start of the input block. `buffer`   is only a subset of that input
+r`   is only a subset of that input block, a single line within. This is why   we nee
+uffer`   actually within user input. This allows us to match color spans correctly.
+tual terminalz saved original input mode 0x  x  wN)   superr5   r_     _WindowsConsol
+ue $_WindowsConsole__original_input_mode  SetConsoleMode  OutHandle  ENABLE_WRAP_AT_E
+c   rd   re   rg     original_input_mode  __class__s    &&&&&  r"   r5     WindowsCon
+# R # R # r3   ) r<     _is_inputhook_installed  _inputhook  r4   s    &r"     inpu
+_is_inputhook_installed  _inputhook  r4   s    &r"     input_hook  WindowsConsole
+_inputhook  r4   s    &r"     input_hook  WindowsConsole.input_hook    s(           >
+input_hook  WindowsConsole.input_hook    s(           > b  8  8  :  :    = =
+rec  reads    &  r"     _read_input  WindowsConsole._read_input    s3         n
+d_input  WindowsConsole._read_input    s3         n      w        # q $  7  7    < >
+r+   s    &&  r"     _read_input_bulk  WindowsConsole._read_input_bulk    s@
+ut_bulk  WindowsConsole._read_input_bulk    s@           <     "      w        # $  7
+ending, but not yet processed input.N)   FlushConsoleInputBufferro   r    r    r    s
+r    r    s    &r"     forgetinput  WindowsConsole.forgetinput    s        & x  0  0
+etinput  WindowsConsole.forgetinput    s        & x  0  0    < >  *  *    1r$   c
+ne_tall  __offset  __original_input_mode  __vt_supportr{   ry   r    r    rw   rx   )
+R R R R R R R R / # ) r      input_linesr      max_linesr      max_charsr    r    )
+40 characters - whichever the input reaches first, taking the truncation explanation
+USAGE_MSG) r    r    r!     input_char_count  tolerable_max_chars  tolerable_max_li
+d_char_count  iterated_index  input_line  truncated_result  final_line  final_line_tr
+R # R # )   cacheshow  workerinputNr    ) r!   r5     hasattrr    rw   r    r    ) r
+ds) to use given the relevant inputs.  :param warn: Whether can issue warnings.  :ret
+override_valuer?     dp  input_valuesr      ts    &&          rA   r;     Config
+directly use fixture names as input arguments in which case the fixture instance retu
+or) r/   r    r_   r`     dp  input_values  xs    &&&&   r(     Config__getini_unknow
+rk.parametrize(         "test_input,expected",         [             ("3+5", 8),
+)     def test_eval(test_input, expected):         assert eval(test_input) == ex
+ed):         assert eval(test_input) == expected  :param values: Variable args of the
+and  not  identifierz end of input  =z string literal  ,  N)   __name__  __module__
+Q h R R R R / # ) r1     inputr+   r4   r5   r    ) r6   s    "r$   r7     Scann
+e a match expression.  :param input: The input expression - one line. z <pytest match
+xpression.  :param input: The input expression - one line. z <pytest match expression
+o handle arbitrary strings as input.  :returns: Whether the expression matches or not
+Q h R R R R R R / # ) r      inputr8     rootpathr    r"   r$   ) r%   s    "r&   r'
+ath.exists(), but account for input arguments that might be too long (#11394).F) r
+instance for checking that an input linearly contains a sequence of strings.) r    r6
+stdin:     Optional standard input.      - If it is ``CLOSE_STDIN`` (Default), then
+IPE``, and       the standard input is closed immediately after the new command is
+re sent to the       standard input of the command.      - Otherwise, it is passed th
+n_count must be >= 0. Current input:   .  tmp_path_retention_policyzKtmp_path_retenti
+er all, failed, none. Current input:   tmpdirT) r'   r;   r(   r)   r$       all  fai
+e, add a specific year to the input & format. See https://github.com/python/cpython/i
+of microseconds based on the input string and the format string.z*strptime() argumen
+rn a time struct based on the input string and the format string.N) rz   r)   rH
+a date instance based on the input string and the format string.rA   ) rz   )   clsr
+a time instance based on the input string and the format string.N:r|   r    N
+atetime instance based on the input string and the format string.N:Nr    Nr    r    r
+ectionResetErrorr=   ) r      inputr}   rE   s    &&  r      _feed_stdin  Process._fe
+on-alphabet characters in the input result in a binascii.Error. For more information
+nascii.Error is raised if the input is incorrectly padded.  Characters that are not i
+nascii.Error is raised if the input is incorrectly padded.  Characters that are not i
+ase alphabet is acceptable as input.  For security purposes, the default is False. {e
+nascii.Error is raised if the input is incorrectly padded or if there are non-alphabe
+bet characters present in the input. a     RFC 3548 allows for optional mapping of th
+and 1 are not allowed in the input. s    ABCDEFGHIJKLMNOPQRSTUVWXYZ234567s    012345
+ase alphabet is acceptable as input.  For security purposes, the default is False.  T
+bet characters present in the input. Ns    0123456789ABCDEF)   deletez Non-base16 dig
+ne.  pad controls whether the input is padded to a multiple of 4 before encoding. Not
+.  adobe controls whether the input sequence is in Adobe Ascii85 format (i.e. is fram
+characters to ignore from the input. This should only contain whitespace characters,
+object.  If pad is true, the input is padded with b'\0' so its length is a multiple
+K   R # ) z1Encode a file; input and output are binary files.N)   read  MAXBINSIZE
+SIZEr    r    r      write)   input  outputr      ns  lines    &&   r    r    r
+KA  R # ) z1Decode a file; input and output are binary files.N)   readliner    r"
+m  err  msgs    &   r      _input_type_checkr    %   s          &    q M        x x
+ction name or '<lambda>', the input arguments, the return value, and the line of code
+ression.  If mode is 'r', the input file may be the concatenation of multiple compres
+nventions:  1. End of file on input is processed as the command 'EOF'. 2. A command i
+h it.  line is the current    input line (lstripped), begidx and endidx are the begin
+and stdout specify alternate input and output file objects; if not specified, sys.st
+atedly issue a prompt, accept input, parse an initial prefix off the received input,
+itial prefix off the received input, and dispatch to action methods, passing them the
+EOFz   )   preloop  use_rawinputr      readline  get_completer  old_completer  set
+or      write  strr      pop  input  prompt  EOFError  flushr      len  rstrip  precm
+is interpreted, but after the input prompt is generated and issued.      r    r0   s
+R # ) z Called on an input line when the command prefix is not recognized.
+Method called to complete an input line when no command-specific complete_*() method
+espace); it doesn't deal with input buffering or prompting or input file naming (the
+put buffering or prompting or input file naming (the filename is always passed in exp
+al things can happen:  1) The input is incorrect; compile_command() raised an excepti
+syntaxerror() method.  2) The input is incomplete, and more input is required; compil
+input is incomplete, and more input is required; compile_command() returned None.  No
+ne.  Nothing happens.  3) The input is complete; compile_command() returned a code ob
+r    ) r    r      N) z <input>  single) r      __module__  __qualname__  __firs
+liar sys.ps1 and sys.ps2, and input buffering.  N  local_exitFc                     h
+specify the (file)name of the input stream; it will show up in tracebacks.  N) r    r
+V n         R # ) z Reset the input buffer.N)   buffer  r    s    &r    r^     Intera
+ltinsrf     Quitterrg     raw_input  push  EOFError  KeyboardInterruptr^   r    ) r
+The return value is 1 if more input is required, 0 if the line was dealt with in some
+on uses the built-in function input(); a subclass may replace this with a different i
+ifferent implementation.  )   input) r    r    s    &&r    rr     InteractiveConsole.
+rr     InteractiveConsole.raw_inputI   s            V }   r    ) ra   r    r\   ) Nz
+places InteractiveConsole.raw_input() local -- passed to InteractiveInterpreter.__ini
+h ) a    Encodes the object input and returns a tuple (output object, length consum
+be able to handle zero length input and return an empty object of the output object t
+NotImplementedError  r;     input  errorss    &&&r<   r"     Codec.encode    s
+h ) aY   Decodes the object input and returns a tuple (output object, length consum
+ut object, length consumed).  input must be an object which provides the bf_getreadbu
+be able to handle zero length input and return an empty object of the output object t
+IncrementalEncoder encodes an input in multiple steps. The input can be passed piece
+input in multiple steps. The input can be passed piece by piece to the encode() meth
+\         h ) z1 Encodes input and returns the resulting object. rS     r;   rV
+IncrementalDecoder decodes an input in multiple steps. The input can be passed piece
+input in multiple steps. The input can be passed piece by piece to the decode() meth
+\         h ) z0 Decode input and returns the resulting object. rS   rf   s
+er.  This must be a (buffered_input, additional_state_info) tuple. buffered_input mus
+l_state_info) tuple. buffered_input must be a bytes object containing bytes that were
+ssed the contents of buffered_input.  In the initial state and after reset(), getstat
+first line terminator in the input only the first line will be returned, the rest of
+be returned, the rest of the input will be kept until the next call to read().  The
+) z Read one line from the input stream and return the decoded data.  size, if giv
+ad all lines available on the input stream and return them as a list.  Line breaks ar
+4         R # ) z[Set the input stream's current position.  Resets the codec buff
+he next decoded line from the input stream.) r      StopIteration) r;   r    s    & r
+coding iterator.  Encodes the input strings from the iterator using an IncrementalEnc
+coding iterator.  Decodes the input strings from the iterator using an IncrementalDec
+nore    flagsNF)   incomplete_input)   split  strip  warnings  catch_warnings  simple
+s read; default             "<input>" symbol -- optional grammar start symbol; "singl
+s read;             default "<input>" symbol -- optional grammar start symbol; "singl
+M` M`  a  ar#   ) r    N)   <input>  singler8   r@   s    @r    r    r    }   s
+given, count elements from an input iterable.  Or, initialize the count from another
+reduced below zero.  Both the inputs and outputs are allowed to contain zero and nega
+mum of value in either of the input counters.  >>> Counter('abbb') | Counter('bcc') C
+rgb(a, b, c) --> r, g, b  All inputs and outputs are triples of floats in the range [
+r/     decompressr1     needs_input  EOFErrorr,   r-   rE   ) r      sizerI     rawbl
+buffer.         If None, all input elements are eagerly collected, and a task is
+buffer.         If None, all input elements are eagerly collected, and a task is
+n a section is repeated in an input source.  Possible repetitions that raise this exc
+nd more than once in a single input file, string or dictionary. Nc
+n an option is repeated in an input source.  Current implementation raises this excep
+ance  bytesr    r    ))  cls  input_fields  is_struct  base  pack  layout  gcc_layout
+line not present in either input sequence  Lines beginning with '? ' attempt to gu
+nd were not present in either input sequence.  These lines can be confusing if the se
+ine.  This is helpful so that inputs created from file.readlines() result in diffs th
+e.writelines() since both the inputs and outputs have trailing newlines.  For inputs
+have trailing newlines.  For inputs that do not have trailing newlines, set the line
+ine.  This is helpful so that inputs created from file.readlines() result in diffs th
+e.writelines() since both the inputs and outputs have trailing newlines.  For inputs
+have trailing newlines.  For inputs that do not have trailing newlines, set the line

@@ -1,0 +1,605 @@
+ton[aria-label="
+nh k
+m file"], button[aria-label="Attach file"], button[aria-label*="
+nh k
+m"], button[aria-label*="Attach"], button[title="
+nh k
+m file"], button[title="Attach file"]
+afirst
+ais_visible
+aclick
+'await_for_function
+un => document.querySelectorAll("img[alt], img[src^='blob:'], [data-attachment-item]").length >= n
+aarg
+atimeout
+asleep
+?aattach_reference_images
+uMuseBrowser.attach_reference_images
+u<genexpr>
+a.0
+aref
+aMuseBrowser
+uMuseBrowser.attach_reference_images.<locals>.<genexpr>
+nh URL cu
+c tr
+chuy
+n qua nhi
+u ph
+ng th
+c (URL, Network, DOM, Sidebar).
+a_find_thread_url
+aself
+apage
+acaptured_url
+aloc
+adom_url
+aMuseBrowser
+aTHREAD_URL_RE
+acaptured_url
+aevaluate
+u() => window.location.href
+u() => {
+const active = document.querySelector('a[href*="/thread/"][aria-current], a[href*="/thread/"][class*="active"], a[href*="/thread/"][class*="selected"], [data-state="active"] a[href*="/thread/"], div[class*="active"] a[href*="/thread/"]');
+if (active && active.href && /\/thread\/[0-9a-f-]{36}/i.test(active.href)) {
+return active.href;
+}
+const links = Array.from(document.querySelectorAll('a[href*="/thread/"]'))
+.map(a => a.href)
+.filter(h => /\/thread\/[0-9a-f-]{36}/i.test(h));
+if (links.length > 0) {
+return links[0];
+}
+const el = document.querySelector('[data-thread-id], [data-chat-id]');
+if (el) {
+const id = el.getAttribute('data-thread-id') || el.getAttribute('data-chat-id');
+if (id && /[0-9a-f-]{36}/i.test(id)) {
+return `https://muse.ai/thread/${id}`;
+}
+}
+return null;
+}
+a_find_thread_url
+uMuseBrowser._find_thread_url
+uKi
+m tra xem prompt
+th
+c s
+c g
+i l
+n giao di
+n Muse ch
+a_is_prompt_submitted
+aself
+apage
+aprompt_text
+abox
+aval
+aclean_snippet
+afound_text
+aMuseBrowser
+ainput_value
+asub
+u[\r\n\t]+
+w aprompt_text
+:nl#nu(snippet) => {
+const text = (document.body ? document.body.innerText : '') || '';
+return text.includes(snippet);
+}
+a_is_prompt_submitted
+uMuseBrowser._is_prompt_submitted
+agenerate
+T#aself
+atask
+aaccount
+acancel
+atid
+apage
+acontext
+aexc
+achat_opened
+aattempt
+astatus
+abox
+aside_btn
+arefs
+asend_btn
+acaptured_url
+aon_response
+athread_url
+aprompt_sent
+wsav_found
+aalerts
+adetail
+adeadline
+apolls
+afound_url
+afound
+aoutput
+aevidence
+astem
+acurrent
+arecovered_url
+auncertain
+aattempt_count
+afields
+aMuseBrowser
+atask
+acancel
+ais_set
+uSELECT archived FROM tasks WHERE id=?
+aarchived
+aset_task
+aconnecting_account
+aaccount_id
+atime
+amonotonic
+uKh
+ng m
+c profile
+u; gi
+i kho
+n b
+t v
+th
+i sau 20 gi
+y:
+:nl
+nuKh
+ng m
+c profile Chromium; c
+th
+profile
+ang
+c c
+a s
+Chrome kh
+c s
+aopening_chat
+uhttps://muse.ai/thread/new
+adomcontentloaded
+alogin_screen_url
+uhttps://muse.ai/
+u^(
+ng nh
+p|Log in)$
+uMuse
+chuy
+n t
+i m
+n h
+nh
+ng nh
+p; h
+y c
+p nh
+t cookie ho
+ng nh
+p l
+uMuse chuy
+n sang trang
+ng nh
+p; h
+y ki
+m tra l
+i t
+i kho
+n ho
+c cookie
+avisible
+Nawait_for_url
+u/thread/(?:new|[0-9a-f-]{36})(?:[/?#]|$)
+avisible
+NuKh
+ng m
+c chat ph
+u sau 2 l
+n; t
+i kho
+n v
+n b
+t, th
+i sau 20 gi
+y. URL:
+uKh
+ng m
+c chat ph
+sau 2 l
+n; ki
+m tra giao di
+n Muse ho
+c m
+uKh
+ng m
+c giao di
+n chat ph
+a Muse sau 2 l
+n th
+acancelled
+arefs_json
+afill
+aprompt_for
+asending
+ubutton[aria-label="G
+i"], button[aria-label="Send"], button[title="G
+i"], button[title="Send"]
+apress
+aEnter
+aon_response
+uMuseBrowser.generate.<locals>.on_response
+aon_response
+aresp
+acaptured_url
+aMuseBrowser
+acaptured_url
+aon
+aresponse
+lZl
+asend_btn
+aprompt_sent
+aVIDEO_SCAN
+athread_url
+u[role="alert"], [data-sonner-toast]
+aall_text_contents
+:nl
+nuMuse ch
+a x
+c nh
+n g
+i prompt sau 90 gi
+y.
+uTh
+ng b
+o Muse:
+u.
+uURL hi
+n t
+i:
+u. Vui l
+ng th
+agenerating
+athread_url
+asubmitted_at
+atimeout_minutes
+l<atid
+aneeds_review
+ng theo d
+i; Muse c
+th
+ang t
+aerror
+athread_url
+adownloading
+aoutput_dir
+aseq
+u03d
+u.mp4
+adownload_video
+adone
+aoutput_file
+aerror
+uVideo
+c minh:
+adumps
+u() => [...(document.querySelector('[role=log]')?.querySelectorAll('img')||[])].filter(i=>i.naturalWidth>=512 && i.naturalHeight>=512).map(i=>i.currentSrc||i.src)
+adownload_image
+apolls
+adomcontentloaded
+areload
+t th
+i gian ch
+; ki
+m tra chat v
+Muse c
+th
+ho
+n t
+t sau
+uSELECT status,thread_url FROM tasks WHERE id=?
+astatus
+asending
+adownloading
+agenerating
+afailed
+aconnecting_account
+aopening_chat
+uSELECT attempts FROM tasks WHERE id=?
+aattempts
+aqueued
+:nl
+nagenerate
+uMuseBrowser.generate
+uhttps://muse.ai
+agroup
+u<genexpr>
+a.0
+atext
+aMuseBrowser
+uMuseBrowser.generate.<locals>.<genexpr>
+adownload_video
+aself
+acontext
+apage
+aitem
+aoutput
+atask
+apart
+aerrors
+amethod
+aresponse
+adata
+apayload
+awrappers
+atarget
+awrapper
+aowner
+abutton
+apending
+aevidence
+aexc
+aMuseBrowser
+aoutput
+awith_suffix
+u.mp4.part
+ahttps
+ablob
+abutton
+ahttps
+aitem
+astartswith
+uhttps:
+ablob
+ublob:
+apart
+aunlink
+amissing_ok
+arequest
+aReferer
+aheaders
+atimeout
+aok
+uHTTP
+astatus
+awrite_bytes
+abody
+adispose
+aBLOB_FETCH
+abase64
+ab64decode
+ab64
+avalidate
+asize
+uBlob size mismatch
+u[data-hatch-video-src]
+aall
+aget_attribute
+udata-hatch-video-src
+uCannot identify this video's message
+uxpath=ancestor::*[@data-message-item][1]
+i video xu
+ng|Download video
+uNo unique download button
+aexpect_download
+asave_as
+ato_thread
+averify_video
+areplace
+amethod
+aCancelledError
+aerrors
+u:
+i video th
+t b
+i:
+u |
+uMuseBrowser.download_video
+adownload_image
+aself
+apage
+aurl
+astem
+adata
+apayload
+aext
+aoutput
+aMuseBrowser
+uhttps:
+ublob:
+uImage source is unsupported
+uasync u => {const r=await fetch(u);if(!r.ok)throw Error('HTTP '+r.status);const b=await r.blob();if(b.size>50*1024*1024)throw Error('Image too large');const a=await new Promise((ok,fail)=>{const f=new FileReader();f.onload=()=>ok(f.result.split(',')[1]);f.onerror=fail;f.readAsDataURL(b)});return {b64:a,size:b.size,mime:b.type}}
+uImage data is incomplete
+PNG
+u.png
+u.jpg
+cRIFF
+ncWEBP
+u.webp
+uImage format is unsupported
+astem
+uMuseBrowser.download_image
+arecover
+aself
+atask
+aaccount
+atarget_url
+acontext
+apage
+asidebar_chats
+aclean_snippet
+acurl
+abody_txt
+afound
+w_aoutput
+aevidence
+aexc
+aMuseBrowser
+uhttps://muse.ai/
+adomcontentloaded
+u() => {
+const links = Array.from(document.querySelectorAll('a[href*="/thread/"]'));
+return links.map(a => a.href).filter(h => /\/thread\/[0-9a-f-]{36}/i.test(h));
+}
+aprompt
+s:nl
+adomcontentloaded
+u() => document.body ? document.body.innerText : ''
+atarget_url
+uTask ch
+a c
+URL chat v
+kh
+ng t
+m th
+y cu
+c tr
+chuy
+n ph
+p tr
+n Muse
+qu
+t l
+u[role="log"]
+afound
+uChat ch
+a hi
+n th
+video
+uVideo qu
+t l
+i:
+uChat ch
+a hi
+n th
+arecover
+uMuseBrowser.recover
+uMuse browser adapter. One persistent Chromium context per account; one page per task.
+u<module app.muse>
+aorigin
+ahas_location
+aos
+asys
+uurllib.parse
+aurlparse
+uplaywright.async_api
+aasync_playwright
+astore
+u/thread/[0-9a-f-]{36}(?:[/?#]|$)
+u(^|\.)auth\.muse\.ai$|(^|\.)accounts\.google\.com$
+affmpeg
+returnN)
+NotImplementedError
+str)
+formats
+#app$muse$$$function__2___annotate__
+__annotate__r
+a__annotate__
+return)
+NotImplementedError
+dict)
+formats
+#app$muse$$$function__4___annotate__
+__annotate__r
+u() => {
+const log=document.querySelector('[role="log"]'); if(!log) return [];
+const out=[];
+for(const e of log.querySelectorAll('[data-hatch-video-src]')) {
+const v=e.querySelector('video');
+out.push({url:e.getAttribute('data-hatch-video-src'), label:e.getAttribute('aria-label')||'',
+width:v?.videoWidth||null,height:v?.videoHeight||null,duration:v?.duration||null});
+for(const v of log.querySelectorAll('video')) {
+const url=v.currentSrc||v.src;
+if(url) out.push({url,label:'',width:v.videoWidth||null,height:v.videoHeight||null,duration:v.duration||null});
+return out.filter(x=>/^(https:|blob:)/.test(x.url));
+uasync url => {
+const r=await fetch(url); if(!r.ok) throw Error('HTTP '+r.status);
+const blob=await r.blob();
+if(blob.size>256*1024*1024) throw Error('Video exceeds 256 MiB limit');
+const b64=await new Promise((resolve,reject)=>{
+const reader=new FileReader(); reader.onload=()=>resolve(reader.result.split(',')[1]);
+reader.onerror=()=>reject(Error('Cannot read video blob')); reader.readAsDataURL(blob);
+});
+return {size:blob.size,b64};
+nnuapp.muse
+aMuseBrowser
+a__firstlineno__
+uMuseBrowser.__init__
+uMuseBrowser.login_active
+returnN)
+NotImplementedError
+str)
+formats
+$app$muse$$$function__22___annotate__
+__annotate__r
+uMuseBrowser.__annotate__
+prompt_text
+return)
+NotImplementedError
+str
+bool)
+formats
+$app$muse$$$function__24___annotate__
+__annotate__r
+aplaywright
+acontexts
+acontext_modes
+alocks
+achat_locks
+acooldown_until
+a__static_attributes__
+uapp\muse.py
+.app.store
+anow
+adatetime
+anow
+atimezone
+autc
+aisoformat
+aseconds
+atimespec
+aconnect
+aconn
+aDATA
+amkdir
+aexist_ok
+asqlite3
+aconnect
+aDB
+atimeout
+aRow
+arow_factory
+aexecute
+uPRAGMA journal_mode=WAL
+uPRAGMA foreign_keys=ON
+nnnC
+ainit
+adb
+atable
+acolumn
+adefinition
+aexisting
+aLOCK
+aexecutescript
+CREATE TABLE IF NOT EXISTS accounts (
+id TEXT PRIMARY KEY, name TEXT NOT NULL, profile_path TEXT NOT NULL,
+enabled INTEGER NOT NULL DEFAULT 1, created_at TEXT NOT NULL
+);
+CREATE TABLE IF NOT EXISTS batches (
+id TEXT PRIMARY KEY, kind TEXT NOT NULL, duration INTEGER,
+ratio TEXT, threads_per_account INTEGER NOT NULL, timeout_minutes INTEGER NOT NULL,
+output_dir TEXT NOT NULL, created_at TEXT NOT NULL
+);
+CREATE TABLE IF NOT EXISTS tasks (
+id TEXT PRIMARY KEY, batch_id TEXT NOT NULL REFERENCES batches(id),
+seq INTEGER NOT NULL, prompt TEXT NOT NULL, refs_json TEXT NOT NULL,
+status TEXT NOT NULL, account_id TEXT REFERENCES accounts(id),
+thread_url TEXT, output_file TEXT, error TEXT,
+attempts INTEGER NOT NULL DEFAULT 0, created_at TEXT NOT NULL,
+updated_at TEXT NOT NULL
+);
+CREATE INDEX IF NOT EXISTS task_status_idx ON tasks(status, created_at);
+CREATE TABLE IF NOT EXISTS events (
+id INTEGER PRIMARY KEY AUTOINCREMENT, task_id TEXT, level TEXT NOT NULL,
+message TEXT NOT NULL, created_at TEXT NOT NULL
+);
+CREATE TABLE IF NOT EXISTS task_attempts (
+id INTEGER PRIMARY KEY AUTOINCREMENT, task_id TEXT NOT NULL,
+attempt INTEGER NOT NULL, old_s

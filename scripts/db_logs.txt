@@ -1,0 +1,36 @@
+--- RECENT TASKS ---
+('c69b235ca78d4e01ac221f80551378a2', 2, 'Tao video con mèo', 'done', 'https://muse.ai/thread/dcbca69f-4480-4a3f-8b61-99c2daed969e?', 'E:\\video muse ai\\20261010_175858_a3b87a\\002.mp4', None, '2026-10-10T10:59:23+00:00', '2026-10-10T11:00:45+00:00')
+('67bb01320e06488f8c6572b0a131e685', 3, 'Tajo video con ngựa', 'done', 'https://muse.ai/thread/ee03b766-eb37-4097-8bc1-da4548877d89', 'E:\\video muse ai\\20261010_175858_a3b87a\\003.mp4', None, '2026-10-10T10:59:23+00:00', '2026-10-10T11:00:46+00:00')
+('2cfa2a726e544308987c380168888d60', 1, 'tạo video cô gái xinh đjep', 'done', 'https://muse.ai/thread/6c94ab41-34bd-4e16-a26a-56a01e49fcf3', 'E:\\video muse ai\\20261010_175858_a3b87a\\001.mp4', None, '2026-10-10T10:59:21+00:00', '2026-10-10T11:00:43+00:00')
+('0c1719137a3b4591801bb05e2f46e7c6', 4, 'Tạo video con bò', 'done', 'https://muse.ai/thread/7823ad64-6829-4fe5-8412-ab81ff369d3c', 'E:\\video muse ai\\20261010_175858_a3b87a\\004.mp4', None, '2026-10-10T10:59:25+00:00', '2026-10-10T11:00:47+00:00')
+
+--- RECENT EVENTS / LOGS ---
+[2026-10-10T11:00:47+00:00] [info] (Task 0c1719137a3b4591801bb05e2f46e7c6): Video đã xác minh: {"bytes": 6441621, "sha256": "c445d7b6450c5698a8a58d5cb7c4cc53ae47eb9d33b4d2567fb62adf1003093e", "validation": "ffprobe", "duration": 10.0, "width": 720, "height": 1280, "method": "blob"}
+[2026-10-10T11:00:47+00:00] [info] (Task 0c1719137a3b4591801bb05e2f46e7c6): done
+[2026-10-10T11:00:46+00:00] [info] (Task 67bb01320e06488f8c6572b0a131e685): Video đã xác minh: {"bytes": 15213808, "sha256": "a36681ef812d05cc639801dd01b046b68c62a193b4655abf48b37591a7d33087", "validation": "ffprobe", "duration": 10.0, "width": 720, "height": 1280, "method": "blob"}
+[2026-10-10T11:00:46+00:00] [info] (Task 67bb01320e06488f8c6572b0a131e685): done
+[2026-10-10T11:00:46+00:00] [info] (Task 0c1719137a3b4591801bb05e2f46e7c6): downloading
+[2026-10-10T11:00:45+00:00] [info] (Task c69b235ca78d4e01ac221f80551378a2): Video đã xác minh: {"bytes": 7413101, "sha256": "438ca980857bc488cf7b0c8f5d6d6922aa904a52569d65da22afc0306205c375", "validation": "ffprobe", "duration": 10.0, "width": 720, "height": 1280, "method": "blob"}
+[2026-10-10T11:00:45+00:00] [info] (Task c69b235ca78d4e01ac221f80551378a2): done
+[2026-10-10T11:00:45+00:00] [info] (Task 67bb01320e06488f8c6572b0a131e685): downloading
+[2026-10-10T11:00:44+00:00] [info] (Task c69b235ca78d4e01ac221f80551378a2): downloading
+[2026-10-10T11:00:43+00:00] [info] (Task 2cfa2a726e544308987c380168888d60): Video đã xác minh: {"bytes": 4506735, "sha256": "17a734bcbd1c0c76e64a5bd4eb5349afa018822cc05b6531a6a5f620b750ae48", "validation": "ffprobe", "duration": 10.0, "width": 720, "height": 1280, "method": "blob"}
+[2026-10-10T11:00:43+00:00] [info] (Task 2cfa2a726e544308987c380168888d60): done
+[2026-10-10T11:00:42+00:00] [info] (Task 2cfa2a726e544308987c380168888d60): downloading
+[2026-10-10T10:59:25+00:00] [info] (Task 0c1719137a3b4591801bb05e2f46e7c6): generating
+[2026-10-10T10:59:23+00:00] [info] (Task 67bb01320e06488f8c6572b0a131e685): generating
+[2026-10-10T10:59:23+00:00] [info] (Task c69b235ca78d4e01ac221f80551378a2): generating
+[2026-10-10T10:59:21+00:00] [info] (Task 2cfa2a726e544308987c380168888d60): generating
+[2026-10-10T10:59:15+00:00] [info] (Task 0c1719137a3b4591801bb05e2f46e7c6): sending
+[2026-10-10T10:59:15+00:00] [info] (Task 67bb01320e06488f8c6572b0a131e685): sending
+[2026-10-10T10:59:15+00:00] [info] (Task c69b235ca78d4e01ac221f80551378a2): sending
+[2026-10-10T10:59:14+00:00] [info] (Task 2cfa2a726e544308987c380168888d60): sending
+[2026-10-10T10:59:13+00:00] [info] (Task 0c1719137a3b4591801bb05e2f46e7c6): opening_chat
+[2026-10-10T10:59:13+00:00] [info] (Task 67bb01320e06488f8c6572b0a131e685): opening_chat
+[2026-10-10T10:59:13+00:00] [info] (Task c69b235ca78d4e01ac221f80551378a2): opening_chat
+[2026-10-10T10:59:13+00:00] [info] (Task 2cfa2a726e544308987c380168888d60): opening_chat
+[2026-10-10T10:59:13+00:00] [info] (Task 0c1719137a3b4591801bb05e2f46e7c6): connecting_account
+[2026-10-10T10:59:13+00:00] [info] (Task 67bb01320e06488f8c6572b0a131e685): connecting_account
+[2026-10-10T10:59:13+00:00] [info] (Task c69b235ca78d4e01ac221f80551378a2): connecting_account
+[2026-10-10T10:59:13+00:00] [info] (Task 2cfa2a726e544308987c380168888d60): connecting_account
+[2026-10-10T10:59:12+00:00] [info] (Task None): Bắt đầu xử lý hàng đợi

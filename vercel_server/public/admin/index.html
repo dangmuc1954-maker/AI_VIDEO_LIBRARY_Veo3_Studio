@@ -1,0 +1,1138 @@
+<!DOCTYPE html>
+<html lang="vi" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AIForge License Center — Quản Trị Bản Quyền & Khóa Máy</title>
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/logo.png">
+  <link rel="apple-touch-icon" href="/logo.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #070913;
+    }
+    .font-mono { font-family: 'JetBrains Mono', monospace; }
+    .glass-card {
+      background: rgba(14, 19, 36, 0.75);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .glass-input {
+      background: rgba(10, 14, 28, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+    .glass-input:focus {
+      border-color: #6366f1;
+      box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.25);
+    }
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-thumb { background: #252d4a; border-radius: 4px; }
+  </style>
+</head>
+<body class="text-slate-100 min-h-screen">
+
+  <!-- Top Navbar -->
+  <header class="glass-card sticky top-0 z-40 border-b border-white/10 px-6 py-4 flex items-center justify-between">
+    <div class="flex items-center space-x-3">
+      <div class="w-10 h-10 rounded-xl overflow-hidden border border-mint-400/40 shadow-lg shadow-mint-500/25 bg-slate-900 p-0.5 flex items-center justify-center shrink-0">
+        <img src="/logo.png" alt="Robot Mascot" class="w-full h-full object-cover rounded-lg">
+      </div>
+      <div>
+        <h1 class="text-lg font-bold bg-gradient-to-r from-white via-slate-200 to-mint-300 bg-clip-text text-transparent">AIForge License Hub</h1>
+        <p class="text-xs text-slate-400">Trung Tâm Quản Lý Máy Kích Hoạt, Cấp Key & Khóa Máy Chống Lậu</p>
+      </div>
+    </div>
+    
+    <div class="flex items-center space-x-3">
+      <a href="https://drive.google.com/file/d/1fPsbP72500JKiExlzt1UNE0Cai6yWabX/view?usp=drive_link" target="_blank" class="flex items-center space-x-1.5 bg-emerald-600 hover:bg-emerald-500 text-xs font-semibold px-3.5 py-2 rounded-xl transition shadow-lg shadow-emerald-600/30 text-white" title="Mở link tải Google Drive bản mới nhất">
+        <i data-lucide="download" class="w-4 h-4"></i>
+        <span>Tải App v3.0</span>
+      </a>
+      <button onclick="openModal('createKeyModal')" class="flex items-center space-x-1.5 bg-indigo-600 hover:bg-indigo-500 text-xs font-semibold px-4 py-2 rounded-xl transition shadow-lg shadow-indigo-600/30">
+        <i data-lucide="plus-circle" class="w-4 h-4"></i>
+        <span>Tạo Key Mới</span>
+      </button>
+      <button onclick="refreshData()" class="flex items-center space-x-1.5 bg-slate-800 hover:bg-slate-700 text-xs px-3.5 py-2 rounded-xl border border-white/10 transition">
+        <i data-lucide="refresh-cw" class="w-3.5 h-3.5"></i>
+        <span>Làm Mới</span>
+      </button>
+      <button onclick="logout()" class="p-2 rounded-xl bg-red-500/10 hover:bg-red-500/20 text-red-400 border border-red-500/20 transition" title="Đăng xuất">
+        <i data-lucide="log-out" class="w-4 h-4"></i>
+      </button>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto p-6 space-y-6">
+
+    <!-- Stats Overview (6 Cards) -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4">
+      <div class="glass-card rounded-2xl p-4 border border-emerald-500/30 relative overflow-hidden group">
+        <div class="flex items-center justify-between">
+          <div>
+            <p class="text-[11px] text-emerald-300/80 uppercase tracking-wider font-semibold">Tổng Doanh Thu</p>
+            <h3 id="statTotalRevenue" class="text-xl font-black mt-1 text-emerald-400 font-mono">0 đ</h3>
+          </div>
+          <div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400">
+            <i data-lucide="wallet" class="w-5 h-5"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card rounded-2xl p-4 border border-cyan-500/30 relative overflow-hidden group">
+        <div class="flex items-center justify-between">
+          <div>
+            <p class="text-[11px] text-cyan-300/80 uppercase tracking-wider font-semibold">Doanh Thu Tháng Này</p>
+            <h3 id="statThisMonthRevenue" class="text-xl font-black mt-1 text-cyan-400 font-mono">0 đ</h3>
+          </div>
+          <div class="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400">
+            <i data-lucide="trending-up" class="w-5 h-5"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card rounded-2xl p-4 border border-indigo-500/20 relative overflow-hidden group">
+        <div class="flex items-center justify-between">
+          <div>
+            <p class="text-[11px] text-slate-400 uppercase tracking-wider font-semibold">Đơn Đã Bán</p>
+            <h3 id="statPaidOrders" class="text-xl font-extrabold mt-1 text-indigo-400 font-mono">0</h3>
+          </div>
+          <div class="w-10 h-10 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400">
+            <i data-lucide="shopping-bag" class="w-5 h-5"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card rounded-2xl p-4 relative overflow-hidden group">
+        <div class="flex items-center justify-between">
+          <div>
+            <p class="text-[11px] text-slate-400 uppercase tracking-wider font-semibold">Máy Hoạt Động</p>
+            <h3 id="statActiveMachines" class="text-xl font-extrabold mt-1 text-emerald-400 font-mono">0</h3>
+          </div>
+          <div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400">
+            <i data-lucide="monitor" class="w-5 h-5"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card rounded-2xl p-4 relative overflow-hidden group">
+        <div class="flex items-center justify-between">
+          <div>
+            <p class="text-[11px] text-slate-400 uppercase tracking-wider font-semibold">Tổng License Key</p>
+            <h3 id="statTotalKeys" class="text-xl font-extrabold mt-1 text-indigo-300 font-mono">0</h3>
+          </div>
+          <div class="w-10 h-10 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400">
+            <i data-lucide="key" class="w-5 h-5"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card rounded-2xl p-4 relative overflow-hidden group">
+        <div class="flex items-center justify-between">
+          <div>
+            <p class="text-[11px] text-slate-400 uppercase tracking-wider font-semibold">Blacklist Khóa</p>
+            <h3 id="statBanned" class="text-xl font-extrabold mt-1 text-rose-400 font-mono">0</h3>
+          </div>
+          <div class="w-10 h-10 rounded-xl bg-rose-500/10 border border-rose-500/20 flex items-center justify-center text-rose-400">
+            <i data-lucide="shield-alert" class="w-5 h-5"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation Tabs -->
+    <div class="flex items-center space-x-2 border-b border-white/10 pb-2 overflow-x-auto">
+      <button onclick="switchTab('revenueTab')" id="btnTabRevenue" class="px-4 py-2.5 rounded-xl text-xs font-semibold flex items-center space-x-2 bg-emerald-600 text-white shadow-md shadow-emerald-600/30 transition">
+        <i data-lucide="trending-up" class="w-4 h-4"></i>
+        <span>💰 Bảng Doanh Thu (Theo Tháng)</span>
+      </button>
+      <button onclick="switchTab('machinesTab')" id="btnTabMachines" class="px-4 py-2.5 rounded-xl text-xs font-semibold flex items-center space-x-2 bg-slate-800/80 hover:bg-slate-700 text-slate-300 transition">
+        <i data-lucide="monitor" class="w-4 h-4"></i>
+        <span>🖥️ Danh Sách Máy Tính (HWID)</span>
+      </button>
+      <button onclick="switchTab('keysTab')" id="btnTabKeys" class="px-4 py-2.5 rounded-xl text-xs font-semibold flex items-center space-x-2 bg-slate-800/80 hover:bg-slate-700 text-slate-300 transition">
+        <i data-lucide="key" class="w-4 h-4"></i>
+        <span>🔑 Quản Lý License Key</span>
+      </button>
+      <button onclick="switchTab('ordersTab')" id="btnTabOrders" class="px-4 py-2.5 rounded-xl text-xs font-semibold flex items-center space-x-2 bg-slate-800/80 hover:bg-slate-700 text-slate-300 transition">
+        <i data-lucide="shopping-cart" class="w-4 h-4"></i>
+        <span>🛒 Đơn Hàng (VietQR / SePay)</span>
+      </button>
+      <button onclick="switchTab('blacklistTab')" id="btnTabBlacklist" class="px-4 py-2.5 rounded-xl text-xs font-semibold flex items-center space-x-2 bg-slate-800/80 hover:bg-slate-700 text-slate-300 transition">
+        <i data-lucide="shield-alert" class="w-4 h-4"></i>
+        <span>⛔ Danh Sách Đen (Blacklist)</span>
+      </button>
+      <button onclick="switchTab('settingsTab')" id="btnTabSettings" class="px-4 py-2.5 rounded-xl text-xs font-semibold flex items-center space-x-2 bg-slate-800/80 hover:bg-slate-700 text-slate-300 transition">
+        <i data-lucide="settings" class="w-4 h-4"></i>
+        <span>⚙️ Cài Đặt</span>
+      </button>
+    </div>
+
+    <!-- TAB 0: REVENUE MONTHLY ANALYTICS -->
+    <div id="revenueTab" class="space-y-6">
+      <!-- Header Highlights -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="glass-card rounded-2xl p-5 border border-emerald-500/20 relative overflow-hidden">
+          <p class="text-xs text-slate-400 uppercase tracking-wider font-semibold">Tổng Doanh Thu Toàn Bộ</p>
+          <h3 id="revTabTotal" class="text-2xl font-black mt-1 text-emerald-400 font-mono">0 đ</h3>
+          <p class="text-[11px] text-slate-500 mt-1">Từ tất cả các đơn đã kích hoạt</p>
+        </div>
+        <div class="glass-card rounded-2xl p-5 border border-cyan-500/20 relative overflow-hidden">
+          <p class="text-xs text-slate-400 uppercase tracking-wider font-semibold">Doanh Thu Tháng Này</p>
+          <h3 id="revTabThisMonth" class="text-2xl font-black mt-1 text-cyan-400 font-mono">0 đ</h3>
+          <p id="revTabThisMonthLabel" class="text-[11px] text-slate-500 mt-1">Tháng hiện tại</p>
+        </div>
+        <div class="glass-card rounded-2xl p-5 border border-amber-500/20 relative overflow-hidden">
+          <p class="text-xs text-slate-400 uppercase tracking-wider font-semibold">Số Đơn Hàng Đã Bán</p>
+          <h3 id="revTabPaidCount" class="text-2xl font-black mt-1 text-amber-400 font-mono">0 Đơn</h3>
+          <p class="text-[11px] text-slate-500 mt-1">Giao dịch thành công</p>
+        </div>
+        <div class="glass-card rounded-2xl p-5 border border-purple-500/20 relative overflow-hidden">
+          <p class="text-xs text-slate-400 uppercase tracking-wider font-semibold">Gói Bán Chạy Nhất</p>
+          <h3 id="revTabTopPlan" class="text-xl font-bold mt-1 text-purple-300">---</h3>
+          <p class="text-[11px] text-slate-500 mt-1">Đóng góp doanh thu cao nhất</p>
+        </div>
+      </div>
+
+      <!-- BẢNG 1: DOANH THU THEO TỪNG THÁNG -->
+      <div class="glass-card rounded-2xl p-5 space-y-4 border border-white/10">
+        <div class="flex items-center justify-between">
+          <div>
+            <h3 class="font-bold text-base text-white flex items-center gap-2">
+              <i data-lucide="calendar" class="w-5 h-5 text-emerald-400"></i>
+              <span>Bảng Tổng Hợp Doanh Thu Theo Từng Tháng</span>
+            </h3>
+            <p class="text-xs text-slate-400 mt-0.5">Theo dõi chi tiết số tiền thu được, lượng license bán ra theo mỗi tháng</p>
+          </div>
+          <button onclick="refreshData()" class="text-xs bg-slate-800 hover:bg-slate-700 text-slate-300 px-3 py-1.5 rounded-lg flex items-center gap-1.5 transition">
+            <i data-lucide="refresh-cw" class="w-3.5 h-3.5"></i>
+            <span>Cập nhật</span>
+          </button>
+        </div>
+
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-xs text-slate-300">
+            <thead class="bg-slate-900/80 text-slate-400 uppercase tracking-wider font-semibold border-b border-white/10">
+              <tr>
+                <th class="px-4 py-3.5">Tháng / Năm</th>
+                <th class="px-4 py-3.5 text-center">Số License Bán Ra</th>
+                <th class="px-4 py-3.5">Cơ Cấu Gói Cước</th>
+                <th class="px-4 py-3.5 text-right font-bold text-emerald-400">Doanh Thu (VNĐ)</th>
+                <th class="px-4 py-3.5 text-right">Tỉ Trọng</th>
+              </tr>
+            </thead>
+            <tbody id="revenueMonthlyTableBody" class="divide-y divide-white/5 font-sans">
+              <!-- Dynamically populated -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- BẢNG 2: DANH SÁCH GIAO DỊCH ĐÃ THANH TOÁN (CHI TIẾT ĐƠN HÀNG) -->
+      <div class="glass-card rounded-2xl p-5 space-y-4 border border-white/10">
+        <div class="flex flex-wrap items-center justify-between gap-4">
+          <div>
+            <h3 class="font-bold text-base text-white flex items-center gap-2">
+              <i data-lucide="receipt" class="w-5 h-5 text-cyan-400"></i>
+              <span>Chi Tiết Từng Giao Dịch Thu Tiền Thành Công</span>
+            </h3>
+            <p class="text-xs text-slate-400 mt-0.5">Danh sách các khách hàng đã mua gói và kích hoạt bản quyền thành công</p>
+          </div>
+          <div class="flex items-center space-x-2">
+            <select id="revMonthFilter" onchange="renderRevenueDetailsTable()" class="glass-input text-xs px-3 py-1.5 rounded-xl text-white outline-none">
+              <option value="">Tất cả các tháng</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-xs text-slate-300">
+            <thead class="bg-slate-900/80 text-slate-400 uppercase tracking-wider font-semibold border-b border-white/10">
+              <tr>
+                <th class="px-4 py-3.5">Mã Đơn</th>
+                <th class="px-4 py-3.5">Khách Hàng</th>
+                <th class="px-4 py-3.5">Gói Mua</th>
+                <th class="px-4 py-3.5 font-bold text-emerald-400">Số Tiền</th>
+                <th class="px-4 py-3.5">Mã Máy Nhận Key (HWID)</th>
+                <th class="px-4 py-3.5">License Key Cấp</th>
+                <th class="px-4 py-3.5">Thời Gian Thanh Toán</th>
+                <th class="px-4 py-3.5 text-right">Trạng Thái</th>
+              </tr>
+            </thead>
+            <tbody id="revenueDetailsTableBody" class="divide-y divide-white/5">
+              <!-- Dynamically populated -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 1: MACHINES LIST -->
+    <div id="machinesTab" class="space-y-4">
+      <div class="glass-card rounded-2xl p-4 flex flex-wrap items-center justify-between gap-4">
+        <div class="flex items-center space-x-2">
+          <input type="text" id="searchMachineInput" oninput="renderMachinesTable()" placeholder="🔍 Tìm kiếm Machine Code, Khách hàng, IP, Key..." class="glass-input text-xs px-3.5 py-2 rounded-xl w-80 text-white outline-none">
+        </div>
+        <div class="text-xs text-slate-400">
+          Tổng số thiết bị đã ghi nhận: <span id="countMachines" class="font-bold text-white">0</span>
+        </div>
+      </div>
+
+      <div class="glass-card rounded-2xl overflow-hidden border border-white/10">
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-xs text-slate-300">
+            <thead class="bg-slate-900/80 text-slate-400 uppercase tracking-wider font-semibold border-b border-white/10">
+              <tr>
+                <th class="px-4 py-3.5">Khách Hàng / Thiết Bị</th>
+                <th class="px-4 py-3.5">Mã Máy (Machine Code HWID)</th>
+                <th class="px-4 py-3.5">Gói Cước</th>
+                <th class="px-4 py-3.5">Key Sử Dụng</th>
+                <th class="px-4 py-3.5">IP & Hoạt Động</th>
+                <th class="px-4 py-3.5">Hạn Dùng</th>
+                <th class="px-4 py-3.5">Trạng Thái</th>
+                <th class="px-4 py-3.5 text-right">Thao Tác</th>
+              </tr>
+            </thead>
+            <tbody id="machinesTableBody" class="divide-y divide-white/5">
+              <!-- Dynamically populated -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 2: KEYS LIST -->
+    <div id="keysTab" class="hidden space-y-4">
+      <div class="glass-card rounded-2xl p-4 flex flex-wrap items-center justify-between gap-4">
+        <div class="flex items-center space-x-2">
+          <input type="text" id="searchKeyInput" oninput="renderKeysTable()" placeholder="🔍 Tìm kiếm License Key, Khách hàng..." class="glass-input text-xs px-3.5 py-2 rounded-xl w-80 text-white outline-none">
+          <select id="filterKeyStatus" onchange="renderKeysTable()" class="glass-input text-xs px-3 py-2 rounded-xl text-white outline-none">
+            <option value="">Tất cả trạng thái</option>
+            <option value="active">Active (Đang chạy)</option>
+            <option value="suspended">Suspended (Tạm dừng)</option>
+            <option value="unused">Unused (Chưa kích hoạt)</option>
+            <option value="expired">Expired (Hết hạn)</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="glass-card rounded-2xl overflow-hidden border border-white/10">
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-xs text-slate-300">
+            <thead class="bg-slate-900/80 text-slate-400 uppercase tracking-wider font-semibold border-b border-white/10">
+              <tr>
+                <th class="px-4 py-3.5">License Key</th>
+                <th class="px-4 py-3.5">Gói Cước</th>
+                <th class="px-4 py-3.5">Thời Hạn</th>
+                <th class="px-4 py-3.5">Khách Hàng</th>
+                <th class="px-4 py-3.5">Máy Kích Hoạt (HWID)</th>
+                <th class="px-4 py-3.5">Hết Hạn Lúc</th>
+                <th class="px-4 py-3.5">Trạng Thái</th>
+                <th class="px-4 py-3.5 text-right">Hành Động</th>
+              </tr>
+            </thead>
+            <tbody id="keysTableBody" class="divide-y divide-white/5 font-mono">
+              <!-- Dynamically populated -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 3: ORDERS LIST -->
+    <div id="ordersTab" class="hidden space-y-4">
+      <div class="glass-card rounded-2xl overflow-hidden border border-white/10">
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-xs text-slate-300">
+            <thead class="bg-slate-900/80 text-slate-400 uppercase tracking-wider font-semibold border-b border-white/10">
+              <tr>
+                <th class="px-4 py-3.5">Mã Đơn</th>
+                <th class="px-4 py-3.5">Gói Đăng Ký</th>
+                <th class="px-4 py-3.5">Số Tiền (VNĐ)</th>
+                <th class="px-4 py-3.5">Khách Hàng</th>
+                <th class="px-4 py-3.5">Key Đã Cấp</th>
+                <th class="px-4 py-3.5">Thời Gian</th>
+                <th class="px-4 py-3.5">Trạng Thái</th>
+                <th class="px-4 py-3.5 text-right">Duyệt</th>
+              </tr>
+            </thead>
+            <tbody id="ordersTableBody" class="divide-y divide-white/5">
+              <!-- Dynamically populated -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 4: BLACKLIST -->
+    <div id="blacklistTab" class="hidden space-y-6">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <!-- Banned Machines -->
+        <div class="glass-card rounded-2xl p-5 space-y-4 border border-rose-500/20">
+          <div class="flex items-center justify-between">
+            <h3 class="font-bold text-sm text-rose-400 flex items-center gap-2">
+              <i data-lucide="laptop" class="w-4 h-4"></i>
+              <span>Máy Tính Bị Khóa (Banned HWID)</span>
+            </h3>
+            <button onclick="promptBanMachine()" class="text-xs bg-rose-600 hover:bg-rose-500 text-white font-semibold px-3 py-1.5 rounded-lg">
+              + Khóa Mã Máy
+            </button>
+          </div>
+          <div class="overflow-y-auto max-h-96">
+            <table class="w-full text-left text-xs text-slate-300">
+              <thead class="bg-slate-900/80 text-slate-400 uppercase font-semibold">
+                <tr>
+                  <th class="px-3 py-2">Machine Code</th>
+                  <th class="px-3 py-2">Lý Do</th>
+                  <th class="px-3 py-2 text-right">Gỡ Khóa</th>
+                </tr>
+              </thead>
+              <tbody id="bannedMachinesTableBody" class="divide-y divide-white/5"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Banned IPs -->
+        <div class="glass-card rounded-2xl p-5 space-y-4 border border-rose-500/20">
+          <div class="flex items-center justify-between">
+            <h3 class="font-bold text-sm text-rose-400 flex items-center gap-2">
+              <i data-lucide="globe" class="w-4 h-4"></i>
+              <span>Địa Chỉ IP Bị Khóa (Banned IP)</span>
+            </h3>
+            <button onclick="promptBanIp()" class="text-xs bg-rose-600 hover:bg-rose-500 text-white font-semibold px-3 py-1.5 rounded-lg">
+              + Khóa IP Mạng
+            </button>
+          </div>
+          <div class="overflow-y-auto max-h-96">
+            <table class="w-full text-left text-xs text-slate-300">
+              <thead class="bg-slate-900/80 text-slate-400 uppercase font-semibold">
+                <tr>
+                  <th class="px-3 py-2">IP Address</th>
+                  <th class="px-3 py-2">Lý Do</th>
+                  <th class="px-3 py-2 text-right">Gỡ Khóa</th>
+                </tr>
+              </thead>
+              <tbody id="bannedIpsTableBody" class="divide-y divide-white/5"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 5: SETTINGS -->
+    <div id="settingsTab" class="hidden space-y-4 max-w-2xl">
+      <div class="glass-card rounded-2xl p-6 space-y-4">
+        <h3 class="font-bold text-sm text-indigo-400">Cấu Hình Ngân Hàng Thanh Toán VietQR</h3>
+        <div class="space-y-3">
+          <div>
+            <label class="text-xs text-slate-400">Ngân Hàng (BIDV, VCB, MB, Techcombank...)</label>
+            <input type="text" id="setBankName" class="glass-input text-xs w-full px-3.5 py-2 rounded-xl mt-1 text-white outline-none">
+          </div>
+          <div>
+            <label class="text-xs text-slate-400">Số Tài Khoản</label>
+            <input type="text" id="setBankAccount" class="glass-input text-xs w-full px-3.5 py-2 rounded-xl mt-1 text-white outline-none">
+          </div>
+          <div>
+            <label class="text-xs text-slate-400">Tên Chủ Tài Khoản</label>
+            <input type="text" id="setPaymentReceiver" class="glass-input text-xs w-full px-3.5 py-2 rounded-xl mt-1 text-white outline-none">
+          </div>
+          <div>
+            <label class="text-xs text-slate-400">Mật Khẩu Quản Trị Mới</label>
+            <input type="password" id="setAdminPassword" placeholder="Nhập mật khẩu mới..." class="glass-input text-xs w-full px-3.5 py-2 rounded-xl mt-1 text-white outline-none">
+          </div>
+          <button onclick="saveSettings()" class="bg-indigo-600 hover:bg-indigo-500 text-xs font-semibold px-5 py-2.5 rounded-xl transition text-white">
+            Lưu Thay Đổi
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- CREATE KEY MODAL -->
+  <div id="createKeyModal" class="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="glass-card rounded-2xl max-w-md w-full p-6 space-y-4 border border-indigo-500/30">
+      <div class="flex items-center justify-between">
+        <h3 class="font-bold text-base text-white">Tạo License Key Mới</h3>
+        <button onclick="closeModal('createKeyModal')" class="text-slate-400 hover:text-white">&times;</button>
+      </div>
+      <div class="space-y-3">
+        <div>
+          <label class="text-xs text-slate-400">Gói Bản Quyền</label>
+          <select id="modalPlanCode" onchange="onModalPlanChange()" class="glass-input text-xs w-full px-3 py-2 rounded-xl mt-1 text-white outline-none">
+            <option value="custom" data-days="1" selected>⚡ Gói Tùy Chọn Số Ngày (Cấp Thử Nghiệm / Tự Do Ngày)</option>
+            <option value="trial" data-days="1">🎁 Gói Trial Dùng Thử Mặc Định (1 Ngày)</option>
+            <option value="basic" data-days="30">Gói Basic (30 Ngày - 1 Tháng)</option>
+            <option value="silver" data-days="90">Gói Silver (90 Ngày - 3 Tháng)</option>
+            <option value="gold" data-days="365">Gói Gold VIP (365 Ngày - 1 Năm)</option>
+          </select>
+        </div>
+        <div>
+          <label class="text-xs text-slate-400">Thời Hạn Sử Dụng (Số Ngày)</label>
+          <input type="number" id="modalDurationDays" value="1" min="1" max="3650" class="glass-input text-xs w-full px-3 py-2 rounded-xl mt-1 text-white outline-none font-semibold text-emerald-300" placeholder="Nhập số ngày tùy ý (vd: 1, 2, 3, 5, 7, 30, 90...)">
+          <div class="flex items-center gap-1.5 mt-2 flex-wrap">
+            <span class="text-[10px] text-slate-400">Chọn nhanh:</span>
+            <button type="button" onclick="setQuickDays(1)" class="px-2 py-0.5 text-[10px] font-semibold rounded-lg bg-emerald-500/15 hover:bg-emerald-500/25 text-emerald-300 border border-emerald-500/30 transition">1 Ngày</button>
+            <button type="button" onclick="setQuickDays(2)" class="px-2 py-0.5 text-[10px] font-semibold rounded-lg bg-emerald-500/15 hover:bg-emerald-500/25 text-emerald-300 border border-emerald-500/30 transition">2 Ngày</button>
+            <button type="button" onclick="setQuickDays(3)" class="px-2 py-0.5 text-[10px] font-semibold rounded-lg bg-emerald-500/15 hover:bg-emerald-500/25 text-emerald-300 border border-emerald-500/30 transition">3 Ngày</button>
+            <button type="button" onclick="setQuickDays(7)" class="px-2 py-0.5 text-[10px] font-semibold rounded-lg bg-emerald-500/15 hover:bg-emerald-500/25 text-emerald-300 border border-emerald-500/30 transition">7 Ngày</button>
+            <button type="button" onclick="setQuickDays(30)" class="px-2 py-0.5 text-[10px] font-semibold rounded-lg bg-emerald-500/15 hover:bg-emerald-500/25 text-emerald-300 border border-emerald-500/30 transition">30 Ngày</button>
+            <button type="button" onclick="setQuickDays(90)" class="px-2 py-0.5 text-[10px] font-semibold rounded-lg bg-emerald-500/15 hover:bg-emerald-500/25 text-emerald-300 border border-emerald-500/30 transition">90 Ngày</button>
+          </div>
+        </div>
+        <div>
+          <label class="text-xs text-slate-400">Số Lượng Key Cần Tạo</label>
+          <input type="number" id="modalKeyCount" value="1" min="1" max="50" class="glass-input text-xs w-full px-3 py-2 rounded-xl mt-1 text-white outline-none">
+        </div>
+        <div>
+          <label class="text-xs text-slate-400">Tên / Email Khách Hàng (Tùy chọn)</label>
+          <input type="text" id="modalCustomerEmail" placeholder="vd: nguyen.van.a@gmail.com" class="glass-input text-xs w-full px-3 py-2 rounded-xl mt-1 text-white outline-none">
+        </div>
+        <div>
+          <label class="text-xs text-slate-400">Ghi Chú</label>
+          <input type="text" id="modalNotes" placeholder="vd: Cấp cho đại lý ABC..." class="glass-input text-xs w-full px-3 py-2 rounded-xl mt-1 text-white outline-none">
+        </div>
+      </div>
+      <div class="flex justify-end space-x-2 pt-2">
+        <button onclick="closeModal('createKeyModal')" class="px-4 py-2 rounded-xl text-xs bg-slate-800 hover:bg-slate-700 text-slate-300">Hủy</button>
+        <button onclick="submitCreateKeys()" class="px-4 py-2 rounded-xl text-xs font-semibold bg-indigo-600 hover:bg-indigo-500 text-white">Tạo Ngay</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let token = localStorage.getItem('aiforge_admin_token') || 'admin';
+    let dataCache = { machines: [], keys: [], orders: [], bannedMachines: [], bannedIps: [], revenue: { totalRevenue: 0, monthlyStats: [], allPaidOrders: [] } };
+
+    function formatMoney(amount) {
+      return (Number(amount) || 0).toLocaleString('vi-VN') + ' đ';
+    }
+
+    async function apiReq(url, method = 'GET', body = null) {
+      const headers = { 'Authorization': 'Bearer ' + token, 'Content-Type': 'application/json' };
+      const opts = { method, headers };
+      if (body) opts.body = JSON.stringify(body);
+      const res = await fetch(url, opts);
+      if (res.status === 401) {
+        const pass = prompt('Nhập mật khẩu Quản Trị Viên (Admin Password):');
+        if (pass) {
+          token = pass;
+          localStorage.setItem('aiforge_admin_token', pass);
+          return apiReq(url, method, body);
+        }
+      }
+      return res.json();
+    }
+
+    async function refreshData() {
+      try {
+        const stats = await apiReq('/api/admin/stats');
+        if (stats) {
+          document.getElementById('statTotalRevenue').textContent = formatMoney(stats.totalRevenue || 0);
+          document.getElementById('statThisMonthRevenue').textContent = formatMoney(stats.thisMonthRevenue || 0);
+          document.getElementById('statPaidOrders').textContent = (stats.paidOrdersCount || 0).toLocaleString('vi-VN');
+          document.getElementById('statActiveMachines').textContent = stats.activeMachines || 0;
+          document.getElementById('statTotalKeys').textContent = stats.totalKeys || 0;
+          document.getElementById('statBanned').textContent = (stats.bannedMachines || 0) + (stats.bannedIps || 0);
+        }
+
+        const revRes = await apiReq('/api/admin/revenue');
+        if (revRes) dataCache.revenue = revRes;
+
+        const mRes = await apiReq('/api/admin/machines');
+        if (mRes && mRes.machines) dataCache.machines = mRes.machines;
+
+        const kRes = await apiReq('/api/admin/keys');
+        if (kRes && kRes.keys) dataCache.keys = kRes.keys;
+
+        const oRes = await apiReq('/api/admin/orders');
+        if (oRes && oRes.orders) dataCache.orders = oRes.orders;
+
+        const bRes = await apiReq('/api/admin/blacklist');
+        if (bRes) {
+          dataCache.bannedMachines = bRes.bannedMachines || [];
+          dataCache.bannedIps = bRes.bannedIps || [];
+        }
+
+        renderRevenueTab();
+        renderMachinesTable();
+        renderKeysTable();
+        renderOrdersTable();
+        renderBlacklistTable();
+        lucide.createIcons();
+      } catch (e) {
+        console.error('Error refreshing data:', e);
+      }
+    }
+
+    function setQuickDays(days) {
+      document.getElementById('modalDurationDays').value = days;
+      const selectEl = document.getElementById('modalPlanCode');
+      if (days !== 30 && days !== 90 && days !== 365) {
+        selectEl.value = 'custom';
+      }
+    }
+
+    function onModalPlanChange() {
+      const selectEl = document.getElementById('modalPlanCode');
+      const selectedOption = selectEl.options[selectEl.selectedIndex];
+      const days = selectedOption?.dataset?.days || 1;
+      document.getElementById('modalDurationDays').value = days;
+      if (selectEl.value === 'custom') {
+        document.getElementById('modalDurationDays').focus();
+      }
+    }
+
+    function formatDate(isoStr) {
+      if (!isoStr) return '---';
+      const d = new Date(isoStr);
+      if (isNaN(d.getTime())) return '---';
+      const pad = n => String(n).padStart(2, '0');
+      return `${pad(d.getDate())}/${pad(d.getMonth()+1)}/${d.getFullYear()} ${pad(d.getHours())}:${pad(d.getMinutes())}:${pad(d.getSeconds())}`;
+    }
+
+    function formatShortDate(isoStr) {
+      if (!isoStr) return '---';
+      const d = new Date(isoStr);
+      if (isNaN(d.getTime())) return '---';
+      const pad = n => String(n).padStart(2, '0');
+      return `${pad(d.getDate())}/${pad(d.getMonth()+1)}/${d.getFullYear()}`;
+    }
+
+    function formatCountdown(expiresIso) {
+      if (!expiresIso) return '<span class="text-slate-400">---</span>';
+      const exp = new Date(expiresIso).getTime();
+      const now = Date.now();
+      const diff = exp - now;
+      if (diff <= 0) return '<span class="text-rose-400 font-bold">🔴 Hết hạn</span>';
+      const days = Math.floor(diff / (86400 * 1000));
+      const hours = Math.floor((diff % (86400 * 1000)) / (3600 * 1000));
+      if (days >= 3650) return '<span class="text-amber-400 font-bold">👑 Vĩnh viễn</span>';
+      if (days >= 1) return `<span class="text-emerald-400 font-semibold">Còn ${days} ngày ${hours}h</span>`;
+      const mins = Math.floor((diff % (3600 * 1000)) / (60 * 1000));
+      return `<span class="text-amber-400 font-semibold">Còn ${hours}h ${mins}p</span>`;
+    }
+
+    function getPlanBadge(planCode, planName) {
+      const code = String(planCode || '').toLowerCase();
+      const name = planName || planCode || 'Basic';
+      if (code === 'gold' || code.includes('ultra') || code.includes('vip')) {
+        return `<span class="px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 font-bold text-[10px] border border-amber-500/30">👑 ${name}</span>`;
+      }
+      if (code === 'silver') {
+        return `<span class="px-2 py-0.5 rounded bg-purple-500/20 text-purple-300 font-semibold text-[10px] border border-purple-500/30">💎 ${name}</span>`;
+      }
+      if (code === 'trial') {
+        return `<span class="px-2 py-0.5 rounded bg-sky-500/20 text-sky-300 font-semibold text-[10px] border border-sky-500/30">🎁 ${name}</span>`;
+      }
+      if (code === 'custom') {
+        return `<span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-bold text-[10px] border border-emerald-500/30">⚡ ${name}</span>`;
+      }
+      return `<span class="px-2 py-0.5 rounded bg-indigo-500/20 text-indigo-300 font-semibold text-[10px] border border-indigo-500/30">⚡ ${name}</span>`;
+    }
+
+    function renderMachinesTable() {
+      const q = (document.getElementById('searchMachineInput')?.value || '').toLowerCase();
+      const tbody = document.getElementById('machinesTableBody');
+      const filtered = dataCache.machines.filter(m => {
+        return !q || (m.machineCode && m.machineCode.toLowerCase().includes(q)) ||
+               (m.customerIdentifier && m.customerIdentifier.toLowerCase().includes(q)) ||
+               (m.ip && m.ip.toLowerCase().includes(q)) ||
+               (m.licenseKey && m.licenseKey.toLowerCase().includes(q));
+      });
+
+      document.getElementById('countMachines').textContent = filtered.length;
+
+      tbody.innerHTML = filtered.map((m, idx) => {
+        const isBanned = dataCache.bannedMachines.some(b => b.machineCode === m.machineCode);
+        const isUnlinked = m.status === 'unlinked' || m.status === 'reset';
+        const isExpired = m.expiresAt && new Date(m.expiresAt).getTime() <= Date.now();
+        const statusBadge = isBanned
+          ? '<span class="px-2 py-0.5 rounded bg-rose-500/20 text-rose-400 font-bold border border-rose-500/30">🔴 Bị Khóa</span>'
+          : isUnlinked
+          ? '<span class="px-2 py-0.5 rounded bg-rose-500/20 text-rose-300 font-bold border border-rose-500/30">⚠️ Đã Reset</span>'
+          : m.status === 'suspended'
+          ? '<span class="px-2 py-0.5 rounded bg-amber-500/20 text-amber-400 font-bold border border-amber-500/30">⏸️ Tạm Dừng</span>'
+          : isExpired
+          ? '<span class="px-2 py-0.5 rounded bg-slate-500/20 text-slate-400 font-bold border border-slate-500/30">Hết Hạn</span>'
+          : '<span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 font-bold border border-emerald-500/30">🟢 Hoạt Động</span>';
+
+        return `
+          <tr class="hover:bg-white/[0.02]">
+            <td class="px-4 py-3">
+              <div class="font-bold text-white">${m.customerIdentifier || 'Khách hàng'}</div>
+              <div class="text-[10px] text-slate-500">v${m.appVersion || '1.0.0'}</div>
+            </td>
+            <td class="px-4 py-3 font-mono text-[11px] text-indigo-300">
+              <span title="${m.machineCode}">${m.machineCode.slice(0, 16)}...</span>
+              <button onclick="copyToClipboard('${m.machineCode}')" class="ml-1 text-slate-500 hover:text-white" title="Copy HWID">📋</button>
+            </td>
+            <td class="px-4 py-3">
+              ${getPlanBadge(m.planCode, m.planName)}
+            </td>
+            <td class="px-4 py-3 font-mono text-[11px] text-slate-300">
+              <div>${m.licenseKey || '---'}</div>
+              ${m.notes ? `<div class="text-[10px] text-slate-500 font-sans italic">${m.notes}</div>` : ''}
+            </td>
+            <td class="px-4 py-3">
+              <div>${m.ip || 'Local'}</div>
+              <div class="text-[10px] text-slate-500">${m.lastSeenAt ? formatDate(m.lastSeenAt) : '---'}</div>
+            </td>
+            <td class="px-4 py-3 text-[11px]">
+              <div class="font-semibold text-slate-200">${m.expiresAt ? formatDate(m.expiresAt) : 'Vĩnh viễn'}</div>
+              <div class="text-[10px] mt-0.5">${formatCountdown(m.expiresAt)}</div>
+            </td>
+            <td class="px-4 py-3">${statusBadge}</td>
+            <td class="px-4 py-3 text-right space-x-1.5 whitespace-nowrap">
+              <button onclick="resetMachine('${m.machineCode}')" class="px-2 py-1 rounded bg-rose-600/20 text-rose-300 hover:bg-rose-600 hover:text-white border border-rose-500/30 text-[11px] font-semibold transition" title="Dừng ngay lập tức gói license trên máy này">🔄 Reset Máy</button>
+              ${m.status === 'suspended'
+                ? `<button onclick="resumeKey('${m.licenseKey}')" class="px-2 py-1 rounded bg-emerald-600/30 text-emerald-300 hover:bg-emerald-600/50 text-[11px]">▶️ Tiếp Tục</button>`
+                : `<button onclick="suspendKey('${m.licenseKey}')" class="px-2 py-1 rounded bg-amber-600/30 text-amber-300 hover:bg-amber-600/50 text-[11px]">⏸️ Tạm Dừng</button>`}
+              ${isBanned
+                ? `<button onclick="unbanMachine('${m.machineCode}')" class="px-2 py-1 rounded bg-emerald-600/30 text-emerald-300 hover:bg-emerald-600/50 text-[11px]">Mở Khóa</button>`
+                : `<button onclick="banMachine('${m.machineCode}')" class="px-2 py-1 rounded bg-rose-600/30 text-rose-300 hover:bg-rose-600/50 text-[11px]">🚫 Khóa Máy</button>`}
+              <button onclick="banIp('${m.ip}', '${m.machineCode}')" class="px-2 py-1 rounded bg-purple-600/30 text-purple-300 hover:bg-purple-600/50 text-[11px]" title="Khóa IP và đưa máy vào Blacklist">🌐 Ban IP</button>
+              <button onclick="deleteMachine('${m.machineCode}')" class="px-2 py-1 rounded bg-slate-700 hover:bg-rose-700 text-slate-300 hover:text-white text-[11px]" title="Xóa">🗑️</button>
+            </td>
+          </tr>
+        `;
+      }).join('');
+    }
+
+    function renderKeysTable() {
+      const q = (document.getElementById('searchKeyInput')?.value || '').toLowerCase();
+      const statusFilter = document.getElementById('filterKeyStatus')?.value || '';
+      const tbody = document.getElementById('keysTableBody');
+
+      const filtered = dataCache.keys.filter(k => {
+        const matchesQ = !q || k.key.toLowerCase().includes(q) || (k.customerEmail && k.customerEmail.toLowerCase().includes(q));
+        const matchesStatus = !statusFilter || k.status === statusFilter;
+        return matchesQ && matchesStatus;
+      });
+
+      tbody.innerHTML = filtered.map(k => {
+        const isExpired = k.expiresAt && new Date(k.expiresAt).getTime() <= Date.now();
+        const isRevoked = k.status === 'revoked';
+        const isUsed = k.isConsumed || k.activatedAt || (k.machineCodes && k.machineCodes.length > 0);
+        const statusBadge = isRevoked
+          ? '<span class="px-2 py-0.5 rounded bg-rose-500/20 text-rose-400 font-bold border border-rose-500/30">Revoked (Đã hủy)</span>'
+          : k.status === 'active'
+          ? (isExpired ? '<span class="px-2 py-0.5 rounded bg-slate-500/20 text-slate-400 font-bold">Hết Hạn</span>' : '<span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 font-bold border border-emerald-500/30">Active</span>')
+          : k.status === 'suspended'
+          ? '<span class="px-2 py-0.5 rounded bg-amber-500/20 text-amber-400 font-bold border border-amber-500/30">Suspended</span>'
+          : k.status === 'expired' || isExpired
+          ? '<span class="px-2 py-0.5 rounded bg-slate-500/20 text-slate-400 font-bold">Hết Hạn</span>'
+          : '<span class="px-2 py-0.5 rounded bg-indigo-500/20 text-indigo-400 font-bold">Chưa Kích Hoạt</span>';
+
+        return `
+          <tr class="hover:bg-white/[0.02]">
+            <td class="px-4 py-3 text-white font-bold">
+              ${k.key}
+              <button onclick="copyToClipboard('${k.key}')" class="ml-1 text-slate-400 hover:text-white" title="Copy Key">📋</button>
+              ${isUsed ? `<span class="ml-1 px-1.5 py-0.5 rounded bg-rose-500/20 text-rose-300 font-sans text-[9px] border border-rose-500/30" title="Key này đã kích hoạt và đã bị khóa, không thể nhập lại!">Đã dùng (Khóa nhập lại)</span>` : ''}
+              ${k.stacked ? `<span class="ml-1 px-1.5 py-0.5 rounded bg-cyan-500/20 text-cyan-300 font-sans text-[9px] border border-cyan-500/30" title="Key này được cộng dồn vào hạn cũ">Cộng dồn</span>` : ''}
+            </td>
+            <td class="px-4 py-3">${getPlanBadge(k.planCode, k.planName)}</td>
+            <td class="px-4 py-3 text-slate-300 font-sans font-semibold">${k.durationDays || (k.planCode === 'trial' ? 1 : 30)} Ngày</td>
+            <td class="px-4 py-3 text-slate-300 font-sans">${k.customerEmail || '---'}</td>
+            <td class="px-4 py-3 text-slate-400 text-[10px]">${(k.machineCodes || []).length ? k.machineCodes[0].slice(0, 12) + '...' : '<span class="italic text-slate-600">Chưa kích hoạt</span>'}</td>
+            <td class="px-4 py-3 text-slate-300 font-sans text-[11px]">
+              <div>${k.expiresAt ? formatDate(k.expiresAt) : '---'}</div>
+              ${k.expiresAt ? `<div class="text-[10px]">${formatCountdown(k.expiresAt)}</div>` : ''}
+            </td>
+            <td class="px-4 py-3 font-sans">${statusBadge}</td>
+            <td class="px-4 py-3 text-right space-x-1.5 font-sans">
+              ${k.status === 'suspended'
+                ? `<button onclick="resumeKey('${k.key}')" class="px-2 py-1 rounded bg-emerald-600/30 text-emerald-300 hover:bg-emerald-600/50 text-[11px]">▶️ Mở</button>`
+                : `<button onclick="suspendKey('${k.key}')" class="px-2 py-1 rounded bg-amber-600/30 text-amber-300 hover:bg-amber-600/50 text-[11px]">⏸️ Dừng</button>`}
+              <button onclick="resetKeyHwid('${k.key}')" class="px-2 py-1 rounded bg-indigo-600/30 text-indigo-300 hover:bg-indigo-600/50 text-[11px]" title="Cho phép kích hoạt máy mới">🔄 Đổi Máy</button>
+              <button onclick="deleteKey('${k.key}')" class="px-2 py-1 rounded bg-slate-700 hover:bg-rose-700 text-slate-300 hover:text-white text-[11px]">🗑️</button>
+            </td>
+          </tr>
+        `;
+      }).join('');
+    }
+
+    function renderOrdersTable() {
+      const tbody = document.getElementById('ordersTableBody');
+      tbody.innerHTML = dataCache.orders.map(o => {
+        const isPaid = o.status === 'paid';
+        return `
+          <tr class="hover:bg-white/[0.02]">
+            <td class="px-4 py-3 font-bold text-white">${o.orderCode}</td>
+            <td class="px-4 py-3">${getPlanBadge(o.planCode, o.planName)} <span class="text-slate-400 font-mono text-[10px]">(${o.durationDays}D)</span></td>
+            <td class="px-4 py-3 font-semibold text-emerald-400">${(o.amount || 0).toLocaleString('vi-VN')} đ</td>
+            <td class="px-4 py-3 text-slate-300">
+              <div>${o.customerIdentifier || '---'}</div>
+              ${o.machineCode ? `<div class="text-[10px] font-mono text-indigo-300" title="${o.machineCode}">${o.machineCode.slice(0, 12)}...</div>` : ''}
+            </td>
+            <td class="px-4 py-3 font-mono text-slate-300 text-[11px]">${o.licenseKey || '---'}</td>
+            <td class="px-4 py-3 text-[11px] text-slate-400">${formatDate(o.createdAt)}</td>
+            <td class="px-4 py-3">
+              ${isPaid
+                ? '<span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 font-bold border border-emerald-500/30">Đã Thanh Toán</span>'
+                : '<span class="px-2 py-0.5 rounded bg-amber-500/20 text-amber-400 font-bold border border-amber-500/30">Chờ Chuyển Khoản</span>'}
+            </td>
+            <td class="px-4 py-3 text-right space-x-1.5">
+              ${!isPaid
+                ? `
+                  <button onclick="simulateSepay('${o.orderCode}')" class="px-2.5 py-1 rounded bg-gradient-to-r from-cyan-600 to-indigo-600 hover:from-cyan-500 hover:to-indigo-500 text-white font-semibold text-xs shadow-md shadow-cyan-600/30" title="Giả lập SePay tự động phát hiện chuyển khoản">⚡ Test SePay</button>
+                  <button onclick="approveOrder('${o.orderCode}')" class="px-2.5 py-1 rounded bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-xs shadow-md shadow-emerald-600/30">✓ Duyệt Cấp Key</button>
+                  <button onclick="deleteOrder('${o.orderCode}')" class="px-2 py-1 rounded bg-slate-800 hover:bg-rose-800 text-slate-400 hover:text-white text-xs">🗑️</button>
+                `
+                : `<button onclick="deleteOrder('${o.orderCode}')" class="px-2 py-1 rounded bg-slate-800 hover:bg-rose-800 text-slate-400 hover:text-white text-xs">🗑️</button>`}
+            </td>
+          </tr>
+        `;
+      }).join('');
+    }
+
+    function onModalPlanChange() {
+      const sel = document.getElementById('modalPlanCode');
+      const opt = sel.options[sel.selectedIndex];
+      const days = opt ? (opt.getAttribute('data-days') || '1') : '1';
+      document.getElementById('modalDurationDays').value = days;
+    }
+
+    async function submitCreateKeys() {
+      const planCode = document.getElementById('modalPlanCode').value;
+      const durationDays = parseInt(document.getElementById('modalDurationDays').value) || (planCode === 'trial' ? 1 : 30);
+      const count = document.getElementById('modalKeyCount').value;
+      const customerEmail = document.getElementById('modalCustomerEmail').value;
+      const notes = document.getElementById('modalNotes').value;
+
+      const res = await apiReq('/api/admin/keys/generate', 'POST', { planCode, durationDays, count, customerEmail, notes });
+      if (res && res.keys) {
+        alert(`Đã tạo thành công ${res.keys.length} License Key (${planCode === 'trial' ? 'Trial 1 Ngày' : durationDays + ' Ngày'})!`);
+        closeModal('createKeyModal');
+        refreshData();
+      }
+    }
+
+    function renderBlacklistTable() {
+      const bMBody = document.getElementById('bannedMachinesTableBody');
+      bMBody.innerHTML = dataCache.bannedMachines.map(b => `
+        <tr>
+          <td class="px-3 py-2 font-mono text-[11px] text-rose-300">${b.machineCode}</td>
+          <td class="px-3 py-2 text-slate-400 text-xs">${b.reason}</td>
+          <td class="px-3 py-2 text-right">
+            <button onclick="unbanMachine('${b.machineCode}')" class="px-2 py-0.5 rounded bg-emerald-600/30 text-emerald-300 hover:bg-emerald-600/50 text-[11px]">Gỡ Khóa</button>
+          </td>
+        </tr>
+      `).join('');
+
+      const bIBody = document.getElementById('bannedIpsTableBody');
+      bIBody.innerHTML = dataCache.bannedIps.map(b => `
+        <tr>
+          <td class="px-3 py-2 font-mono text-[11px] text-rose-300">${b.ip}</td>
+          <td class="px-3 py-2 text-slate-400 text-xs">${b.reason}</td>
+          <td class="px-3 py-2 text-right">
+            <button onclick="unbanIp('${b.ip}')" class="px-2 py-0.5 rounded bg-emerald-600/30 text-emerald-300 hover:bg-emerald-600/50 text-[11px]">Gỡ Khóa</button>
+          </td>
+        </tr>
+      `).join('');
+    }
+
+    // ACTIONS
+    async function suspendKey(key) {
+      if (!confirm(`Bạn có chắc chắn muốn TẠM DỪNG gói bản quyền: ${key}?`)) return;
+      await apiReq('/api/admin/keys/suspend', 'POST', { key });
+      refreshData();
+    }
+
+    async function resumeKey(key) {
+      await apiReq('/api/admin/keys/resume', 'POST', { key });
+      refreshData();
+    }
+
+    async function resetKeyHwid(key) {
+      if (!confirm(`Reset HWID cho key: ${key}? Khách hàng sẽ có thể kích hoạt trên máy tính mới.`)) return;
+      await apiReq('/api/admin/keys/reset-hwid', 'POST', { key });
+      alert('Đã reset HWID thành công!');
+      refreshData();
+    }
+
+    async function deleteKey(key) {
+      if (!confirm(`Xóa vĩnh viễn key: ${key}?`)) return;
+      await apiReq('/api/admin/keys/delete', 'POST', { key });
+      refreshData();
+    }
+
+    async function resetMachine(machineCode) {
+      if (!confirm(`Bạn có chắc chắn muốn RESET MÁY (${machineCode.slice(0, 12)}...)?\n\n⚠️ CẢNH BÁO: Gói license trên máy này sẽ bị DỪNG NGAY LẬP TỨC!`)) return;
+      const res = await apiReq('/api/admin/machines/reset', 'POST', { machineCode });
+      if (res && res.ok) {
+        alert(`Đã reset máy thành công!\nGói license trên máy ${machineCode.slice(0, 12)}... đã bị dừng ngay lập tức.`);
+        refreshData();
+      }
+    }
+
+    async function banMachine(machineCode) {
+      const reason = prompt(`Nhập lý do khóa máy (${machineCode.slice(0, 12)}...):`, 'Vi phạm chính sách sử dụng');
+      if (reason != null) {
+        await apiReq('/api/admin/machines/ban', 'POST', { machineCode, reason });
+        refreshData();
+      }
+    }
+
+    async function unbanMachine(machineCode) {
+      await apiReq('/api/admin/machines/unban', 'POST', { machineCode });
+      refreshData();
+    }
+
+    async function deleteMachine(machineCode) {
+      if (!confirm('Xóa bản ghi thiết bị này khỏi danh sách?')) return;
+      await apiReq('/api/admin/machines/delete', 'POST', { machineCode });
+      refreshData();
+    }
+
+    async function promptBanMachine() {
+      const code = prompt('Nhập Machine Code (HWID) cần khóa:');
+      if (code) banMachine(code.trim());
+    }
+
+    async function banIp(ip, machineCode = '') {
+      const desc = (ip && ip !== 'Local') ? `IP: ${ip}` : `Mã máy: ${machineCode ? machineCode.slice(0, 12) + '...' : 'này'}`;
+      const reason = prompt(`Nhập lý do đưa vào Blacklist (${desc}):`, 'Gian lận / Vi phạm chính sách');
+      if (reason != null) {
+        await apiReq('/api/admin/ips/ban', 'POST', { ip: (ip && ip !== 'Local') ? ip : '', machineCode, reason });
+        alert('Đã đưa vào Blacklist thành công!');
+        refreshData();
+      }
+    }
+
+    async function unbanIp(ip) {
+      await apiReq('/api/admin/ips/unban', 'POST', { ip });
+      refreshData();
+    }
+
+    async function promptBanIp() {
+      const ip = prompt('Nhập địa chỉ IP cần khóa:');
+      if (ip) banIp(ip.trim());
+    }
+
+    async function simulateSepay(orderCode) {
+      if (!confirm(`Giả lập SePay bắt biến động số dư ngân hàng cho đơn ${orderCode}?`)) return;
+      const res = await apiReq('/api/admin/orders/simulate-sepay', 'POST', { orderCode });
+      if (res && res.ok) {
+        alert(`⚡ Giả lập SePay thành công!\n👉 Đơn hàng ${orderCode} đã được cấp Key: ${res.result?.key?.key}\n👉 App của khách hàng sẽ tự động kích hoạt ngay lập tức!`);
+      }
+      refreshData();
+    }
+
+    async function approveOrder(orderCode) {
+      if (!confirm(`Duyệt thanh toán cho đơn hàng ${orderCode}? Key sẽ được tự động kích hoạt cho khách.`)) return;
+      const res = await apiReq('/api/admin/orders/approve', 'POST', { orderCode });
+      if (res && res.licenseKey) {
+        alert(`Đã duyệt đơn và tạo License Key: ${res.licenseKey}`);
+      }
+      refreshData();
+    }
+
+    async function deleteOrder(orderCode) {
+      if (!confirm(`Xóa đơn hàng ${orderCode}?`)) return;
+      await apiReq('/api/admin/orders/delete', 'POST', { orderCode });
+      refreshData();
+    }
+
+
+
+    async function saveSettings() {
+      const bankName = document.getElementById('setBankName').value;
+      const bankAccount = document.getElementById('setBankAccount').value;
+      const paymentReceiver = document.getElementById('setPaymentReceiver').value;
+      const adminPassword = document.getElementById('setAdminPassword').value;
+
+      const payload = {};
+      if (bankName) payload.bankName = bankName;
+      if (bankAccount) payload.bankAccount = bankAccount;
+      if (paymentReceiver) payload.paymentReceiver = paymentReceiver;
+      if (adminPassword) payload.adminPassword = adminPassword;
+
+      await apiReq('/api/admin/settings', 'POST', payload);
+      alert('Đã lưu cấu hình hệ thống thành công!');
+    }
+
+    function renderRevenueTab() {
+      const revData = dataCache.revenue || { totalRevenue: 0, monthlyStats: [], allPaidOrders: [] };
+      const totalRev = revData.totalRevenue || 0;
+      const monthlyStats = revData.monthlyStats || [];
+      const allPaid = revData.allPaidOrders || [];
+
+      // Highlights
+      const elTotal = document.getElementById('revTabTotal');
+      if (elTotal) elTotal.textContent = formatMoney(totalRev);
+      
+      const now = new Date();
+      const curKey = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}`;
+      const curMonthStat = monthlyStats.find(m => m.monthKey === curKey);
+      const elThisMonth = document.getElementById('revTabThisMonth');
+      if (elThisMonth) elThisMonth.textContent = formatMoney(curMonthStat?.totalRevenue || 0);
+
+      const elThisMonthLbl = document.getElementById('revTabThisMonthLabel');
+      if (elThisMonthLbl) elThisMonthLbl.textContent = `Tháng ${String(now.getMonth() + 1).padStart(2, '0')}/${now.getFullYear()}`;
+
+      const elPaidCount = document.getElementById('revTabPaidCount');
+      if (elPaidCount) elPaidCount.textContent = `${allPaid.length} Đơn`;
+
+      // Top Plan
+      let planRevenue = { gold: 0, silver: 0, basic: 0 };
+      allPaid.forEach(o => {
+        const p = (o.planCode || '').toLowerCase();
+        if (p.includes('gold')) planRevenue.gold += (o.amount || 0);
+        else if (p.includes('silver')) planRevenue.silver += (o.amount || 0);
+        else planRevenue.basic += (o.amount || 0);
+      });
+      let topPlanName = '---';
+      let maxRev = -1;
+      if (planRevenue.gold > maxRev && planRevenue.gold > 0) { maxRev = planRevenue.gold; topPlanName = '👑 Gold VIP'; }
+      if (planRevenue.silver > maxRev && planRevenue.silver > 0) { maxRev = planRevenue.silver; topPlanName = '💎 Silver'; }
+      if (planRevenue.basic > maxRev && planRevenue.basic > 0) { maxRev = planRevenue.basic; topPlanName = '⚡ Basic'; }
+      if (allPaid.length === 0) topPlanName = 'Chưa có đơn';
+      const elTopPlan = document.getElementById('revTabTopPlan');
+      if (elTopPlan) elTopPlan.textContent = topPlanName;
+
+      // Update Filter Dropdown
+      const monthFilter = document.getElementById('revMonthFilter');
+      if (monthFilter) {
+        const selectedMonth = monthFilter.value;
+        monthFilter.innerHTML = '<option value="">Tất cả các tháng</option>' + monthlyStats.map(m => `
+          <option value="${m.monthKey}" ${selectedMonth === m.monthKey ? 'selected' : ''}>${m.monthLabel} (${formatMoney(m.totalRevenue)})</option>
+        `).join('');
+      }
+
+      // Render Monthly Table
+      const mBody = document.getElementById('revenueMonthlyTableBody');
+      if (mBody) {
+        if (monthlyStats.length === 0) {
+          mBody.innerHTML = `<tr><td colspan="5" class="px-4 py-8 text-center text-slate-500 italic">Chưa có giao dịch thanh toán thành công nào được ghi nhận.</td></tr>`;
+        } else {
+          mBody.innerHTML = monthlyStats.map(m => {
+            const pct = totalRev > 0 ? ((m.totalRevenue / totalRev) * 100).toFixed(1) : 0;
+            return `
+              <tr class="hover:bg-white/[0.02] transition">
+                <td class="px-4 py-3.5 font-bold text-white flex items-center gap-2">
+                  <span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span>
+                  <span class="text-sm">${m.monthLabel}</span>
+                </td>
+                <td class="px-4 py-3.5 text-center">
+                  <span class="px-3 py-1 rounded-lg bg-indigo-500/10 text-indigo-300 font-mono text-xs font-bold border border-indigo-500/20">${m.ordersCount} đơn</span>
+                </td>
+                <td class="px-4 py-3.5 space-x-1">
+                  ${m.plansCount.gold ? `<span class="px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 text-[11px] font-bold border border-amber-500/30">👑 Gold: ${m.plansCount.gold}</span>` : ''}
+                  ${m.plansCount.silver ? `<span class="px-2 py-0.5 rounded bg-purple-500/20 text-purple-300 text-[11px] font-semibold border border-purple-500/30">💎 Silver: ${m.plansCount.silver}</span>` : ''}
+                  ${m.plansCount.basic ? `<span class="px-2 py-0.5 rounded bg-indigo-500/20 text-indigo-300 text-[11px] font-semibold border border-indigo-500/30">⚡ Basic: ${m.plansCount.basic}</span>` : ''}
+                  ${m.plansCount.other ? `<span class="px-2 py-0.5 rounded bg-slate-500/20 text-slate-300 text-[11px]">Khác: ${m.plansCount.other}</span>` : ''}
+                </td>
+                <td class="px-4 py-3.5 text-right font-black text-emerald-400 text-sm font-mono">
+                  ${formatMoney(m.totalRevenue)}
+                </td>
+                <td class="px-4 py-3.5 text-right">
+                  <div class="flex items-center justify-end gap-2">
+                    <div class="w-16 h-2 rounded-full bg-slate-800 overflow-hidden">
+                      <div class="h-full bg-emerald-400 rounded-full" style="width: ${pct}%"></div>
+                    </div>
+                    <span class="text-[11px] font-semibold text-slate-400 font-mono w-10 text-right">${pct}%</span>
+                  </div>
+                </td>
+              </tr>
+            `;
+          }).join('');
+        }
+      }
+
+      renderRevenueDetailsTable();
+    }
+
+    function renderRevenueDetailsTable() {
+      const revData = dataCache.revenue || { allPaidOrders: [] };
+      const allPaid = revData.allPaidOrders || [];
+      const selectedMonth = document.getElementById('revMonthFilter')?.value || '';
+
+      const filtered = allPaid.filter(o => {
+        if (!selectedMonth) return true;
+        const d = new Date(o.paidAt || o.createdAt);
+        const key = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}`;
+        return key === selectedMonth;
+      });
+
+      const dBody = document.getElementById('revenueDetailsTableBody');
+      if (dBody) {
+        if (filtered.length === 0) {
+          dBody.innerHTML = `<tr><td colspan="8" class="px-4 py-8 text-center text-slate-500 italic">Không có đơn hàng nào trong khoảng thời gian đã chọn.</td></tr>`;
+        } else {
+          dBody.innerHTML = filtered.map(o => `
+            <tr class="hover:bg-white/[0.02] transition">
+              <td class="px-4 py-3 font-bold text-white font-mono">${o.orderCode}</td>
+              <td class="px-4 py-3 font-semibold text-slate-200">${o.customerIdentifier || 'Khách hàng'}</td>
+              <td class="px-4 py-3">${getPlanBadge(o.planCode, o.planName)} <span class="text-slate-400 font-mono text-[10px]">(${o.durationDays || 30}D)</span></td>
+              <td class="px-4 py-3 font-bold text-emerald-400 font-mono text-xs">${formatMoney(o.amount)}</td>
+              <td class="px-4 py-3 font-mono text-[11px] text-indigo-300">
+                ${o.machineCode ? `<span title="${o.machineCode}">${o.machineCode.slice(0, 14)}...</span>` : '<span class="text-slate-500 italic">N/A</span>'}
+              </td>
+              <td class="px-4 py-3 font-mono text-[11px] text-slate-300">
+                ${o.licenseKey ? `<span>${o.licenseKey}</span> <button onclick="copyToClipboard('${o.licenseKey}')" class="ml-1 text-slate-500 hover:text-white" title="Copy Key">📋</button>` : '---'}
+              </td>
+              <td class="px-4 py-3 text-[11px] text-slate-400">${formatDate(o.paidAt)}</td>
+              <td class="px-4 py-3 text-right">
+                <span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 font-bold border border-emerald-500/30 text-[10px]">🟢 Đã Nhận Tiền</span>
+              </td>
+            </tr>
+          `).join('');
+        }
+      }
+    }
+
+    function switchTab(tabId) {
+      ['revenueTab', 'machinesTab', 'keysTab', 'ordersTab', 'blacklistTab', 'settingsTab'].forEach(t => {
+        const el = document.getElementById(t);
+        if (el) el.classList.add('hidden');
+      });
+      const activeEl = document.getElementById(tabId);
+      if (activeEl) activeEl.classList.remove('hidden');
+
+      ['btnTabRevenue', 'btnTabMachines', 'btnTabKeys', 'btnTabOrders', 'btnTabBlacklist', 'btnTabSettings'].forEach(b => {
+        const btn = document.getElementById(b);
+        if (btn) btn.className = 'px-4 py-2.5 rounded-xl text-xs font-semibold flex items-center space-x-2 bg-slate-800/80 hover:bg-slate-700 text-slate-300 transition';
+      });
+
+      const activeBtnMap = {
+        revenueTab: 'btnTabRevenue',
+        machinesTab: 'btnTabMachines',
+        keysTab: 'btnTabKeys',
+        ordersTab: 'btnTabOrders',
+        blacklistTab: 'btnTabBlacklist',
+        settingsTab: 'btnTabSettings'
+      };
+      const activeBtn = document.getElementById(activeBtnMap[tabId]);
+      if (activeBtn) {
+        if (tabId === 'revenueTab') {
+          activeBtn.className = 'px-4 py-2.5 rounded-xl text-xs font-semibold flex items-center space-x-2 bg-emerald-600 text-white shadow-md shadow-emerald-600/30 transition';
+        } else {
+          activeBtn.className = 'px-4 py-2.5 rounded-xl text-xs font-semibold flex items-center space-x-2 bg-indigo-600 text-white shadow-md shadow-indigo-600/30 transition';
+        }
+      }
+      lucide.createIcons();
+    }
+
+    function openModal(id) { document.getElementById(id).classList.remove('hidden'); }
+    function closeModal(id) { document.getElementById(id).classList.add('hidden'); }
+    function copyToClipboard(txt) {
+      navigator.clipboard.writeText(txt);
+      alert('Đã copy: ' + txt);
+    }
+    function logout() {
+      localStorage.removeItem('aiforge_admin_token');
+      location.reload();
+    }
+
+    // Init
+    refreshData();
+  </script>
+</body>
+</html>

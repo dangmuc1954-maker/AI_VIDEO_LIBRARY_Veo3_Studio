@@ -1,0 +1,82 @@
+# Dependencies
+node_modules/
+*/node_modules/
+*/*/node_modules/
+package-lock.json
+
+# Build Outputs & Heavy Packages (Exceeds GitHub limits)
+dist/
+scratch/
+electron_bin/
+output/
+
+# Reverse Engineering & Backup Dumps
+extracted_*/
+backup_*/
+app_backup_*/
+original_aiforge_source/
+
+# App Backup Folders & Backup Files
+app/out_backup_*/
+*.bak
+*.bak_*
+*.bak.*
+
+# Sensitive Files, Tokens & Database
+.env
+.env.*
+*.env
+vercel_server/.vercel/
+vercel_server/.env*
+license_server/data/keys.json
+license_server/data/database.json
+temp_cookies.db
+
+# Large Binaries & Archive Bundles
+*.exe
+*.zip
+*.tar
+*.tar.gz
+*.asar
+*.7z
+*.onnx
+
+# Agent & Skill Customizations
+.agents/
+
+# Audio & Video test media
+*.mp3
+*.mp4
+*.wav
+*.aac
+*.ogg
+
+# Temporary Image Dumps & Raw Buffers
+*.rgba
+corner_file*.jpg
+crop_corner*.jpg
+flow_*.png
+flow_*.json
+test_cleaned*.jpg
+test_cleaned*.rgba
+test_corner_*.jpg
+test_raw.rgba
+toast_crop.png
+watermark_zoom.jpg
+temp_*.js
+temp_*.cjs
+temp_electron_test.cjs
+extracted_editor_comp.js
+original_editor_formatted.js
+original_editor_jsx.js
+original_mn_exact.js
+original_video_editor_mn.js
+scripts/test_crop*.png
+scripts/test_thumb.*
+
+# OS & Editor
+.DS_Store
+Thumbs.db
+*.log
+.vscode/
+.idea/
